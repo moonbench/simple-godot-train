@@ -29,6 +29,7 @@ func _on_Button_pressed():
 	 switch()
 
 func switch():
+	if _has_wheels_on(): return
 	direction = DIRECTIONS.LEFT if direction == DIRECTIONS.RIGHT else DIRECTIONS.RIGHT
 	_update_track_visuals()
 
@@ -48,6 +49,12 @@ func _update_track_visuals():
 func link_track(other_track, from_side, to_side):
 	connect("wheel_at_" + from_side, other_track, "enter_from_" + to_side)
 	other_track.connect("wheel_at_" + to_side, self, "enter_from_" + from_side)
+
+func _has_wheels_on():
+	for child in right_track.get_children():
+		if child.is_in_group("train_wheels"): return true
+	for child in left_track.get_children():
+		if child.is_in_group("train_wheels"): return true
 
 func _on_RightTrack_wheel_at_tail(wheel, extra, is_forward):
 	emit_signal("wheel_at_right", wheel, extra, is_forward)
