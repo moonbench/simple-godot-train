@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/grid.png" type="Texture" id=1]
+
+[node name="World" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1074.0
+margin_bottom = 628.0
+texture = ExtResource( 1 )
+stretch_mode = 2

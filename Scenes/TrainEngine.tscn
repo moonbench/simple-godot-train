@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/TrainVehicle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/TrainEngine.gd" type="Script" id=2]
+[ext_resource path="res://Assets/train_engine.png" type="Texture" id=3]
+
+[node name="TrainEngine" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+max_force = 1000
+gravity = 9.8
+friction_coefficient = 0.1
+rolling_resistance_coefficient = 0.005
+air_resistance_coefficient = 0.15
+air_density = 1.0
+velocity_multiplier = 1.5
+
+[node name="TextureRect" parent="Body" index="2"]
+texture = ExtResource( 3 )

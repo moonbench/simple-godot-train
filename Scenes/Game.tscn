@@ -1,0 +1,147 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Resources/Theme1.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/World.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Track.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/TrackSwitch.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Curve2D" id=1]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 520, 0 )
+}
+
+[sub_resource type="Curve2D" id=2]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 448, 0 )
+}
+
+[sub_resource type="Curve2D" id=3]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 448, -448 )
+}
+
+[sub_resource type="Curve2D" id=4]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -32.4262, 32.4024, 32.4262, -32.4024, 64, -32, 0, 0, 0, 0, 128, -96 )
+}
+
+[sub_resource type="Curve2D" id=5]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0 )
+}
+
+[node name="Game" type="Node"]
+script = ExtResource( 4 )
+
+[node name="World" parent="." instance=ExtResource( 2 )]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2( 2, 2 )
+transform = Transform2D( 2, 0, 0, 2, 0, 0 )
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 12.0
+margin_top = 44.0
+margin_right = 128.0
+margin_bottom = 58.0
+text = "Select Test Track"
+align = 2
+
+[node name="Line2D" type="Line2D" parent="CanvasLayer"]
+position = Vector2( 32.812, -16.8 )
+scale = Vector2( 0.548, 0.8 )
+points = PoolVector2Array( 176, 96, -64, 96 )
+width = 5.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+margin_left = 32.0
+margin_top = 76.0
+margin_right = 89.0
+margin_bottom = 96.0
+theme = ExtResource( 1 )
+text = "Track 1"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+margin_left = 32.0
+margin_top = 108.0
+margin_right = 89.0
+margin_bottom = 128.0
+theme = ExtResource( 1 )
+text = "Track 2"
+
+[node name="Button3" type="Button" parent="CanvasLayer"]
+margin_left = 32.0
+margin_top = 140.0
+margin_right = 89.0
+margin_bottom = 160.0
+theme = ExtResource( 1 )
+text = "Track 3"
+
+[node name="Button4" type="Button" parent="CanvasLayer"]
+margin_left = 32.0
+margin_top = 172.0
+margin_right = 89.0
+margin_bottom = 192.0
+theme = ExtResource( 1 )
+text = "Track 4"
+
+[node name="Button5" type="Button" parent="CanvasLayer"]
+margin_left = 32.0
+margin_top = 204.0
+margin_right = 89.0
+margin_bottom = 224.0
+theme = ExtResource( 1 )
+text = "Track 5"
+
+[node name="TestRail" parent="." instance=ExtResource( 3 )]
+position = Vector2( -8, 512 )
+curve = SubResource( 1 )
+
+[node name="TestRail2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 640, 512 )
+curve = SubResource( 2 )
+
+[node name="TestRail3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 640, 416 )
+curve = SubResource( 3 )
+
+[node name="TrackSwitch" parent="." instance=ExtResource( 5 )]
+position = Vector2( 512, 512 )
+
+[node name="LeftTrack" parent="TrackSwitch" index="0"]
+curve = SubResource( 4 )
+
+[node name="Pointer" parent="TrackSwitch/LeftTrack" index="3"]
+position = Vector2( 59.3956, -27.6084 )
+rotation = -0.753055
+
+[node name="RightTrack" parent="TrackSwitch" index="1"]
+curve = SubResource( 5 )
+
+[node name="Pointer" parent="TrackSwitch/RightTrack" index="3"]
+position = Vector2( 66.7038, 0 )
+rotation = 0.0
+
+[node name="Button" parent="TrackSwitch" index="2"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 48.0
+margin_bottom = 40.0
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button5" to="." method="_on_Button5_pressed"]
+
+[editable path="TrackSwitch"]

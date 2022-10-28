@@ -1,0 +1,271 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Scenes/TestWorld.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Track.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/TestTracks4.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/TrainEngine.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/ChaseCamera.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/TrackSwitch.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/icon.png" type="Texture" id=7]
+
+[sub_resource type="Curve2D" id=1]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1536, 0 )
+}
+
+[sub_resource type="Curve2D" id=2]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 768, 0, -256.289, 0.66742, 256.289, -0.66742, 1120, 0, 0, 0, 0, 0, 1376, 256, 0, 0, 0, 0, 1376, 512 )
+}
+
+[sub_resource type="Curve2D" id=3]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 704, 0 )
+}
+
+[sub_resource type="Curve2D" id=8]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -191.508, -0.629961, 191.508, 0.629961, 320, 0, 0, 0, 0, 0, 512, 192, 0, 0, 0, 0, 512, 448 )
+}
+
+[sub_resource type="Curve2D" id=9]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 256, -585.264, -3.36359, 585.264, 3.36359, 552, 640, 5.11028, -304.22, -5.11028, 304.22, 1312, 1192, 266.394, 44.6038, -266.394, -44.6038, 632, 1728, 296.844, 296.844, -296.844, -296.844, 40, 1336, 0, 0, 0, 0, -608, 1056, 0, 0, 0, 0, -992, 1056 )
+}
+
+[sub_resource type="Curve2D" id=10]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 64, 190.215, -1.33484, -190.215, 1.33484, -384, 64, 0, 0, 0, 0, -576, -128, 0, 0, 0, 0, -576, -1280, -191.941, 1.12246, 191.941, -1.12246, -384, -1472, 0, 0, 0, 0, 448, -1472 )
+}
+
+[sub_resource type="Curve2D" id=11]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2, -32, 0, 0, 0, 0, -254, -32, 127.396, -0.420448, -127.396, 0.420448, -406, -32, 0, 0, 0, 0, -622, -120, 288, 142, -288, -142, -1278, -640, 151.321, 106.066, -151.321, -106.066, -2302, -896, 20.6024, 93.1765, -20.6024, -93.1765, -2502, -1152, -34.5217, 135.501, 34.5217, -135.501, -2486, -1488, -192, 1, 192, -1, -2110, -1728, 0, 0, 0, 0, -1918, -1728 )
+}
+
+[sub_resource type="Curve2D" id=4]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0 )
+}
+
+[sub_resource type="Curve2D" id=5]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -31.7592, -32.0595, 31.7592, 32.0595, 64, 32, 0, 0, 0, 0, 128, 64 )
+}
+
+[sub_resource type="Curve2D" id=6]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 31.8113, -31.8113, -31.8113, 31.8113, -64, 32, 0, 0, 0, 0, -128, 64 )
+}
+
+[sub_resource type="Curve2D" id=7]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -128, 0 )
+}
+
+[sub_resource type="Curve2D" id=14]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -24.0172, 16.0049, 24.0172, -16.0049, 64, -16, 0, 0, 0, 0, 128, -32 )
+}
+
+[sub_resource type="Curve2D" id=15]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, -0.000244141 )
+}
+
+[sub_resource type="Curve2D" id=12]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -128, 0 )
+}
+
+[sub_resource type="Curve2D" id=13]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 32.015, 15.8816, -32.015, -15.8816, -64, -16, 0, 0, 0, 0, -128, -32 )
+}
+
+[node name="TestTracks4" type="Node2D"]
+script = ExtResource( 3 )
+car_count = 8
+
+[node name="TestWorld" parent="." instance=ExtResource( 1 )]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TextureRect" parent="TestWorld" index="0"]
+margin_left = -2040.0
+margin_top = -896.0
+margin_right = 4640.0
+margin_bottom = 2888.0
+
+[node name="TestRail" parent="." instance=ExtResource( 2 )]
+position = Vector2( -512, -256 )
+curve = SubResource( 1 )
+
+[node name="TestRail2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1152, -256 )
+curve = SubResource( 2 )
+
+[node name="TestRail3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1152, -192 )
+curve = SubResource( 3 )
+
+[node name="TestRail4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1984, -192 )
+curve = SubResource( 8 )
+
+[node name="TestRail5" parent="." instance=ExtResource( 2 )]
+material = null
+position = Vector2( 2528, 384 )
+curve = SubResource( 9 )
+
+[node name="TestRail6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1408, 1344 )
+curve = SubResource( 10 )
+
+[node name="TestRail7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1406, 1472 )
+curve = SubResource( 11 )
+
+[node name="TrackSwitch" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1024, -256 )
+direction = 0
+
+[node name="LeftTrack" parent="TrackSwitch" index="0"]
+curve = SubResource( 4 )
+
+[node name="Pointer" parent="TrackSwitch/LeftTrack" index="3"]
+position = Vector2( 66.7283, 0 )
+rotation = 0.0
+
+[node name="RightTrack" parent="TrackSwitch" index="1"]
+curve = SubResource( 5 )
+
+[node name="Pointer" parent="TrackSwitch/RightTrack" index="3"]
+position = Vector2( 59.4084, 27.5863 )
+rotation = 0.756521
+
+[node name="Button" parent="TrackSwitch" index="2"]
+margin_left = 0.0
+margin_top = -128.0
+margin_right = 64.0
+margin_bottom = -64.0
+
+[node name="TrackSwitch2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1984, -192 )
+
+[node name="LeftTrack" parent="TrackSwitch2" index="0"]
+curve = SubResource( 6 )
+
+[node name="Pointer" parent="TrackSwitch2/LeftTrack" index="3"]
+position = Vector2( -59.4388, 27.6526 )
+rotation = 2.389
+
+[node name="RightTrack" parent="TrackSwitch2" index="1"]
+curve = SubResource( 7 )
+
+[node name="Pointer" parent="TrackSwitch2/RightTrack" index="3"]
+position = Vector2( -66.7038, 0 )
+rotation = 3.14159
+
+[node name="Button" parent="TrackSwitch2" index="2"]
+margin_left = 0.0
+margin_top = 64.0
+margin_right = 64.0
+margin_bottom = 128.0
+
+[node name="TrackSwitch3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2528, 384 )
+rotation = -1.57079
+
+[node name="LeftTrack" parent="TrackSwitch3" index="0"]
+curve = SubResource( 14 )
+
+[node name="Pointer" parent="TrackSwitch3/LeftTrack" index="3"]
+position = Vector2( 64.0158, -15.9894 )
+
+[node name="RightTrack" parent="TrackSwitch3" index="1"]
+curve = SubResource( 15 )
+
+[node name="Pointer" parent="TrackSwitch3/RightTrack" index="3"]
+position = Vector2( 66.7038, -0.000127227 )
+rotation = -1.90735e-06
+
+[node name="Button" parent="TrackSwitch3" index="2"]
+margin_left = 0.0
+margin_top = -96.0
+margin_right = 64.0
+margin_bottom = -32.0
+
+[node name="TrackSwitch4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1536, 1440 )
+direction = 0
+
+[node name="LeftTrack" parent="TrackSwitch4" index="0"]
+curve = SubResource( 12 )
+
+[node name="Pointer" parent="TrackSwitch4/LeftTrack" index="3"]
+position = Vector2( -66.7283, 0 )
+rotation = 3.14159
+
+[node name="RightTrack" parent="TrackSwitch4" index="1"]
+curve = SubResource( 13 )
+
+[node name="Pointer" parent="TrackSwitch4/RightTrack" index="3"]
+position = Vector2( -64.2897, -16.131 )
+rotation = -2.69539
+
+[node name="Button" parent="TrackSwitch4" index="2"]
+margin_left = 0.0
+margin_top = -96.0
+margin_right = 64.0
+margin_bottom = -32.0
+
+[node name="TrainEngine" parent="." instance=ExtResource( 4 )]
+max_force = 2500
+
+[node name="ChaseCamera" parent="TrainEngine" instance=ExtResource( 5 )]
+current = true
+
+[node name="Icon3" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.498039 )
+position = Vector2( 3040, 1504 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 7 )
+
+[node name="Icon4" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.498039 )
+position = Vector2( 3360, 1504 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 7 )
+
+[node name="Icon" type="Sprite" parent="."]
+position = Vector2( 3584, 1600 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+
+[node name="Icon2" type="Sprite" parent="."]
+position = Vector2( 3464, 1728 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+
+[editable path="TestWorld"]
+[editable path="TrackSwitch"]
+[editable path="TrackSwitch2"]
+[editable path="TrackSwitch3"]
+[editable path="TrackSwitch4"]
