@@ -10,3 +10,6 @@ There are a number of elements you can change to make the trains behave . Specif
 * Vehicle mass
 
 This also includes a few demo train track sample scenes and a chase camera.
+
+## Running the demo project
+Open the game in Godot and press Play.
