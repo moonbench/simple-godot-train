@@ -12,22 +12,40 @@ _global_script_classes=[ {
 "base": "Path2D",
 "class": "Track",
 "language": "GDScript",
-"path": "res://Scripts/TrackSegment.gd"
+"path": "res://Scripts/Track.gd"
+}, {
+"base": "Node2D",
+"class": "TrackSwitch",
+"language": "GDScript",
+"path": "res://Scripts/TrackSwitch.gd"
+}, {
+"base": "TrainVehicle",
+"class": "TrainEngine",
+"language": "GDScript",
+"path": "res://Scripts/TrainEngine.gd"
 }, {
 "base": "Node2D",
 "class": "TrainVehicle",
 "language": "GDScript",
 "path": "res://Scripts/TrainVehicle.gd"
+}, {
+"base": "PathFollow2D",
+"class": "TrainWheel",
+"language": "GDScript",
+"path": "res://Scripts/TrainWheel.gd"
 } ]
 _global_script_class_icons={
 "Track": "",
-"TrainVehicle": ""
+"TrackSwitch": "",
+"TrainEngine": "",
+"TrainVehicle": "",
+"TrainWheel": ""
 }
 
 [application]
 
 config/name="TrainRevamp"
-run/main_scene="res://Scenes/Game.tscn"
+run/main_scene="res://Scenes/Demo/Game.tscn"
 config/icon="res://Assets/icon.png"
 
 [display]

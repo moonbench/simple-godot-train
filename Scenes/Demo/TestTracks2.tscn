@@ -3,8 +3,8 @@
 [ext_resource path="res://Scenes/Track.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TrainEngine.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/TrackSwitch.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/TestWorld.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/TestTracks2.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Demo/TestWorld.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Demo/TestTracks2.gd" type="Script" id=5]
 
 [sub_resource type="Curve2D" id=1]
 resource_local_to_scene = true
@@ -93,7 +93,6 @@ car_count = 7
 [node name="TrainEngine" parent="." instance=ExtResource( 2 )]
 scale = Vector2( 0.999998, 1 )
 max_force = 2200
-friction_coefficient = 0.1
 
 [node name="TestRail" parent="." instance=ExtResource( 1 )]
 position = Vector2( 208, 96 )
@@ -120,48 +119,54 @@ position = Vector2( 960, 320 )
 direction = 0
 
 [node name="LeftTrack" parent="TrackSwitch" index="0"]
+z_index = 1
 curve = SubResource( 6 )
 
-[node name="Pointer" parent="TrackSwitch/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch/LeftTrack" index="5"]
+visible = true
 position = Vector2( 0, 64 )
 rotation = 1.5708
 
 [node name="RightTrack" parent="TrackSwitch" index="1"]
 curve = SubResource( 7 )
 
-[node name="Pointer" parent="TrackSwitch/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch/RightTrack" index="5"]
+visible = false
 position = Vector2( -30.4348, 55.3366 )
 rotation = 2.68554
 
 [node name="Button" parent="TrackSwitch" index="2"]
-margin_left = 48.0
-margin_top = 20.0
-margin_right = 72.0
-margin_bottom = 44.0
+margin_left = -75.0
+margin_top = -11.0
+margin_right = -51.0
+margin_bottom = 13.0
 
 [node name="TrackSwitch2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 64, 320 )
 direction = 0
 
 [node name="LeftTrack" parent="TrackSwitch2" index="0"]
+z_index = 1
 curve = SubResource( 8 )
 
-[node name="Pointer" parent="TrackSwitch2/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch2/LeftTrack" index="5"]
+visible = true
 position = Vector2( 0, -64 )
 rotation = -1.5708
 
 [node name="RightTrack" parent="TrackSwitch2" index="1"]
 curve = SubResource( 9 )
 
-[node name="Pointer" parent="TrackSwitch2/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch2/RightTrack" index="5"]
+visible = false
 position = Vector2( 31.0496, -55.1737 )
 rotation = -0.458044
 
 [node name="Button" parent="TrackSwitch2" index="2"]
-margin_left = -40.0
-margin_top = -40.0
-margin_right = -16.0
-margin_bottom = -16.0
+margin_left = 32.0
+margin_top = -11.0
+margin_right = 56.0
+margin_bottom = 13.0
 
 [node name="TrackSwitch3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 320, 576 )
@@ -169,22 +174,23 @@ position = Vector2( 320, 576 )
 [node name="LeftTrack" parent="TrackSwitch3" index="0"]
 curve = SubResource( 10 )
 
-[node name="Pointer" parent="TrackSwitch3/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch3/LeftTrack" index="5"]
 position = Vector2( 64.6039, -14.1905 )
 rotation = -0.498117
 
 [node name="RightTrack" parent="TrackSwitch3" index="1"]
+z_index = 1
 curve = SubResource( 11 )
 
-[node name="Pointer" parent="TrackSwitch3/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch3/RightTrack" index="5"]
 position = Vector2( 66.7038, 0 )
 rotation = 0.0
 
 [node name="Button" parent="TrackSwitch3" index="2"]
-margin_left = 8.0
-margin_top = -48.0
-margin_right = 32.0
-margin_bottom = -24.0
+margin_left = -11.0
+margin_top = -55.0
+margin_right = 13.0
+margin_bottom = -31.0
 
 [node name="TrackSwitch4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 448, 448 )
@@ -192,22 +198,23 @@ position = Vector2( 448, 448 )
 [node name="LeftTrack" parent="TrackSwitch4" index="0"]
 curve = SubResource( 12 )
 
-[node name="Pointer" parent="TrackSwitch4/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch4/LeftTrack" index="5"]
 position = Vector2( 0, -64 )
 rotation = -1.5708
 
 [node name="RightTrack" parent="TrackSwitch4" index="1"]
+z_index = 1
 curve = SubResource( 13 )
 
-[node name="Pointer" parent="TrackSwitch4/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch4/RightTrack" index="5"]
 position = Vector2( 31.074, -55.1503 )
 rotation = -0.459569
 
 [node name="Button" parent="TrackSwitch4" index="2"]
-margin_left = -40.0
-margin_top = -40.0
-margin_right = -16.0
-margin_bottom = -16.0
+margin_left = -47.0
+margin_top = -11.0
+margin_right = -23.0
+margin_bottom = 13.0
 
 [editable path="TrackSwitch"]
 [editable path="TrackSwitch2"]

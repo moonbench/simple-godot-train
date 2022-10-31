@@ -15,7 +15,7 @@ func _setup_tracks():
 	$TestRail.link_track($TestRail, "tail", "head")
 
 func _setup_train():
-	engine.add_to_rail($TestRail)
+	engine.add_to_track($TestRail)
 	
 	last_car = engine
 	for index in range(car_count):

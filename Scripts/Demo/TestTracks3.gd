@@ -20,7 +20,7 @@ func _setup_tracks():
 
 func _setup_train():
 	$TrainEngine.connect("train_info", $TestWorld, "update_train_info")
-	$TrainEngine.add_to_rail($TestRail)
+	$TrainEngine.add_to_track($TestRail)
 	
 	var last_car = $TrainEngine
 	for index in range(car_count):

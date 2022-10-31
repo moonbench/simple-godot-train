@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/train_wheels.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/TrackFollower.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/TrainWheel.gd" type="Script" id=2]
 
-[node name="RailFollower" type="PathFollow2D" groups=["train_wheels"]]
+[node name="TrainWheel" type="PathFollow2D" groups=["train_wheels"]]
 z_index = 5
 loop = false
 script = ExtResource( 2 )

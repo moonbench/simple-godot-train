@@ -2,10 +2,10 @@
 
 [ext_resource path="res://Scenes/Track.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TrackSwitch.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/TestWorld.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Demo/TestWorld.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/TrainEngine.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/TestTracks5.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/ChaseCamera.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/Demo/TestTracks5.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Demo/ChaseCamera.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/icon.png" type="Texture" id=7]
 [ext_resource path="res://Assets/warn.png" type="Texture" id=8]
 
@@ -439,14 +439,14 @@ direction = 0
 [node name="LeftTrack" parent="TrackSwitch" index="0"]
 curve = SubResource( 6 )
 
-[node name="Pointer" parent="TrackSwitch/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch/LeftTrack" index="5"]
 position = Vector2( 64.3006, -16.1351 )
 rotation = -0.441858
 
 [node name="RightTrack" parent="TrackSwitch" index="1"]
 curve = SubResource( 7 )
 
-[node name="Pointer" parent="TrackSwitch/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch/RightTrack" index="5"]
 position = Vector2( 66.7038, 0.000318068 )
 rotation = 4.76836e-06
 
@@ -463,14 +463,14 @@ direction = 0
 [node name="LeftTrack" parent="TrackSwitch2" index="0"]
 curve = SubResource( 8 )
 
-[node name="Pointer" parent="TrackSwitch2/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch2/LeftTrack" index="5"]
 position = Vector2( 66.7283, 0 )
 rotation = 0.0
 
 [node name="RightTrack" parent="TrackSwitch2" index="1"]
 curve = SubResource( 9 )
 
-[node name="Pointer" parent="TrackSwitch2/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch2/RightTrack" index="5"]
 position = Vector2( 66.5305, 2.38513 )
 rotation = 0.279678
 
@@ -486,14 +486,14 @@ position = Vector2( 4544, 64 )
 [node name="LeftTrack" parent="TrackSwitch3" index="0"]
 curve = SubResource( 10 )
 
-[node name="Pointer" parent="TrackSwitch3/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch3/LeftTrack" index="5"]
 position = Vector2( 64.3095, -15.8826 )
 rotation = -0.479197
 
 [node name="RightTrack" parent="TrackSwitch3" index="1"]
 curve = SubResource( 11 )
 
-[node name="Pointer" parent="TrackSwitch3/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch3/RightTrack" index="5"]
 position = Vector2( 66.7038, 0 )
 rotation = 0.0
 
@@ -511,14 +511,14 @@ direction = 0
 [node name="LeftTrack" parent="TrackSwitch4" index="0"]
 curve = SubResource( 12 )
 
-[node name="Pointer" parent="TrackSwitch4/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch4/LeftTrack" index="5"]
 position = Vector2( 66.7251, 0.232684 )
 rotation = -0.00135763
 
 [node name="RightTrack" parent="TrackSwitch4" index="1"]
 curve = SubResource( 13 )
 
-[node name="Pointer" parent="TrackSwitch4/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch4/RightTrack" index="5"]
 position = Vector2( 64.2757, 16.1538 )
 rotation = 0.47747
 
@@ -535,14 +535,14 @@ direction = 0
 [node name="LeftTrack" parent="TrackSwitch5" index="0"]
 curve = SubResource( 14 )
 
-[node name="Pointer" parent="TrackSwitch5/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch5/LeftTrack" index="5"]
 position = Vector2( 66.7283, 0 )
 rotation = 0.0
 
 [node name="RightTrack" parent="TrackSwitch5" index="1"]
 curve = SubResource( 15 )
 
-[node name="Pointer" parent="TrackSwitch5/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch5/RightTrack" index="5"]
 position = Vector2( 64.2386, 15.94 )
 rotation = 0.477091
 
@@ -560,14 +560,14 @@ direction = 0
 [node name="LeftTrack" parent="TrackSwitch6" index="0"]
 curve = SubResource( 22 )
 
-[node name="Pointer" parent="TrackSwitch6/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch6/LeftTrack" index="5"]
 position = Vector2( 66.7283, -0.000286367 )
 rotation = -4.29153e-06
 
 [node name="RightTrack" parent="TrackSwitch6" index="1"]
 curve = SubResource( 23 )
 
-[node name="Pointer" parent="TrackSwitch6/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch6/RightTrack" index="5"]
 position = Vector2( 66.1639, 5.98479 )
 rotation = 0.3202
 
@@ -584,15 +584,12 @@ rotation = 1.57079
 [node name="LeftTrack" parent="TrackSwitch7" index="0"]
 curve = SubResource( 24 )
 
-[node name="Pointer" parent="TrackSwitch7/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch7/LeftTrack" index="5"]
 position = Vector2( 66.7283, -0.000254548 )
 rotation = -3.8147e-06
 
 [node name="RightTrack" parent="TrackSwitch7" index="1"]
 curve = SubResource( 25 )
-
-[node name="Pointer" parent="TrackSwitch7/RightTrack" index="3"]
-position = Vector2( 63.9926, 15.9739 )
 
 [node name="Button" parent="TrackSwitch7" index="2"]
 margin_left = 32.0002
@@ -606,14 +603,14 @@ position = Vector2( 4672, 705 )
 [node name="LeftTrack" parent="TrackSwitch8" index="0"]
 curve = SubResource( 26 )
 
-[node name="Pointer" parent="TrackSwitch8/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch8/LeftTrack" index="5"]
 position = Vector2( 65.1177, -13.3675 )
 rotation = -0.460149
 
 [node name="RightTrack" parent="TrackSwitch8" index="1"]
 curve = SubResource( 27 )
 
-[node name="Pointer" parent="TrackSwitch8/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch8/RightTrack" index="5"]
 position = Vector2( 66.7038, -1 )
 rotation = 0.0
 
@@ -631,14 +628,14 @@ direction = 0
 [node name="LeftTrack" parent="TrackSwitch9" index="0"]
 curve = SubResource( 32 )
 
-[node name="Pointer" parent="TrackSwitch9/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch9/LeftTrack" index="5"]
 position = Vector2( 66.7283, 0.000286367 )
 rotation = 4.29153e-06
 
 [node name="RightTrack" parent="TrackSwitch9" index="1"]
 curve = SubResource( 33 )
 
-[node name="Pointer" parent="TrackSwitch9/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch9/RightTrack" index="5"]
 position = Vector2( 65.1543, 12.9401 )
 rotation = 0.406205
 
@@ -654,14 +651,14 @@ position = Vector2( 1408, 704 )
 [node name="LeftTrack" parent="TrackSwitch10" index="0"]
 curve = SubResource( 34 )
 
-[node name="Pointer" parent="TrackSwitch10/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch10/LeftTrack" index="5"]
 position = Vector2( 65.1972, -12.158 )
 rotation = -0.481169
 
 [node name="RightTrack" parent="TrackSwitch10" index="1"]
 curve = SubResource( 35 )
 
-[node name="Pointer" parent="TrackSwitch10/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch10/RightTrack" index="5"]
 position = Vector2( 66.7038, 0 )
 rotation = 0.0
 

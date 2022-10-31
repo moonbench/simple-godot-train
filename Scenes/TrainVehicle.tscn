@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/TrackFollower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/TrainWheel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/TrainVehicle.gd" type="Script" id=2]
 [ext_resource path="res://Assets/train_car.png" type="Texture" id=3]
 

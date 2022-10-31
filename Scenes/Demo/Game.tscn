@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Resources/Theme1.tres" type="Theme" id=1]
-[ext_resource path="res://Scenes/World.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Demo/World.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Track.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/Game.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Demo/Game.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/TrackSwitch.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]
@@ -119,16 +119,18 @@ curve = SubResource( 3 )
 position = Vector2( 512, 512 )
 
 [node name="LeftTrack" parent="TrackSwitch" index="0"]
+z_index = 1
 curve = SubResource( 4 )
 
-[node name="Pointer" parent="TrackSwitch/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch/LeftTrack" index="5"]
 position = Vector2( 59.3956, -27.6084 )
 rotation = -0.753055
 
 [node name="RightTrack" parent="TrackSwitch" index="1"]
+z_index = 2
 curve = SubResource( 5 )
 
-[node name="Pointer" parent="TrackSwitch/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch/RightTrack" index="5"]
 position = Vector2( 66.7038, 0 )
 rotation = 0.0
 
