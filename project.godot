@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="TrainRevamp"
-run/main_scene="res://Scenes/Demo/Game.tscn"
+run/main_scene="res://Demo/Scenes/Game.tscn"
 config/icon="res://Assets/icon.png"
 
 [display]

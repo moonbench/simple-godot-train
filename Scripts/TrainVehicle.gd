@@ -21,26 +21,29 @@ func _ready():
 func _process(delta):
 	global_position = lerp(global_position, front_wheel.global_position, 0.8)
 	body.look_at(back_wheel.global_position)
-	
-func add_to_track(rail: Path2D):
-	front_wheel.set_track(rail)
-	back_wheel.set_track(rail)
+
+# Place this vehicle (and all of its wheels) on the track
+func add_to_track(track: Path2D):
+	front_wheel.set_track(track)
+	back_wheel.set_track(track)
 	front_wheel.offset = 1
 	back_wheel.follow(front_wheel, wheel_distance)	
 	global_position = front_wheel.global_position
 
+# Link another TrainVehicle to follow this one
 func set_follower_car(car):
 	car.add_to_track(back_wheel.current_track)
 	car.front_wheel.follow(back_wheel, follow_distance)
 	car.back_wheel.follow(car.front_wheel, car.wheel_distance)
 	back_wheel.connect("moved", car.front_wheel, "move_as_follower")
 	car.connect("towed_mass_changed", self, "change_towed_mass")
-	change_towed_mass(car.mass)
+	change_towed_mass(car.total_mass)
 
+# Disconnect this car's signals from its followers
 func remove_follower_car(car):
 	back_wheel.disconnect("moved", car.front_wheel, "move_as_follower")
 	car.disconnect("towed_mass_changed", self, "change_towed_mass")
-	change_towed_mass(-car.mass)
+	change_towed_mass(-car.total_mass)
 
 # Share the knowledge of the new total mass
 func change_towed_mass(mass_delta):

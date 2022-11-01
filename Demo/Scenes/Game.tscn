@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Resources/Theme1.tres" type="Theme" id=1]
-[ext_resource path="res://Scenes/Demo/World.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Demo/Scenes/World.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Track.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/Demo/Game.gd" type="Script" id=4]
+[ext_resource path="res://Demo/Scripts/Game.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/TrackSwitch.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]

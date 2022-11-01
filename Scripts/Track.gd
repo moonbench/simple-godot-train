@@ -13,9 +13,9 @@ onready var _crosstie_multimesh = $MultiMeshInstance2D
 func _ready():
 	_update_sprites()
 
-# Connect the from_side of this track to the to_side of the other track
+# Connect the "from_side" of this track to the "to_side" of the other track
 #
-# This links both ends, so it only needs to be called once per connection
+# This links both tracks to each other, so only call it once per connection
 func link_track(other_track, from_side, to_side):
 	connect("wheel_at_" + from_side, other_track, "enter_from_" + to_side)
 	other_track.connect("wheel_at_" + to_side, self, "enter_from_" + from_side)
@@ -41,7 +41,7 @@ func wheel_at_head(wheel, extra, is_forward):
 func wheel_at_tail(wheel, extra, is_forward):
 	emit_signal("wheel_at_tail", wheel, extra, is_forward)
 
-func _update_sprites():	
+func _update_sprites():
 	$Line2D.points = curve.get_baked_points()
 	_update_crossties()
 	$HeadPoint.unit_offset = 0

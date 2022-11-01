@@ -34,6 +34,7 @@ offset = 66.7697
 texture = ExtResource( 3 )
 
 [node name="RightTrack" parent="." instance=ExtResource( 2 )]
+z_index = 1
 curve = SubResource( 4 )
 
 [node name="Pointer" type="PathFollow2D" parent="RightTrack"]
