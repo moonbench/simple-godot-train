@@ -1,7 +1,7 @@
 # 2D Godot Train
 A simple implementation of a 2D train mechanic for use in Godot games.
 
-![Screenshot](https://raw.githubusercontent.com/moonbench/simple-godot-train/master/Resources/Screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/moonbench/simple-godot-train/master/Demo/Resources/Screenshot.png)
 
 This provides train tracks and switches (built using Path2D nodes), and train engines and vehicles (using PathFollow2D nodes.)
 
