@@ -15,3 +15,8 @@ This also includes a few demo train track sample scenes and a chase camera.
 
 ## Running the demo project
 Open the game in Godot and press Play.
+
+## Using this in your own projects
+The code responsible for the trains and tracks exists within the `/Scenes` and `/Scripts` folders.
+
+Examples of how the train and track code can be used exist within the `/Demo` folder.
