@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Scripts/TrackSwitch.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Track.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/arrow.png" type="Texture" id=3]
-[ext_resource path="res://Resources/Theme1.tres" type="Theme" id=4]
+[ext_resource path="res://Demo/Assets/arrow.png" type="Texture" id=3]
+[ext_resource path="res://Demo/Resources/Theme1.tres" type="Theme" id=4]
 
 [sub_resource type="Curve2D" id=3]
 resource_local_to_scene = true

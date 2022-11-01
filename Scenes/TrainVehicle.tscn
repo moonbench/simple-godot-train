@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/TrainWheel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/TrainVehicle.gd" type="Script" id=2]
-[ext_resource path="res://Assets/train_car.png" type="Texture" id=3]
+[ext_resource path="res://Demo/Assets/train_car.png" type="Texture" id=3]
 
 [node name="TrainVehicle" type="Node2D"]
 script = ExtResource( 2 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crosstie.png-8f956a3a37ebf4ee82069ab4a6c375b4.stex"
+path="res://.import/icon.png-a5440bea353037db9bc5d1e6f1aeb3fa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/crosstie.png"
-dest_files=[ "res://.import/crosstie.png-8f956a3a37ebf4ee82069ab4a6c375b4.stex" ]
+source_file="res://Demo/Assets/icon.png"
+dest_files=[ "res://.import/icon.png-a5440bea353037db9bc5d1e6f1aeb3fa.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

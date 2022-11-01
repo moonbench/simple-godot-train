@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/TrainEngine.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Demo/Scenes/TestWorld.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Demo/Scripts/TestTracks1.gd" type="Script" id=4]
-[ext_resource path="res://Assets/icon.png" type="Texture" id=6]
+[ext_resource path="res://Demo/Assets/icon.png" type="Texture" id=6]
 
 [sub_resource type="Curve2D" id=1]
 resource_local_to_scene = true

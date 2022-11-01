@@ -46,7 +46,7 @@ _global_script_class_icons={
 
 config/name="TrainRevamp"
 run/main_scene="res://Demo/Scenes/Game.tscn"
-config/icon="res://Assets/icon.png"
+config/icon="res://Demo/Assets/icon.png"
 
 [display]
 
@@ -91,4 +91,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_environment="res://Resources/default_env.tres"
+environment/default_environment="res://Demo/Resources/default_env.tres"
