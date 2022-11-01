@@ -1,6 +1,6 @@
 extends Node
 
-export var car_count = 4
+export var car_count = 8
 
 onready var train_vehicle_reference = load("res://Scenes/TrainVehicle.tscn")
 

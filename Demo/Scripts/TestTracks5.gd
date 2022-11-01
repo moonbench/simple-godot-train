@@ -1,6 +1,6 @@
 extends Node
 
-export var car_count = 12
+export var car_count = 15
 
 onready var train_vehicle_reference = load("res://Scenes/TrainVehicle.tscn")
 onready var engine = $TrainEngine
@@ -44,7 +44,6 @@ func _setup_tracks():
 	$TrackSwitch10.link_track($TestRail14, "left", "head")
 	$TrackSwitch10.link_track($TestRail13, "right", "head")
 	$TrackSwitch10.link_track($TestRail15, "head", "tail")
-	
 
 func _setup_train():
 	engine.connect("train_info", $TestWorld, "update_train_info")

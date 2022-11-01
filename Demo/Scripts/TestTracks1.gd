@@ -1,10 +1,9 @@
 extends Node
 
-export var car_count = 4
+export var car_count = 8
 
 onready var train_vehicle_reference = load("res://Scenes/TrainVehicle.tscn")
 onready var engine = $TrainEngine
-var last_car
 
 func _ready():
 	_setup_tracks()
@@ -17,15 +16,9 @@ func _setup_tracks():
 func _setup_train():
 	engine.add_to_track($TestRail)
 	
-	last_car = engine
+	var last_car = engine
 	for index in range(car_count):
-		_add_car()
-
-func _add_car():
-	var car = train_vehicle_reference.instance()
-	add_child(car)
-	last_car.set_follower_car(car)
-	last_car = car
-
-func _on_TextureButton_pressed():
-	_add_car()
+		var car = train_vehicle_reference.instance()
+		add_child(car)
+		last_car.set_follower_car(car)
+		last_car = car

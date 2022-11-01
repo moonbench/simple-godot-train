@@ -1,4 +1,4 @@
-# A piece of track that TrainWheels follow along
+# A piece of track that TrainWheel nodes follow along
 tool
 class_name Track
 extends Path2D

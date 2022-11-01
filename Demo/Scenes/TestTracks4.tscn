@@ -29,7 +29,7 @@ _data = {
 [sub_resource type="Curve2D" id=8]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -191.508, -0.629961, 191.508, 0.629961, 320, 0, 0, 0, 0, 0, 512, 192, 0, 0, 0, 0, 512, 448 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -191.508, -0.629961, 191.508, 0.629961, 288, 0, 0, 0, 0, 0, 480, 192, 0, 0, 0, 0, 480, 448 )
 }
 
 [sub_resource type="Curve2D" id=9]
@@ -41,7 +41,7 @@ _data = {
 [sub_resource type="Curve2D" id=10]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 64, 190.215, -1.33484, -190.215, 1.33484, -384, 64, 0, 0, 0, 0, -576, -128, 0, 0, 0, 0, -576, -1280, -191.941, 1.12246, 191.941, -1.12246, -384, -1472, 0, 0, 0, 0, 448, -1472 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 64, 190.215, -1.33484, -190.215, 1.33484, -384, 64, 0, 0, 0, 0, -576, -128, -4.24264, 243.245, 4.24264, -243.245, -576, -384, -1.41421, 248.902, 1.41421, -248.902, -376, -768, 1.41421, 186.676, -1.41421, -186.676, -576, -1088, 0, 0, 0, 0, -576, -1280, -191.941, 1.12246, 191.941, -1.12246, -384, -1472, 0, 0, 0, 0, 448, -1472 )
 }
 
 [sub_resource type="Curve2D" id=11]
@@ -77,7 +77,7 @@ _data = {
 [sub_resource type="Curve2D" id=14]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -24.0172, 16.0049, 24.0172, -16.0049, 64, -16, 0, 0, 0, 0, 128, -32 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -16.6783, 31.9191, 16.6783, -31.9191, 63.9998, -32.0005, 0, 0, 0, 0, 128, -64.0007 )
 }
 
 [sub_resource type="Curve2D" id=15]
@@ -100,7 +100,6 @@ _data = {
 
 [node name="TestTracks4" type="Node2D"]
 script = ExtResource( 3 )
-car_count = 8
 
 [node name="TestWorld" parent="." instance=ExtResource( 1 )]
 __meta__ = {
@@ -147,16 +146,20 @@ position = Vector2( 1024, -256 )
 direction = 0
 
 [node name="LeftTrack" parent="TrackSwitch" index="0"]
+z_index = 1
 curve = SubResource( 4 )
 
-[node name="Pointer" parent="TrackSwitch/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch/LeftTrack" index="5"]
+visible = true
 position = Vector2( 66.7283, 0 )
 rotation = 0.0
 
 [node name="RightTrack" parent="TrackSwitch" index="1"]
+z_index = 0
 curve = SubResource( 5 )
 
-[node name="Pointer" parent="TrackSwitch/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch/RightTrack" index="5"]
+visible = false
 position = Vector2( 59.4084, 27.5863 )
 rotation = 0.756521
 
@@ -172,14 +175,14 @@ position = Vector2( 1984, -192 )
 [node name="LeftTrack" parent="TrackSwitch2" index="0"]
 curve = SubResource( 6 )
 
-[node name="Pointer" parent="TrackSwitch2/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch2/LeftTrack" index="5"]
 position = Vector2( -59.4388, 27.6526 )
 rotation = 2.389
 
 [node name="RightTrack" parent="TrackSwitch2" index="1"]
 curve = SubResource( 7 )
 
-[node name="Pointer" parent="TrackSwitch2/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch2/RightTrack" index="5"]
 position = Vector2( -66.7038, 0 )
 rotation = 3.14159
 
@@ -196,37 +199,42 @@ rotation = -1.57079
 [node name="LeftTrack" parent="TrackSwitch3" index="0"]
 curve = SubResource( 14 )
 
-[node name="Pointer" parent="TrackSwitch3/LeftTrack" index="3"]
-position = Vector2( 64.0158, -15.9894 )
+[node name="Pointer" parent="TrackSwitch3/LeftTrack" index="5"]
+position = Vector2( 59.6371, -25.1794 )
+rotation = -0.958854
 
 [node name="RightTrack" parent="TrackSwitch3" index="1"]
 curve = SubResource( 15 )
 
-[node name="Pointer" parent="TrackSwitch3/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch3/RightTrack" index="5"]
 position = Vector2( 66.7038, -0.000127227 )
 rotation = -1.90735e-06
 
 [node name="Button" parent="TrackSwitch3" index="2"]
-margin_left = 0.0
-margin_top = -96.0
-margin_right = 64.0
-margin_bottom = -32.0
+margin_left = -0.000946045
+margin_top = -152.0
+margin_right = 63.9991
+margin_bottom = -88.0
 
 [node name="TrackSwitch4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1536, 1440 )
 direction = 0
 
 [node name="LeftTrack" parent="TrackSwitch4" index="0"]
+z_index = 1
 curve = SubResource( 12 )
 
-[node name="Pointer" parent="TrackSwitch4/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch4/LeftTrack" index="5"]
+visible = true
 position = Vector2( -66.7283, 0 )
 rotation = 3.14159
 
 [node name="RightTrack" parent="TrackSwitch4" index="1"]
+z_index = 0
 curve = SubResource( 13 )
 
-[node name="Pointer" parent="TrackSwitch4/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch4/RightTrack" index="5"]
+visible = false
 position = Vector2( -64.2897, -16.131 )
 rotation = -2.69539
 
@@ -244,23 +252,23 @@ current = true
 
 [node name="Icon3" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 3040, 1504 )
+position = Vector2( -1480, 176 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 7 )
 
 [node name="Icon4" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 3360, 1504 )
+position = Vector2( 3344, 1600 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 7 )
 
 [node name="Icon" type="Sprite" parent="."]
-position = Vector2( 3584, 1600 )
+position = Vector2( 2696, 352 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 
 [node name="Icon2" type="Sprite" parent="."]
-position = Vector2( 3464, 1728 )
+position = Vector2( 1568, 1248 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 

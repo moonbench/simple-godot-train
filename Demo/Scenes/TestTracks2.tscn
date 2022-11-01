@@ -15,25 +15,25 @@ _data = {
 [sub_resource type="Curve2D" id=2]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 632, 48, 191.094, -0.743758, -191.094, 0.743758, 440, 240, 0, 0, 0, 0, 120, 240 )
+"points": PoolVector2Array( 0, 0, 0, 0, 632, 48, 191.094, -0.743758, -191.094, 0.743758, 440, 240, 0, 0, 0, 0, 248, 240 )
 }
 
 [sub_resource type="Curve2D" id=3]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 112, 80, 127.356, 0, -127.356, 0, -16, 80, 0, 0, 0, 0, -144, -48, 0, 0, 0, 0, -144, -176 )
+"points": PoolVector2Array( 0, 0, 0, 0, 240, 80, 127.356, 0, -127.356, 0, -16, 80, 0, 0, 0, 0, -144, -48, 0, 0, 0, 0, -144, -176 )
 }
 
 [sub_resource type="Curve2D" id=4]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -56, 0, 0, 0, 0, 0, 328, 0 )
+"points": PoolVector2Array( 0, 0, 0, 0, 72, 0, 0, 0, 0, 0, 328, 0 )
 }
 
 [sub_resource type="Curve2D" id=5]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -128.693, -0.353553, 128.693, 0.353553, 192, 0, 0, 0, 0, 0, 320, 128 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -128.693, -0.353553, 128.693, 0.353553, 320, 0, 0, 0, 0, 0, 448, 128 )
 }
 
 [sub_resource type="Curve2D" id=6]
@@ -63,7 +63,7 @@ _data = {
 [sub_resource type="Curve2D" id=10]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( -129.078, 0, 129.078, 0, 0, 0, 0, 0, 0, 0, 128, -128 )
+"points": PoolVector2Array( -129.078, 0, 129.078, 0, 0, 0, 0, 0, 0, 0, 126, -128 )
 }
 
 [sub_resource type="Curve2D" id=11]
@@ -86,7 +86,6 @@ _data = {
 
 [node name="TestTracks2" type="Node2D"]
 script = ExtResource( 5 )
-car_count = 7
 
 [node name="TestWorld" parent="." instance=ExtResource( 4 )]
 
@@ -128,6 +127,7 @@ position = Vector2( 0, 64 )
 rotation = 1.5708
 
 [node name="RightTrack" parent="TrackSwitch" index="1"]
+z_index = 0
 curve = SubResource( 7 )
 
 [node name="Pointer" parent="TrackSwitch/RightTrack" index="5"]
@@ -155,6 +155,7 @@ position = Vector2( 0, -64 )
 rotation = -1.5708
 
 [node name="RightTrack" parent="TrackSwitch2" index="1"]
+z_index = 0
 curve = SubResource( 9 )
 
 [node name="Pointer" parent="TrackSwitch2/RightTrack" index="5"]
@@ -169,7 +170,7 @@ margin_right = 56.0
 margin_bottom = 13.0
 
 [node name="TrackSwitch3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 320, 576 )
+position = Vector2( 450, 576 )
 
 [node name="LeftTrack" parent="TrackSwitch3" index="0"]
 curve = SubResource( 10 )
@@ -179,7 +180,6 @@ position = Vector2( 64.6039, -14.1905 )
 rotation = -0.498117
 
 [node name="RightTrack" parent="TrackSwitch3" index="1"]
-z_index = 1
 curve = SubResource( 11 )
 
 [node name="Pointer" parent="TrackSwitch3/RightTrack" index="5"]
@@ -193,7 +193,7 @@ margin_right = 13.0
 margin_bottom = -31.0
 
 [node name="TrackSwitch4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 448, 448 )
+position = Vector2( 576, 448 )
 
 [node name="LeftTrack" parent="TrackSwitch4" index="0"]
 curve = SubResource( 12 )
@@ -203,7 +203,6 @@ position = Vector2( 0, -64 )
 rotation = -1.5708
 
 [node name="RightTrack" parent="TrackSwitch4" index="1"]
-z_index = 1
 curve = SubResource( 13 )
 
 [node name="Pointer" parent="TrackSwitch4/RightTrack" index="5"]

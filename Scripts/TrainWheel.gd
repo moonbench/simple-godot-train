@@ -1,4 +1,6 @@
-# A set of wheels, TrainVehicles generally have two of these
+# A set of wheels that follow along Tracks
+#
+# TrainVehicles generally have two of these
 class_name TrainWheel
 extends PathFollow2D
 

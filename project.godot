@@ -91,4 +91,6 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+2d/snapping/use_gpu_pixel_snap=true
+quality/filters/use_debanding=true
 environment/default_environment="res://Demo/Resources/default_env.tres"

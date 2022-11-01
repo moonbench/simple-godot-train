@@ -62,7 +62,6 @@ _data = {
 
 [node name="TestTracks3" type="Node2D"]
 script = ExtResource( 5 )
-car_count = 5
 
 [node name="TestWorld" parent="." instance=ExtResource( 4 )]
 
@@ -90,14 +89,14 @@ rotation = -3.14159
 [node name="LeftTrack" parent="TrackSwitch" index="0"]
 curve = SubResource( 5 )
 
-[node name="Pointer" parent="TrackSwitch/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch/LeftTrack" index="5"]
 position = Vector2( 64.016, -15.9923 )
 rotation = -0.563177
 
 [node name="RightTrack" parent="TrackSwitch" index="1"]
 curve = SubResource( 6 )
 
-[node name="Pointer" parent="TrackSwitch/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch/RightTrack" index="5"]
 position = Vector2( 66.7038, -0.000286261 )
 rotation = -4.29152e-06
 
@@ -116,14 +115,14 @@ position = Vector2( 664, 512 )
 [node name="LeftTrack" parent="TrackSwitch2" index="0"]
 curve = SubResource( 8 )
 
-[node name="Pointer" parent="TrackSwitch2/LeftTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch2/LeftTrack" index="5"]
 position = Vector2( 66.7283, 0 )
 rotation = 0.0
 
 [node name="RightTrack" parent="TrackSwitch2" index="1"]
 curve = SubResource( 9 )
 
-[node name="Pointer" parent="TrackSwitch2/RightTrack" index="3"]
+[node name="Pointer" parent="TrackSwitch2/RightTrack" index="5"]
 position = Vector2( 63.993, 15.9769 )
 rotation = 0.567084
 
@@ -137,7 +136,6 @@ margin_bottom = -16.0
 position = Vector2( 280.001, 128 )
 scale = Vector2( 0.999998, 1 )
 max_force = 2000
-friction_coefficient = 0.1
 
 [editable path="TrackSwitch"]
 [editable path="TrackSwitch2"]
