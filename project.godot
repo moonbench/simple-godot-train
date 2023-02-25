@@ -44,9 +44,10 @@ _global_script_class_icons={
 
 [application]
 
-config/name="TrainRevamp"
+config/name="2D Train Simulator"
+config/description="For Godot version 3.5"
 run/main_scene="res://Demo/Scenes/Game.tscn"
-config/icon="res://Demo/Assets/icon.png"
+config/icon="res://icon.png"
 
 [display]
 

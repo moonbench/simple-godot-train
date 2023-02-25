@@ -119,7 +119,6 @@ curve = SubResource( 3 )
 position = Vector2( 512, 512 )
 
 [node name="LeftTrack" parent="TrackSwitch" index="0"]
-z_index = 1
 curve = SubResource( 4 )
 
 [node name="Pointer" parent="TrackSwitch/LeftTrack" index="5"]
@@ -127,7 +126,6 @@ position = Vector2( 59.3956, -27.6084 )
 rotation = -0.753055
 
 [node name="RightTrack" parent="TrackSwitch" index="1"]
-z_index = 2
 curve = SubResource( 5 )
 
 [node name="Pointer" parent="TrackSwitch/RightTrack" index="5"]
