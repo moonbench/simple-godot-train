@@ -23,11 +23,11 @@ func _process(delta):
 	body.look_at(back_wheel.global_position)
 
 # Place this vehicle (and all of its wheels) on the track
-func add_to_track(track: Path2D):
+func add_to_track(track: Path2D, offset = 1):
 	front_wheel.set_track(track)
 	back_wheel.set_track(track)
-	front_wheel.offset = 1
-	back_wheel.follow(front_wheel, wheel_distance)	
+	front_wheel.offset = offset
+	back_wheel.follow(front_wheel, wheel_distance)
 	global_position = front_wheel.global_position
 
 # Link another TrainVehicle to follow this one
@@ -50,3 +50,6 @@ func change_towed_mass(mass_delta):
 	towed_mass += mass_delta
 	total_mass = mass + towed_mass
 	emit_signal("towed_mass_changed", mass_delta)
+
+func _on_RailFollower_track_changed():
+	add_to_track(front_wheel.get_parent(), front_wheel.offset)

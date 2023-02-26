@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Track.gd" type="Script" id=1]
 [ext_resource path="res://Demo/Assets/arrow.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Demo/Assets/tail.png" type="Texture" id=4]
 [ext_resource path="res://Demo/Assets/head.png" type="Texture" id=5]
 [ext_resource path="res://Demo/Assets/crosstie.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/TrackJunction.tscn" type="PackedScene" id=7]
 
 [sub_resource type="VisualShaderNodeTexture" id=2]
 output_port_for_preview = 0
@@ -98,6 +99,10 @@ loop = false
 position = Vector2( 7, 0 )
 texture = ExtResource( 5 )
 
+[node name="TrackJunction" parent="HeadPoint" instance=ExtResource( 7 )]
+parent = NodePath("../..")
+side = "head"
+
 [node name="TailPoint" type="PathFollow2D" parent="."]
 position = Vector2( 256, 0 )
 z_index = 3
@@ -108,6 +113,10 @@ loop = false
 [node name="Sprite" type="Sprite" parent="TailPoint"]
 position = Vector2( -7, 0 )
 texture = ExtResource( 4 )
+
+[node name="TrackJunction" parent="TailPoint" instance=ExtResource( 7 )]
+parent = NodePath("../..")
+side = "tail"
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PoolVector2Array( 0, 0, 5.01034, 0, 9.99618, 0, 15.0017, 0, 19.9919, 0, 24.9891, 0, 29.9807, 0, 35.0054, 0, 40.0141, 0, 45.0315, 0, 50.0128, 0, 55.0127, 0, 60.0368, 0, 65.03, 0, 70.0378, 0, 75.0442, 0, 80.0697, 0, 85.102, 0, 90.13, 0, 95.143, 0, 100.131, 0, 105.122, 0, 110.146, 0, 115.157, 0, 120.186, 0, 125.15, 0, 130.156, 0, 135.122, 0, 140.115, 0, 145.092, 0, 150.119, 0, 155.153, 0, 160.147, 0, 165.131, 0, 170.133, 0, 175.105, 0, 180.109, 0, 185.131, 0, 190.123, 0, 195.104, 0, 200.089, 0, 205.116, 0, 210.129, 0, 215.125, 0, 220.148, 0, 225.146, 0, 230.151, 0, 235.159, 0, 240.17, 0, 245.163, 0, 250.166, 0, 255.168, 0, 256, 0 )

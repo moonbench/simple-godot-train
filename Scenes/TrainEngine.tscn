@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/TrainEngine.gd" type="Script" id=2]
 [ext_resource path="res://Demo/Assets/train_engine.png" type="Texture" id=3]
 
-[node name="TrainEngine" instance=ExtResource( 1 )]
+[node name="TrainEngine" groups=["train_engines"] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 max_force = 1000
 gravity = 9.8
@@ -13,6 +13,8 @@ rolling_resistance_coefficient = 0.005
 air_resistance_coefficient = 0.15
 air_density = 1.0
 velocity_multiplier = 1.5
+
+[node name="RailFollower" parent="." index="0" groups=["train_engine_front_wheels"]]
 
 [node name="TextureRect" parent="Body" index="2"]
 texture = ExtResource( 3 )
