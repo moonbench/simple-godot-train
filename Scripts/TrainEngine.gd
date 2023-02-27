@@ -23,7 +23,15 @@ func change_towed_mass(mass_delta):
 
 # Emit a signal to update the HUD
 func _process(_delta):
-	emit_signal("train_info", applied_force, max_force, velocity)
+	emit_signal("train_info", {
+		"throttle": target_force_percent,
+		"force_applied": applied_force,
+		"force_max": max_force,
+		"total_mass": total_mass,
+		"velocity": velocity,
+		"friction": friction_force,
+		"drag": _drag(),
+	})
 
 # Apply forces
 func _physics_process(delta):
@@ -34,7 +42,7 @@ func _physics_process(delta):
 
 # Move the front wheel by the applied force, minus friction forces
 func _move_with_friction(delta):
-	var applied_friction = friction_force + (air_resistance_coefficient * air_density * (pow(velocity,2)/2))
+	var applied_friction = friction_force + _drag()
 	if applied_force == 0 && abs(velocity) < applied_friction / total_mass * delta:
 		velocity = 0
 	else:
@@ -64,3 +72,6 @@ func _updated_applied_force(delta):
 func _update_frictions():
 	friction_force = friction_coefficient * total_mass * gravity
 	friction_force += rolling_resistance_coefficient * total_mass * gravity
+
+func _drag():
+	return (air_resistance_coefficient * air_density * (pow(velocity,2)/2))

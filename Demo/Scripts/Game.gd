@@ -15,3 +15,6 @@ func _on_Button4_pressed():
 
 func _on_Button5_pressed():
 	get_tree().change_scene_to(load("res://Demo/Scenes/TestTracks5.tscn"))
+
+func _on_Button6_pressed():
+	get_tree().change_scene_to(load("res://Demo/Scenes/TestTracks6.tscn"))
