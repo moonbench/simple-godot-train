@@ -4,8 +4,8 @@ extends Node2D
 
 signal towed_mass_changed
 
-export var wheel_distance = 54
-export var follow_distance = 24
+export var wheel_distance = 58
+export var follow_distance = 26
 export var mass = 10
 
 var towed_mass = 0

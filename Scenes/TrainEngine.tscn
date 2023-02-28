@@ -13,8 +13,10 @@ rolling_resistance_coefficient = 0.005
 air_resistance_coefficient = 0.1
 air_density = 1.0
 velocity_multiplier = 1.5
+brake_power = 12
+brake_application_speed = 5
 
 [node name="RailFollower" parent="." index="0" groups=["train_engine_front_wheels"]]
 
-[node name="TextureRect" parent="Body" index="2"]
+[node name="TextureRect" parent="Body/Node2D2" index="0"]
 texture = ExtResource( 3 )

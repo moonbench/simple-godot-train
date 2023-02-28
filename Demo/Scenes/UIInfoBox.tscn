@@ -50,10 +50,27 @@ margin_right = 1004.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_top = 44.0
 margin_right = 1004.0
 margin_bottom = 62.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer7"]
+margin_right = 56.0
+margin_bottom = 18.0
+custom_colors/font_color = Color( 0.67451, 0.67451, 0.67451, 1 )
+text = "Brake: "
+
+[node name="Brake" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer7"]
+margin_left = 60.0
+margin_right = 1004.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 66.0
+margin_right = 1004.0
+margin_bottom = 84.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
 margin_right = 78.0
@@ -67,9 +84,9 @@ margin_right = 82.0
 margin_bottom = 18.0
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 66.0
+margin_top = 88.0
 margin_right = 1004.0
-margin_bottom = 84.0
+margin_bottom = 106.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
 margin_right = 51.0
@@ -83,9 +100,9 @@ margin_right = 55.0
 margin_bottom = 18.0
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 88.0
+margin_top = 110.0
 margin_right = 1004.0
-margin_bottom = 106.0
+margin_bottom = 128.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer5"]
 margin_right = 76.0
@@ -99,9 +116,9 @@ margin_right = 80.0
 margin_bottom = 18.0
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 110.0
+margin_top = 132.0
 margin_right = 1004.0
-margin_bottom = 128.0
+margin_bottom = 150.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer6"]
 margin_right = 47.0

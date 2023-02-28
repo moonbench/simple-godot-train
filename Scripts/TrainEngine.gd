@@ -11,9 +11,12 @@ export var rolling_resistance_coefficient = 0.005
 export var air_resistance_coefficient = 0.10
 export var air_density = 1.0
 export var velocity_multiplier = 1.5
+export var brake_power = 12
+export var brake_application_speed = 5
 var friction_force
 var target_force_percent = 0
 var applied_force = 0
+var brake_force = 0
 var velocity = 0
 
 # Update the friction forces that depend on mass when the towed mass changes
@@ -27,6 +30,7 @@ func _process(_delta):
 		"throttle": target_force_percent,
 		"force_applied": applied_force,
 		"force_max": max_force,
+		"brake": brake_force,
 		"total_mass": total_mass,
 		"velocity": velocity,
 		"friction": friction_force,
@@ -36,6 +40,7 @@ func _process(_delta):
 # Apply forces
 func _physics_process(delta):
 	_update_throttle(delta)
+	_update_brake(delta)
 	_updated_applied_force(delta)
 	if velocity != 0 or applied_force != 0:
 		_move_with_friction(delta)
@@ -52,6 +57,7 @@ func _move_with_friction(delta):
 			velocity = velocity + ((applied_force + applied_friction) / total_mass * delta)
 		else:
 			velocity = velocity + (applied_force / total_mass * delta)
+	_apply_brake(delta)
 	front_wheel.move(velocity * velocity_multiplier * delta)
 
 # Set the "throttle lever" position
@@ -75,3 +81,17 @@ func _update_frictions():
 
 func _drag():
 	return (air_resistance_coefficient * air_density * (pow(velocity,2)/2))
+
+func _update_brake(delta):
+	if Input.is_action_pressed("brake"):
+		brake_force = clamp(brake_force + brake_application_speed * delta, 0, 1)
+	elif brake_force > 0:
+		brake_force = clamp(brake_force - brake_application_speed * delta, 0, 1)
+		
+
+func _apply_brake(delta):
+	if velocity == 0: return
+	elif velocity > 0:
+		velocity = max(velocity - brake_force * brake_power * delta, 0)
+	elif velocity < 0:
+		velocity = min(velocity + brake_force * brake_power * delta, 0)

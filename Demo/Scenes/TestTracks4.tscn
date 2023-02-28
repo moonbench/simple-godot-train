@@ -179,7 +179,7 @@ transform_2d_array = PoolVector2Array( 0.997363, 0.0725716, -0.0725716, 0.997363
 [sub_resource type="Curve2D" id=32]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -1600, -1024, 319.068, -0.7937, -319.068, 0.7937, -1920, -1024, 0, 0, 0, 0, -2240, -704, 0, 0, 0, 0, -2232, -320, -318.051, -0.890899, 318.051, 0.890899, -1920, 0, 0, 0, 0, 0, 1208, 0 )
+"points": PoolVector2Array( 0, 0, 0, 0, -1600, -1024, 319.068, -0.7937, -319.068, 0.7937, -1920, -1024, 0, 0, 0, 0, -2240, -704, 0, 0, 0, 0, -2232, -320, -318.051, -0.890899, 318.051, 0.890899, -1920, 0, -384.868, 0, 384.868, 0, -1400, 0, -258.361, 0, 258.361, 0, -824, -56, -384.868, -1.7818, 384.868, 1.7818, 8, -56, -318.942, 1.7818, 318.942, -1.7818, 584, 0, 0, 0, 0, 0, 1208, 0 )
 }
 
 [sub_resource type="Curve2D" id=33]
@@ -238,7 +238,7 @@ max_force = 2500
 
 [node name="ChaseCamera" parent="TrainEngine" instance=ExtResource( 5 )]
 current = true
-min_zoom = 2.0
+min_zoom = 3.0
 
 [node name="Tracks" type="Node2D" parent="."]
 
@@ -296,14 +296,15 @@ points = PoolVector2Array( 0, 0, 4.99673, 0.0917922, 9.98966, 0.259222, 14.9873,
 
 [node name="Pointer" parent="Tracks/TrackSwitch/RightTrack" index="5"]
 visible = false
-position = Vector2( 66.3115, 6.58238 )
-rotation = 0.213942
+position = Vector2( 66.3232, 6.58481 )
+rotation = 0.214001
 
 [node name="Button" parent="Tracks/TrackSwitch" index="2"]
 margin_left = -48.0
 margin_top = -80.0
 margin_right = 28.0
 margin_bottom = -32.0
+focus_mode = 0
 pressed = false
 
 [node name="TrackSwitch2" parent="Tracks" instance=ExtResource( 6 )]
@@ -348,12 +349,13 @@ offset = 133.763
 points = PoolVector2Array( 0, 0, 4.9989, 0.0624839, 9.99665, 0.204282, 14.986, 0.408833, 19.978, 0.673008, 24.9762, 0.996885, 29.9546, 1.37993, 34.9408, 1.82667, 39.9081, 2.33816, 44.8718, 2.9203, 49.824, 3.57776, 54.776, 4.31918, 59.7059, 5.14982, 64.6306, 6.0831, 69.5167, 7.12557, 74.3785, 8.29608, 79.2008, 9.61185, 83.9845, 11.1007, 88.6965, 12.7889, 93.3113, 14.7165, 97.8034, 16.9082, 102.275, 19.1582, 106.737, 21.4017, 111.202, 23.6444, 115.675, 25.8873, 120.144, 28.1223, 124.618, 30.3497, 128, 32 )
 
 [node name="Pointer" parent="Tracks/TrackSwitch2/RightTrack" index="5"]
-position = Vector2( 66.3399, 6.43381 )
-rotation = 0.216362
+position = Vector2( 66.3516, 6.43627 )
+rotation = 0.216424
 
 [node name="Button" parent="Tracks/TrackSwitch2" index="2"]
 margin_top = -96.0002
 margin_bottom = -48.0002
+focus_mode = 0
 
 [node name="Track3" parent="Tracks" instance=ExtResource( 2 )]
 position = Vector2( 2504, 448 )
@@ -416,7 +418,7 @@ parent = NodePath("../../../../TrackSwitch3")
 points = PoolVector2Array( 0, 0, 4.99416, 0, 9.9853, 0, 14.984, 0, 19.993, 0, 24.9835, 0, 29.9699, 0, 34.9596, 0, 39.9472, 0, 44.948, 0, 49.9372, 0, 54.952, 0, 59.9618, 0, 64.9562, 0, 69.9642, 0, 74.958, 0, 79.946, 0, 84.9505, 0, 89.951, 0, 94.9536, 0, 99.9653, 0, 104.968, 0, 109.966, 0, 114.975, 0, 119.979, 0, 124.981, 0, 128, 0 )
 
 [node name="Pointer" parent="Tracks/TrackSwitch3/RightTrack" index="5"]
-position = Vector2( 66.7038, 0 )
+position = Vector2( 66.7158, 0 )
 rotation = 0.0
 
 [node name="Button" parent="Tracks/TrackSwitch3" index="2"]
@@ -424,6 +426,7 @@ margin_left = 16.0
 margin_top = 51.0
 margin_right = 92.0
 margin_bottom = 99.0
+focus_mode = 0
 
 [node name="TrackSwitch4" parent="Tracks" instance=ExtResource( 6 )]
 position = Vector2( 3400, 448 )
@@ -467,12 +470,13 @@ offset = 128.019
 points = PoolVector2Array( 0, 0, 4.99416, 2.26233e-05, 9.9853, 4.5233e-05, 14.984, 6.7877e-05, 19.993, 9.05672e-05, 24.9835, 0.000113174, 29.9699, 0.000135762, 34.9596, 0.000158366, 39.9472, 0.000180959, 44.948, 0.000203612, 49.9372, 0.000226213, 54.952, 0.00024893, 59.9618, 0.000271624, 64.9562, 0.000294249, 69.9642, 0.000316934, 74.958, 0.000339556, 79.946, 0.000362152, 84.9505, 0.000384822, 89.951, 0.000407474, 94.9536, 0.000430136, 99.9653, 0.000452838, 104.968, 0.000475502, 109.966, 0.000498141, 114.975, 0.00052083, 119.979, 0.000543497, 124.981, 0.000566158, 128, 0.000579834 )
 
 [node name="Pointer" parent="Tracks/TrackSwitch4/RightTrack" index="5"]
-position = Vector2( 66.7038, 0.000302165 )
-rotation = 4.52994e-06
+position = Vector2( 66.7158, 0.000302219 )
+rotation = 4.52996e-06
 
 [node name="Button" parent="Tracks/TrackSwitch4" index="2"]
 margin_top = 31.9998
 margin_bottom = 79.9998
+focus_mode = 0
 
 [node name="Track5" parent="Tracks" instance=ExtResource( 2 )]
 position = Vector2( 3400, 448 )
@@ -530,12 +534,13 @@ points = PoolVector2Array( 0, 0, 4.99735, 0.216648, 9.98051, 0.57924, 14.9523, 1
 
 [node name="Pointer" parent="Tracks/TrackSwitch5/RightTrack" index="5"]
 visible = false
-position = Vector2( 65.1867, 12.8581 )
-rotation = 0.396837
+position = Vector2( 65.1978, 12.8625 )
+rotation = 0.396932
 
 [node name="Button" parent="Tracks/TrackSwitch5" index="2"]
 margin_top = -96.0
 margin_bottom = -48.0
+focus_mode = 0
 pressed = false
 
 [node name="Track7" parent="Tracks" instance=ExtResource( 2 )]
@@ -588,14 +593,15 @@ offset = 206.535
 points = PoolVector2Array( 0, 0, 4.99792, 0.201719, 9.98734, 0.553528, 14.9658, 1.02383, 19.9258, 1.60432, 24.8774, 2.29472, 29.8163, 3.0963, 34.7383, 4.01207, 39.6272, 5.04391, 44.4867, 6.19867, 49.3094, 7.48229, 54.108, 8.90818, 58.8629, 10.4826, 63.5569, 12.2128, 68.187, 14.1129, 72.7261, 16.1886, 77.1831, 18.4647, 81.5295, 20.9515, 85.7252, 23.652, 89.7707, 26.5971, 93.6237, 29.7924, 97.2702, 33.2053, 101.059, 36.4774, 105.037, 39.4861, 109.193, 42.2602, 113.485, 44.8037, 117.908, 47.1408, 122.422, 49.2747, 127.022, 51.2256, 131.695, 53.0053, 136.424, 54.6238, 141.207, 56.0933, 146.036, 57.4233, 150.889, 58.6177, 155.762, 59.6848, 160.664, 60.6337, 165.597, 61.4699, 170.546, 62.1945, 175.51, 62.8096, 180.489, 63.3147, 185.474, 63.7041, 190.465, 63.96, 192, 64 )
 
 [node name="Pointer" parent="Tracks/TrackSwitch6/RightTrack" index="5"]
-position = Vector2( 65.1813, 12.8565 )
-rotation = 0.398886
+position = Vector2( 65.1925, 12.861 )
+rotation = 0.398981
 
 [node name="Button" parent="Tracks/TrackSwitch6" index="2"]
 margin_left = -48.0
 margin_top = -80.0
 margin_right = 28.0
 margin_bottom = -32.0
+focus_mode = 0
 
 [node name="Track9" parent="Tracks" instance=ExtResource( 2 )]
 position = Vector2( 712, 576 )

@@ -19,6 +19,7 @@ onready var checkbutton = $Button
 func _ready():
 	_update_checkbutton()
 	_update_sprites()
+	checkbutton.focus_mode = Control.FOCUS_NONE
 
 # Change the direction of the switch
 func switch():
