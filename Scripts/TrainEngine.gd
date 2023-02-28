@@ -8,7 +8,7 @@ export var max_force = 1000
 export var gravity = 9.8
 export var friction_coefficient = 0.1
 export var rolling_resistance_coefficient = 0.005
-export var air_resistance_coefficient = 0.15
+export var air_resistance_coefficient = 0.10
 export var air_density = 1.0
 export var velocity_multiplier = 1.5
 var friction_force

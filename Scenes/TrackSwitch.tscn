@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/TrackSwitch.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Track.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Demo/Assets/arrow.png" type="Texture" id=3]
-[ext_resource path="res://Demo/Resources/Theme1.tres" type="Theme" id=4]
+[ext_resource path="res://Demo/Assets/switch_right.png" type="Texture" id=4]
+[ext_resource path="res://Demo/Assets/switch_left.png" type="Texture" id=5]
 
 [sub_resource type="Curve2D" id=3]
 resource_local_to_scene = true
@@ -42,6 +43,11 @@ instance_count = 13
 mesh = SubResource( 7 )
 transform_2d_array = PoolVector2Array( 0.997947, 0.0640496, -0.0640496, 0.997947, 4.99855, 0.151877, 0.992838, 0.119466, -0.119466, 0.992838, 14.9734, 0.932876, 0.984107, 0.177575, -0.177575, 0.984107, 24.87, 2.26685, 0.96946, 0.245249, -0.245249, 0.96946, 34.6843, 4.20508, 0.944619, 0.32817, -0.32817, 0.944619, 44.3251, 6.85303, 0.901062, 0.433689, -0.433689, 0.901062, 53.6716, 10.3796, 0.842941, 0.538006, -0.538006, 0.842941, 62.5197, 15.0383, 0.909125, 0.416523, -0.416523, 0.909125, 71.1225, 20.1158, 0.949179, 0.314736, -0.314736, 0.949179, 80.3335, 24.0132, 0.972129, 0.234445, -0.234445, 0.972129, 89.8904, 26.9492, 0.985697, 0.168525, -0.168525, 0.985697, 99.6571, 29.1232, 0.993793, 0.111241, -0.111241, 0.993793, 109.543, 30.6626, 0.998477, 0.0551718, -0.0551718, 0.998477, 119.494, 31.6382 )
 
+[sub_resource type="Theme" id=10]
+CheckButton/icons/off = ExtResource( 5 )
+CheckButton/icons/on = ExtResource( 4 )
+CheckButton/styles/normal = null
+
 [node name="TrackSwitch" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -54,10 +60,7 @@ multimesh = SubResource( 8 )
 [node name="HeadPoint" parent="LeftTrack" index="2"]
 rotation = -0.0290338
 
-[node name="Sprite" parent="LeftTrack/HeadPoint" index="0"]
-rotation = 0.0290338
-
-[node name="TrackJunction" parent="LeftTrack/HeadPoint" index="1"]
+[node name="TrackJunction" parent="LeftTrack/HeadPoint" index="0"]
 parent = NodePath("../../..")
 
 [node name="TailPoint" parent="LeftTrack" index="3"]
@@ -65,10 +68,7 @@ position = Vector2( 128, -32 )
 rotation = -0.0279697
 offset = 133.542
 
-[node name="Sprite" parent="LeftTrack/TailPoint" index="0"]
-rotation = 0.0279697
-
-[node name="TrackJunction" parent="LeftTrack/TailPoint" index="1"]
+[node name="TrackJunction" parent="LeftTrack/TailPoint" index="0"]
 parent = NodePath("../../..")
 side = "left"
 
@@ -95,10 +95,7 @@ multimesh = SubResource( 9 )
 [node name="HeadPoint" parent="RightTrack" index="2"]
 rotation = 0.0276211
 
-[node name="Sprite" parent="RightTrack/HeadPoint" index="0"]
-rotation = -0.0276211
-
-[node name="TrackJunction" parent="RightTrack/HeadPoint" index="1"]
+[node name="TrackJunction" parent="RightTrack/HeadPoint" index="0"]
 parent = NodePath("../../..")
 enabled = false
 
@@ -107,10 +104,7 @@ position = Vector2( 128, 32 )
 rotation = 0.0265524
 offset = 133.514
 
-[node name="Sprite" parent="RightTrack/TailPoint" index="0"]
-rotation = -0.0265524
-
-[node name="TrackJunction" parent="RightTrack/TailPoint" index="1"]
+[node name="TrackJunction" parent="RightTrack/TailPoint" index="0"]
 parent = NodePath("../../..")
 side = "right"
 
@@ -126,12 +120,17 @@ offset = 66.7452
 [node name="Sprite" type="Sprite" parent="RightTrack/Pointer"]
 texture = ExtResource( 3 )
 
-[node name="Button" type="Button" parent="."]
-margin_left = 100.0
-margin_top = -12.0
-margin_right = 124.0
-margin_bottom = 12.0
-theme = ExtResource( 4 )
+[node name="Button" type="CheckButton" parent="."]
+margin_left = -32.0
+margin_top = -72.0
+margin_right = 44.0
+margin_bottom = -24.0
+rect_rotation = 90.0
+rect_pivot_offset = Vector2( 38, 24 )
+theme = SubResource( 10 )
+shortcut_in_tooltip = false
+pressed = true
+keep_pressed_outside = true
 
 [connection signal="wheel_at_head" from="LeftTrack" to="." method="_on_LeftTrack_wheel_at_head"]
 [connection signal="wheel_at_tail" from="LeftTrack" to="." method="_on_LeftTrack_wheel_at_tail"]

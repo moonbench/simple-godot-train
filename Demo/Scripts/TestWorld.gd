@@ -7,7 +7,8 @@ onready var velocity_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/
 onready var mass_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer4/Mass
 onready var friction_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer5/Friction
 onready var drag_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer6/Drag
-
+onready var controls_box = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ControlsPanel
+onready var info_box = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox
 
 func _on_Button_pressed():
 	get_tree().change_scene_to(load("res://Demo/Scenes/Game.tscn"))
@@ -19,3 +20,15 @@ func update_train_info(info):
 	mass_label.text = "%0.1f" % info["total_mass"]
 	friction_label.text = "%0.1f" % info["friction"]
 	drag_label.text = "%0.1f" % info["drag"]
+
+func _on_Button2_pressed():
+	if controls_box.visible:
+		controls_box.hide()
+	else:
+		controls_box.show()
+
+func _on_InfoButton_pressed():
+	if info_box.visible:
+		info_box.hide()
+	else:
+		info_box.show()

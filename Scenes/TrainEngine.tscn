@@ -10,7 +10,7 @@ max_force = 1000
 gravity = 9.8
 friction_coefficient = 0.1
 rolling_resistance_coefficient = 0.005
-air_resistance_coefficient = 0.15
+air_resistance_coefficient = 0.1
 air_density = 1.0
 velocity_multiplier = 1.5
 

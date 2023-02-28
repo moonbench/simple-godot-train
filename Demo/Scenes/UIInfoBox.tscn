@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Demo/Assets/Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Demo/Resources/UITheme.tres" type="Theme" id=1]
 
 [node name="InfoBox" type="PanelContainer"]
 anchor_right = 1.0
@@ -19,95 +19,97 @@ margin_bottom = 580.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_right = 1004.0
-margin_bottom = 19.0
+margin_bottom = 18.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 margin_right = 76.0
-margin_bottom = 19.0
+margin_bottom = 18.0
 custom_colors/font_color = Color( 0.67451, 0.67451, 0.67451, 1 )
 text = "Throttle: "
 
 [node name="Throttle" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 80.0
-margin_right = 80.0
-margin_bottom = 19.0
+margin_right = 1004.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 23.0
+margin_top = 22.0
 margin_right = 1004.0
-margin_bottom = 42.0
+margin_bottom = 40.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 margin_right = 55.0
-margin_bottom = 19.0
+margin_bottom = 18.0
 custom_colors/font_color = Color( 0.67451, 0.67451, 0.67451, 1 )
 text = "Force: "
 
 [node name="Force" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 59.0
-margin_right = 59.0
-margin_bottom = 19.0
+margin_right = 1004.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 46.0
+margin_top = 44.0
 margin_right = 1004.0
-margin_bottom = 65.0
+margin_bottom = 62.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
-margin_right = 80.0
-margin_bottom = 19.0
+margin_right = 78.0
+margin_bottom = 18.0
 custom_colors/font_color = Color( 0.67451, 0.67451, 0.67451, 1 )
 text = "Velocity: "
 
 [node name="Velocity" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
-margin_left = 84.0
-margin_right = 84.0
-margin_bottom = 19.0
+margin_left = 82.0
+margin_right = 82.0
+margin_bottom = 18.0
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 69.0
+margin_top = 66.0
 margin_right = 1004.0
-margin_bottom = 88.0
+margin_bottom = 84.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
-margin_right = 52.0
-margin_bottom = 19.0
+margin_right = 51.0
+margin_bottom = 18.0
 custom_colors/font_color = Color( 0.67451, 0.67451, 0.67451, 1 )
 text = "Mass: "
 
 [node name="Mass" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
-margin_left = 56.0
-margin_right = 56.0
-margin_bottom = 19.0
+margin_left = 55.0
+margin_right = 55.0
+margin_bottom = 18.0
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 92.0
+margin_top = 88.0
 margin_right = 1004.0
-margin_bottom = 111.0
+margin_bottom = 106.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer5"]
 margin_right = 76.0
-margin_bottom = 19.0
+margin_bottom = 18.0
 custom_colors/font_color = Color( 0.67451, 0.67451, 0.67451, 1 )
 text = "Friction: "
 
 [node name="Friction" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer5"]
 margin_left = 80.0
 margin_right = 80.0
-margin_bottom = 19.0
+margin_bottom = 18.0
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 115.0
+margin_top = 110.0
 margin_right = 1004.0
-margin_bottom = 134.0
+margin_bottom = 128.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer6"]
-margin_right = 48.0
-margin_bottom = 19.0
+margin_right = 47.0
+margin_bottom = 18.0
 custom_colors/font_color = Color( 0.67451, 0.67451, 0.67451, 1 )
 text = "Drag: "
 
 [node name="Drag" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer6"]
-margin_left = 52.0
-margin_right = 52.0
-margin_bottom = 19.0
+margin_left = 51.0
+margin_right = 51.0
+margin_bottom = 18.0

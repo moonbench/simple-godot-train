@@ -8,7 +8,7 @@
 [sub_resource type="Curve2D" id=1]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, -64, -127.665, -1.05946, 127.665, 1.05946, 576, -64, 0, 0, 0, 0, 704, 64, -1.05946, -128.195, 1.05946, 128.195, 704, 320, 0, 0, 0, 0, 576, 448, 127.136, -0.529732, -127.136, 0.529732, 0, 448, 0, 0, 0, 0, -128, 320, -1.05946, 127.136, 1.05946, -127.136, -128, 64, 0, 0, 0, 0, 0, -64 )
+"points": PoolVector2Array( 0, 0, 0, 0, 320, -64, -192.565, 0.840896, 192.565, -0.840896, 544, -64, 0, 0, 0, 0, 736, 128, 0, 0, 0, 0, 736, 160, 192.565, 0, -192.565, 0, 544, 352, 190.883, 0, -190.883, 0, 0, 424, 0, 0, 0, 0, -192, 224, 0, 0, 0, 0, -192, 128, -191.724, 0.840896, 191.724, -0.840896, 0, -64, 0, 0, 0, 0, 320, -64 )
 }
 
 [node name="TestTracks1" type="Node2D"]
@@ -22,7 +22,7 @@ max_force = 2500
 
 [node name="Tracks" type="Node2D" parent="."]
 
-[node name="TestRail" parent="Tracks" instance=ExtResource( 1 )]
+[node name="Track" parent="Tracks" instance=ExtResource( 1 )]
 position = Vector2( 256, 128 )
 curve = SubResource( 1 )
 

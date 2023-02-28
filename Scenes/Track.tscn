@@ -1,10 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Track.gd" type="Script" id=1]
 [ext_resource path="res://Demo/Assets/arrow.png" type="Texture" id=2]
 [ext_resource path="res://Demo/Assets/track.png" type="Texture" id=3]
-[ext_resource path="res://Demo/Assets/tail.png" type="Texture" id=4]
-[ext_resource path="res://Demo/Assets/head.png" type="Texture" id=5]
 [ext_resource path="res://Demo/Assets/crosstie.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/TrackJunction.tscn" type="PackedScene" id=7]
 
@@ -95,10 +93,6 @@ z_index = 3
 z_as_relative = false
 loop = false
 
-[node name="Sprite" type="Sprite" parent="HeadPoint"]
-position = Vector2( 7, 0 )
-texture = ExtResource( 5 )
-
 [node name="TrackJunction" parent="HeadPoint" instance=ExtResource( 7 )]
 parent = NodePath("../..")
 side = "head"
@@ -109,10 +103,6 @@ z_index = 3
 z_as_relative = false
 offset = 255.832
 loop = false
-
-[node name="Sprite" type="Sprite" parent="TailPoint"]
-position = Vector2( -7, 0 )
-texture = ExtResource( 4 )
 
 [node name="TrackJunction" parent="TailPoint" instance=ExtResource( 7 )]
 parent = NodePath("../..")

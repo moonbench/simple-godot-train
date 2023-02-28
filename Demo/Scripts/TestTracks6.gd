@@ -7,7 +7,7 @@ onready var engine = $TrainEngine
 
 func _setup_train():
 	engine.connect("train_info", $TestWorld, "update_train_info")
-	engine.add_to_track($Tracks/Track)
+	engine.add_to_track($Tracks/Track, 800)
 	
 	var last_car = engine
 	for index in range(car_count):

@@ -14,15 +14,23 @@ enum Directions {LEFT, RIGHT}
 export var direction = Directions.RIGHT
 onready var left_track = $LeftTrack
 onready var right_track = $RightTrack
+onready var checkbutton = $Button
 
 func _ready():
+	_update_checkbutton()
 	_update_sprites()
 
 # Change the direction of the switch
 func switch():
-	if _has_wheels_on(): return
+	if _has_wheels_on():
+		_update_checkbutton()
+		return
 	direction = Directions.LEFT if direction == Directions.RIGHT else Directions.RIGHT
 	_update_sprites()
+	_update_checkbutton()
+
+func _update_checkbutton():
+	checkbutton.pressed = true if direction == Directions.RIGHT else Directions.LEFT
 
 # Connect the "from_side" of this track to the "to_side" of the other track
 #

@@ -46,15 +46,13 @@ func _update_sprites():
 	_update_crossties()
 	$HeadPoint.unit_offset = 0
 	$TailPoint.unit_offset = 1
-	$HeadPoint/Sprite.global_rotation = 0
-	$TailPoint/Sprite.global_rotation = 0
 
 func _update_crossties():
 	var crossties = _crosstie_multimesh.multimesh
 	crossties.mesh = _crosstie_mesh_instance.mesh
 	
 	var curve_length = curve.get_baked_length()
-	var crosstie_count = floor(curve_length / crosstie_distance)
+	var crosstie_count = round(curve_length / crosstie_distance)
 	crossties.instance_count = crosstie_count
 	
 	for i in range(crosstie_count):
