@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Demo/Assets/font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Demo/Scenes/World.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Demo/Scripts/Game.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/TrackSwitch.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Demo/Resources/UITheme.tres" type="Theme" id=6]
+[ext_resource path="res://Demo/Assets/DePixelSchmal.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="Curve2D" id=1]
 resource_local_to_scene = true
@@ -74,6 +75,20 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 256, -256 )
 }
 
+[sub_resource type="DynamicFont" id=14]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 11
+outline_size = 1
+outline_color = Color( 0.305882, 0.305882, 0.305882, 1 )
+use_mipmaps = true
+font_data = ExtResource( 7 )
+
 [node name="Game" type="Node"]
 script = ExtResource( 4 )
 
@@ -85,11 +100,11 @@ __meta__ = {
 [node name="Tracks" type="Node2D" parent="."]
 
 [node name="Track" parent="Tracks" instance=ExtResource( 3 )]
-position = Vector2( -8, 512 )
+position = Vector2( -128, 512 )
 curve = SubResource( 1 )
 
 [node name="TrackSwitch" parent="Tracks" instance=ExtResource( 5 )]
-position = Vector2( 512, 512 )
+position = Vector2( 392, 512 )
 
 [node name="LeftTrack" parent="Tracks/TrackSwitch" index="0"]
 curve = SubResource( 4 )
@@ -139,7 +154,7 @@ margin_bottom = -40.0
 focus_mode = 0
 
 [node name="TrackSwitch2" parent="Tracks" instance=ExtResource( 5 )]
-position = Vector2( 832, 512 )
+position = Vector2( 712, 512 )
 
 [node name="LeftTrack" parent="Tracks/TrackSwitch2" index="0"]
 curve = SubResource( 4 )
@@ -189,37 +204,47 @@ margin_bottom = -40.0
 focus_mode = 0
 
 [node name="Track2" parent="Tracks" instance=ExtResource( 3 )]
-position = Vector2( 729, 253 )
+position = Vector2( 609, 253 )
 curve = SubResource( 10 )
 
 [node name="Track3" parent="Tracks" instance=ExtResource( 3 )]
-position = Vector2( 664, 512 )
+position = Vector2( 544, 512 )
 curve = SubResource( 11 )
+
+[node name="Track4" parent="Tracks" instance=ExtResource( 3 )]
+position = Vector2( 840, 512 )
+curve = SubResource( 12 )
+
+[node name="Track5" parent="Tracks" instance=ExtResource( 3 )]
+position = Vector2( 840, 416 )
+curve = SubResource( 13 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2( 2, 2 )
 transform = Transform2D( 2, 0, 0, 2, 0, 0 )
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-margin_left = 12.0
-margin_top = 12.0
-margin_right = 153.0
-margin_bottom = 31.0
+margin_left = 4.0
+margin_top = 60.0
+margin_right = 260.0
+margin_bottom = 79.0
 theme = ExtResource( 6 )
 custom_fonts/font = ExtResource( 1 )
-text = "Select Track"
-align = 2
+text = "Select a Track"
+align = 1
 
 [node name="Line2D" type="Line2D" parent="CanvasLayer"]
-position = Vector2( 35.6573, -44 )
-scale = Vector2( 0.686976, 0.8 )
+position = Vector2( 67.072, 43.6001 )
+scale = Vector2( 1.088, 0.399999 )
 points = PoolVector2Array( 176, 96, -64, 96 )
 width = 5.0
 default_color = Color( 1, 1, 1, 1 )
 
 [node name="Control" type="Control" parent="CanvasLayer"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -8.0
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 72.0
 theme = ExtResource( 6 )
 
 [node name="Button" type="Button" parent="CanvasLayer/Control"]
@@ -264,13 +289,27 @@ margin_right = 249.0
 margin_bottom = 128.0
 text = "Track 6"
 
-[node name="Track" parent="." instance=ExtResource( 3 )]
-position = Vector2( 960, 512 )
-curve = SubResource( 12 )
+[node name="Label2" type="Label" parent="CanvasLayer"]
+margin_left = -8.0
+margin_top = 20.0
+margin_right = 270.0
+margin_bottom = 48.0
+rect_scale = Vector2( 0.962034, 0.962034 )
+rect_pivot_offset = Vector2( 139, 14 )
+theme = ExtResource( 6 )
+custom_fonts/font = SubResource( 14 )
+text = "2D Train Sim Demo"
+align = 1
 
-[node name="Track2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 960, 416 )
-curve = SubResource( 13 )
+[node name="Label3" type="Label" parent="CanvasLayer"]
+margin_top = 284.0
+margin_right = 511.0
+margin_bottom = 302.0
+theme = ExtResource( 6 )
+custom_colors/font_color = Color( 0.670588, 0.670588, 0.670588, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "Moonbench Games 2023"
+align = 1
 
 [connection signal="pressed" from="CanvasLayer/Control/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Button2" to="." method="_on_Button2_pressed"]

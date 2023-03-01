@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Demo/Scenes/TestWorld.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Track.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Scenes/TrainEngine.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Demo/Scenes/ChaseCamera.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/TrackSwitch.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Demo/Assets/godot.png" type="Texture" id=7]
+[ext_resource path="res://Demo/Scenes/Station.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve2D" id=1]
 resource_local_to_scene = true
@@ -83,7 +85,7 @@ transform_2d_array = PoolVector2Array( 0.999598, 0.028361, -0.028361, 0.999598, 
 [sub_resource type="Curve2D" id=16]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 768, 0 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 400, 0 )
 }
 
 [sub_resource type="Curve2D" id=17]
@@ -143,13 +145,13 @@ transform_2d_array = PoolVector2Array( 1, 4.52995e-06, -4.52995e-06, 1, 4.99416,
 [sub_resource type="Curve2D" id=26]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -256.96, -0.749154, 256.96, 0.749154, 448, 0, 0, 0, 0, 0, 704, 256, 0, 0, 0, 0, 704, 640, 253.984, 0.7937, -253.984, -0.7937, 448, 896, 0, 0, 0, 0, -136, 896 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -256.96, -0.749154, 256.96, 0.749154, 448, 0, 0, 0, 0, 0, 704, 256, 0, 0, 0, 0, 704, 456, 0, 0, 0, 0, 704, 640, 253.984, 0.7937, -253.984, -0.7937, 448, 896, 0, 0, 0, 0, -136, 896 )
 }
 
 [sub_resource type="Curve2D" id=27]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -193.04, 0, 193.04, 0, 576, 0, 0, 0, 0, 0, 768, 192, 190.652, -0.890899, -190.652, 0.890899, 576, 384, 256.211, 0.749154, -256.211, -0.749154, 128, 384, 255.688, 0, -255.688, 0, -1088, 64, 0, 0, 0, 0, -1344, 64, 0, 0, 0, 0, -2176, 64 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 264, 0, -193.04, 0, 193.04, 0, 576, 0, 0, 0, 0, 0, 768, 192, 190.652, -0.890899, -190.652, 0.890899, 576, 384, 256.211, 0.749154, -256.211, -0.749154, 128, 384, 255.688, 0, -255.688, 0, -1088, 64, 0, 0, 0, 0, -1344, 64, 0, 0, 0, 0, -2176, 64 )
 }
 
 [sub_resource type="Curve2D" id=28]
@@ -179,7 +181,7 @@ transform_2d_array = PoolVector2Array( 0.997363, 0.0725716, -0.0725716, 0.997363
 [sub_resource type="Curve2D" id=32]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -1600, -1024, 319.068, -0.7937, -319.068, 0.7937, -1920, -1024, 0, 0, 0, 0, -2240, -704, 0, 0, 0, 0, -2232, -320, -318.051, -0.890899, 318.051, 0.890899, -1920, 0, -384.868, 0, 384.868, 0, -1400, 0, -258.361, 0, 258.361, 0, -824, -56, -384.868, -1.7818, 384.868, 1.7818, 8, -56, -318.942, 1.7818, 318.942, -1.7818, 584, 0, 0, 0, 0, 0, 1208, 0 )
+"points": PoolVector2Array( 0, 0, 0, 0, -1600, -1024, 319.068, -0.7937, -319.068, 0.7937, -1920, -1024, 0, 0, 0, 0, -2240, -704, 0, 0, 0, 0, -2232, -320, -318.051, -0.890899, 318.051, 0.890899, -1920, 0, -384.868, 0, 384.868, 0, -1400, 0, -258.361, 0, 258.361, 0, -824, -56, 0, 0, 0, 0, -408, -56, -384.868, -1.7818, 384.868, 1.7818, 8, -56, -318.942, 1.7818, 318.942, -1.7818, 584, 0, 0, 0, 0, 0, 968, 0 )
 }
 
 [sub_resource type="Curve2D" id=33]
@@ -218,6 +220,72 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -384, -192, 190.663, 0.943874, -190.663, -0.943874, -768, -192, 0, 0, 0, 0, -960, 0, -184.055, 0, 184.055, 0, -768, 192, -188.775, 0, 188.775, 0, -576, 192, -191.606, -4.71937, 191.606, 4.71937, -192, 0, 0, 0, 0, 0, 256, 0 )
 }
 
+[sub_resource type="Curve2D" id=39]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0 )
+}
+
+[sub_resource type="MultiMesh" id=40]
+resource_local_to_scene = true
+instance_count = 13
+mesh = SubResource( 7 )
+transform_2d_array = PoolVector2Array( 1, 0, 0, 1, 4.99416, 0, 1, 0, 0, 1, 14.984, 0, 1, 0, 0, 1, 24.9835, 0, 1, 0, 0, 1, 34.9596, 0, 1, 0, 0, 1, 44.948, 0, 1, 0, 0, 1, 54.952, 0, 1, 0, 0, 1, 64.9562, 0, 1, 0, 0, 1, 74.958, 0, 1, 0, 0, 1, 84.9505, 0, 1, 0, 0, 1, 94.9536, 0, 1, 0, 0, 1, 104.968, 0, 1, 0, 0, 1, 114.975, 0, 1, 0, 0, 1, 124.981, 0 )
+
+[sub_resource type="Curve2D" id=41]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -23.902, -16.0644, 23.902, 16.0644, 64, 16, 0, 0, 0, 0, 128, 32 )
+}
+
+[sub_resource type="MultiMesh" id=42]
+resource_local_to_scene = true
+instance_count = 13
+mesh = SubResource( 7 )
+transform_2d_array = PoolVector2Array( 0.997947, 0.0640496, -0.0640496, 0.997947, 4.99855, 0.151877, 0.992838, 0.119466, -0.119466, 0.992838, 14.9734, 0.932876, 0.984107, 0.177575, -0.177575, 0.984107, 24.87, 2.26685, 0.96946, 0.245249, -0.245249, 0.96946, 34.6843, 4.20508, 0.944619, 0.32817, -0.32817, 0.944619, 44.3251, 6.85303, 0.901062, 0.433689, -0.433689, 0.901062, 53.6716, 10.3796, 0.842941, 0.538006, -0.538006, 0.842941, 62.5197, 15.0383, 0.909125, 0.416523, -0.416523, 0.909125, 71.1225, 20.1158, 0.949179, 0.314736, -0.314736, 0.949179, 80.3335, 24.0132, 0.972129, 0.234445, -0.234445, 0.972129, 89.8904, 26.9492, 0.985697, 0.168525, -0.168525, 0.985697, 99.6571, 29.1232, 0.993793, 0.111241, -0.111241, 0.993793, 109.543, 30.6626, 0.998477, 0.0551718, -0.0551718, 0.998477, 119.494, 31.6382 )
+
+[sub_resource type="Curve2D" id=43]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 0 )
+}
+
+[sub_resource type="Curve2D" id=44]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 864, 0, -0.66742, 279.649, 0.66742, -279.649, 1152, -280, 0, 0, 0, 0, 1152, -728, 319.861, 0.7937, -319.861, -0.7937, 832, -1048, 0, 0, 0, 0, 64, -1048 )
+}
+
+[sub_resource type="Curve2D" id=45]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( -120.322, 0, 120.322, 0, 0, 0, -127.882, 0.629961, 127.882, -0.629961, 184, -120 )
+}
+
+[sub_resource type="MultiMesh" id=46]
+resource_local_to_scene = true
+instance_count = 24
+mesh = SubResource( 7 )
+transform_2d_array = PoolVector2Array( 0.999007, -0.0445571, 0.0445571, 0.999007, 5.00141, -0.0711286, 0.993275, -0.115776, 0.115776, 0.993275, 14.9791, -0.686144, 0.979204, -0.202878, 0.202878, 0.979204, 24.8913, -2.05208, 0.951352, -0.308107, 0.308107, 0.951352, 34.6267, -4.33407, 0.903139, -0.429349, 0.429349, 0.903139, 44.0482, -7.71507, 0.830447, -0.557097, 0.557097, 0.830447, 52.9185, -12.3301, 0.737158, -0.67572, 0.67572, 0.737158, 61.0105, -18.2171, 0.638357, -0.769741, 0.769741, 0.638357, 68.1361, -25.2295, 0.551291, -0.834313, 0.834313, 0.551291, 74.2988, -33.1189, 0.488329, -0.872659, 0.872659, 0.488329, 79.6265, -41.5547, 0.453925, -0.89104, 0.89104, 0.453925, 84.4122, -50.3514, 0.449256, -0.893403, 0.893403, 0.449256, 88.9194, -59.2729, 0.473778, -0.880644, 0.880644, 0.473778, 93.4585, -68.1914, 0.526017, -0.850474, 0.850474, 0.526017, 98.3177, -76.9479, 0.602036, -0.798469, 0.798469, 0.602036, 103.742, -85.3175, 0.693132, -0.72081, 0.72081, 0.693132, 109.992, -93.1344, 0.785285, -0.619135, 0.619135, 0.785285, 117.161, -100.105, 0.864101, -0.503318, 0.503318, 0.864101, 125.236, -106.022, 0.921992, -0.38721, 0.38721, 0.921992, 134.055, -110.771, 0.95952, -0.281642, 0.281642, 0.95952, 143.339, -114.355, 0.981734, -0.190257, 0.190257, 0.981734, 153.011, -116.937, 0.993488, -0.113933, 0.113933, 0.993488, 162.896, -118.645, 0.998703, -0.0509133, 0.0509133, 0.998703, 172.839, -119.619, 0.99997, -0.00780495, 0.00780495, 0.99997, 182.826, -119.991 )
+
+[sub_resource type="Curve2D" id=47]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 0 )
+}
+
+[sub_resource type="MultiMesh" id=48]
+resource_local_to_scene = true
+instance_count = 12
+mesh = SubResource( 7 )
+transform_2d_array = PoolVector2Array( 1, 0, 0, 1, 4.99589, 0, 1, 0, 0, 1, 14.9796, 0, 1, 0, 0, 1, 24.9661, 0, 1, 0, 0, 1, 34.9831, 0, 1, 0, 0, 1, 44.9908, 0, 1, 0, 0, 1, 54.9954, 0, 1, 0, 0, 1, 65.0046, 0, 1, 0, 0, 1, 75.0263, 0, 1, 0, 0, 1, 85.0331, 0, 1, 0, 0, 1, 95.0339, 0, 1, 0, 0, 1, 105.045, 0, 1, 0, 0, 1, 115.042, 0 )
+
+[sub_resource type="Curve2D" id=49]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 0 )
+}
+
 [node name="TestTracks4" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -231,6 +299,31 @@ margin_left = -1392.0
 margin_top = -504.0
 margin_right = 5344.0
 margin_bottom = 2304.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Godot" type="Sprite" parent="TestWorld"]
+position = Vector2( 3824, 712 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Godot2" type="Sprite" parent="TestWorld"]
+position = Vector2( -48, 1096 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Station" parent="TestWorld" instance=ExtResource( 8 )]
+position = Vector2( 1760, 368 )
+rotation = 0.0872665
+
+[node name="Station2" parent="TestWorld" instance=ExtResource( 8 )]
+position = Vector2( 1496, 344 )
+rotation = 0.0872665
+
+[node name="Station3" parent="TestWorld" instance=ExtResource( 8 )]
+position = Vector2( 1232, 320 )
+rotation = 0.0872665
 
 [node name="TrainEngine" parent="." instance=ExtResource( 4 )]
 position = Vector2( 40, 544 )
@@ -353,7 +446,9 @@ position = Vector2( 66.3516, 6.43627 )
 rotation = 0.216424
 
 [node name="Button" parent="Tracks/TrackSwitch2" index="2"]
+margin_left = -47.9998
 margin_top = -96.0002
+margin_right = 28.0002
 margin_bottom = -48.0002
 focus_mode = 0
 
@@ -422,10 +517,8 @@ position = Vector2( 66.7158, 0 )
 rotation = 0.0
 
 [node name="Button" parent="Tracks/TrackSwitch3" index="2"]
-margin_left = 16.0
-margin_top = 51.0
-margin_right = 92.0
-margin_bottom = 99.0
+margin_top = 48.0
+margin_bottom = 96.0
 focus_mode = 0
 
 [node name="TrackSwitch4" parent="Tracks" instance=ExtResource( 6 )]
@@ -474,7 +567,9 @@ position = Vector2( 66.7158, 0.000302219 )
 rotation = 4.52996e-06
 
 [node name="Button" parent="Tracks/TrackSwitch4" index="2"]
+margin_left = -16.0002
 margin_top = 31.9998
+margin_right = 59.9998
 margin_bottom = 79.9998
 focus_mode = 0
 
@@ -538,8 +633,10 @@ position = Vector2( 65.1978, 12.8625 )
 rotation = 0.396932
 
 [node name="Button" parent="Tracks/TrackSwitch5" index="2"]
-margin_top = -96.0
-margin_bottom = -48.0
+margin_left = -25.0
+margin_top = 31.9995
+margin_right = 51.0
+margin_bottom = 79.9995
 focus_mode = 0
 pressed = false
 
@@ -607,6 +704,75 @@ focus_mode = 0
 position = Vector2( 712, 576 )
 curve = SubResource( 38 )
 
+[node name="TrackSwitch7" parent="Tracks" instance=ExtResource( 6 )]
+position = Vector2( 2896, 1344 )
+direction = 0
+
+[node name="LeftTrack" parent="Tracks/TrackSwitch7" index="0"]
+z_index = 1
+curve = SubResource( 39 )
+
+[node name="MultiMeshInstance2D" parent="Tracks/TrackSwitch7/LeftTrack" index="1"]
+multimesh = SubResource( 40 )
+
+[node name="HeadPoint" parent="Tracks/TrackSwitch7/LeftTrack" index="2"]
+rotation = 0.0
+
+[node name="TrackJunction" parent="Tracks/TrackSwitch7/LeftTrack/HeadPoint" index="0"]
+parent = NodePath("../../../../TrackSwitch7")
+
+[node name="TailPoint" parent="Tracks/TrackSwitch7/LeftTrack" index="3"]
+position = Vector2( 128, 0 )
+rotation = 0.0
+offset = 128.019
+
+[node name="TrackJunction" parent="Tracks/TrackSwitch7/LeftTrack/TailPoint" index="0"]
+parent = NodePath("../../../../TrackSwitch7")
+
+[node name="Line2D" parent="Tracks/TrackSwitch7/LeftTrack" index="4"]
+points = PoolVector2Array( 0, 0, 4.99416, 0, 9.9853, 0, 14.984, 0, 19.993, 0, 24.9835, 0, 29.9699, 0, 34.9596, 0, 39.9472, 0, 44.948, 0, 49.9372, 0, 54.952, 0, 59.9618, 0, 64.9562, 0, 69.9642, 0, 74.958, 0, 79.946, 0, 84.9505, 0, 89.951, 0, 94.9536, 0, 99.9653, 0, 104.968, 0, 109.966, 0, 114.975, 0, 119.979, 0, 124.981, 0, 128, 0 )
+
+[node name="Pointer" parent="Tracks/TrackSwitch7/LeftTrack" index="5"]
+visible = true
+position = Vector2( 66.7283, 0 )
+rotation = 0.0
+
+[node name="RightTrack" parent="Tracks/TrackSwitch7" index="1"]
+z_index = 0
+curve = SubResource( 41 )
+
+[node name="MultiMeshInstance2D" parent="Tracks/TrackSwitch7/RightTrack" index="1"]
+multimesh = SubResource( 42 )
+
+[node name="TrackJunction" parent="Tracks/TrackSwitch7/RightTrack/HeadPoint" index="0"]
+parent = NodePath("../../../../TrackSwitch7")
+
+[node name="TrackJunction" parent="Tracks/TrackSwitch7/RightTrack/TailPoint" index="0"]
+parent = NodePath("../../../../TrackSwitch7")
+
+[node name="Line2D" parent="Tracks/TrackSwitch7/RightTrack" index="4"]
+points = PoolVector2Array( 0, 0, 4.99855, 0.151877, 9.99228, 0.472381, 14.9734, 0.932876, 19.9316, 1.52949, 24.87, 2.26685, 29.793, 3.15517, 34.6843, 4.20508, 39.539, 5.43321, 44.3251, 6.85303, 49.0416, 8.49161, 53.6716, 10.3796, 58.1779, 12.5485, 62.5197, 15.0383, 66.7323, 17.727, 71.1225, 20.1158, 75.6752, 22.2017, 80.3335, 24.0132, 85.0857, 25.589, 89.8904, 26.9492, 94.7538, 28.1221, 99.6571, 29.1232, 104.589, 29.9664, 109.543, 30.6626, 114.517, 31.2194, 119.494, 31.6382, 124.487, 31.914, 128, 32 )
+
+[node name="Pointer" parent="Tracks/TrackSwitch7/RightTrack" index="5"]
+visible = false
+position = Vector2( 64.0027, 15.9805 )
+
+[node name="Button" parent="Tracks/TrackSwitch7" index="2"]
+margin_left = -16.0
+margin_top = 48.0
+margin_right = 60.0
+margin_bottom = 96.0
+focus_mode = 0
+pressed = false
+
+[node name="Track10" parent="Tracks" instance=ExtResource( 2 )]
+position = Vector2( 3024, 1344 )
+curve = SubResource( 43 )
+
+[node name="Track11" parent="Tracks" instance=ExtResource( 2 )]
+position = Vector2( 3024, 1376 )
+curve = SubResource( 44 )
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
@@ -614,6 +780,62 @@ autostart = true
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="TrackSwitch" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2904, 448 )
+
+[node name="LeftTrack" parent="TrackSwitch" index="0"]
+curve = SubResource( 45 )
+
+[node name="MultiMeshInstance2D" parent="TrackSwitch/LeftTrack" index="1"]
+multimesh = SubResource( 46 )
+
+[node name="HeadPoint" parent="TrackSwitch/LeftTrack" index="2"]
+rotation = -0.0117617
+
+[node name="TailPoint" parent="TrackSwitch/LeftTrack" index="3"]
+position = Vector2( 184, -120 )
+rotation = -0.0159377
+offset = 236.174
+
+[node name="Line2D" parent="TrackSwitch/LeftTrack" index="4"]
+points = PoolVector2Array( 0, 0, 5.00141, -0.0711286, 9.96461, -0.292494, 14.9791, -0.686144, 19.9532, -1.26593, 24.8913, -2.05208, 29.7665, -3.06217, 34.6267, -4.33407, 39.3888, -5.87632, 44.0482, -7.71507, 48.578, -9.8685, 52.9185, -12.3301, 57.0761, -15.1192, 61.0105, -18.2171, 64.7106, -21.6089, 68.1361, -25.2295, 71.3269, -29.0771, 74.2988, -33.1189, 77.0525, -37.2863, 79.6265, -41.5547, 82.0678, -45.9173, 84.4122, -50.3514, 86.687, -54.8167, 88.9194, -59.2729, 91.1708, -63.7502, 93.4585, -68.1914, 95.8354, -72.6096, 98.3177, -76.9479, 100.939, -81.1854, 103.742, -85.3175, 106.762, -89.3226, 109.992, -93.1344, 113.457, -96.7375, 117.161, -100.105, 121.104, -103.213, 125.236, -106.022, 129.57, -108.546, 134.055, -110.771, 138.645, -112.699, 143.339, -114.355, 148.136, -115.763, 153.011, -116.937, 157.942, -117.892, 162.896, -118.645, 167.856, -119.214, 172.839, -119.619, 177.826, -119.873, 182.826, -119.991, 184, -120 )
+
+[node name="Pointer" parent="TrackSwitch/LeftTrack" index="5"]
+position = Vector2( 62.3485, -19.3866 )
+rotation = -0.760333
+
+[node name="RightTrack" parent="TrackSwitch" index="1"]
+curve = SubResource( 47 )
+
+[node name="MultiMeshInstance2D" parent="TrackSwitch/RightTrack" index="1"]
+multimesh = SubResource( 48 )
+
+[node name="HeadPoint" parent="TrackSwitch/RightTrack" index="2"]
+rotation = 0.0
+
+[node name="TailPoint" parent="TrackSwitch/RightTrack" index="3"]
+position = Vector2( 120, 0 )
+rotation = 0.0
+offset = 119.958
+
+[node name="Line2D" parent="TrackSwitch/RightTrack" index="4"]
+points = PoolVector2Array( 0, 0, 4.99589, 0, 9.98879, 0, 14.9796, 0, 19.9705, 0, 24.9661, 0, 29.9792, 0, 34.9831, 0, 39.9833, 0, 44.9908, 0, 49.9958, 0, 54.9954, 0, 60.0088, 0, 65.0046, 0, 70.0215, 0, 75.0263, 0, 80.0334, 0, 85.0331, 0, 90.0208, 0, 95.0339, 0, 100.043, 0, 105.045, 0, 110.042, 0, 115.042, 0, 120, 0 )
+
+[node name="Pointer" parent="TrackSwitch/RightTrack" index="5"]
+position = Vector2( 66.7667, 0 )
+rotation = 0.0
+
+[node name="Button" parent="TrackSwitch" index="2"]
+margin_left = -48.0
+margin_top = -80.0
+margin_right = 28.0
+margin_bottom = -32.0
+focus_mode = 0
+
+[node name="Track" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3024, 448 )
+curve = SubResource( 49 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
@@ -636,3 +858,9 @@ __meta__ = {
 [editable path="Tracks/TrackSwitch6"]
 [editable path="Tracks/TrackSwitch6/LeftTrack"]
 [editable path="Tracks/TrackSwitch6/RightTrack"]
+[editable path="Tracks/TrackSwitch7"]
+[editable path="Tracks/TrackSwitch7/LeftTrack"]
+[editable path="Tracks/TrackSwitch7/RightTrack"]
+[editable path="TrackSwitch"]
+[editable path="TrackSwitch/LeftTrack"]
+[editable path="TrackSwitch/RightTrack"]

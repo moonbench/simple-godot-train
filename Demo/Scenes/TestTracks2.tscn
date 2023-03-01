@@ -1,15 +1,16 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/Track.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TrainEngine.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/TrackSwitch.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Demo/Scenes/TestWorld.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Demo/Scripts/TestTracks2.gd" type="Script" id=5]
+[ext_resource path="res://Demo/Assets/godot.png" type="Texture" id=6]
 
 [sub_resource type="Curve2D" id=8]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( -0.0865932, 125.721, 0.0865932, -125.721, -189, 191, -127.786, 0, 127.786, 0, 3, -1, -128.512, 1.25992, 128.512, -1.25992, 611, -1, 0, 0, 0, 0, 739, 127, 0, 0, 0, 0, 739, 191 )
+"points": PoolVector2Array( 15.6624, 116.902, 0, 0, -189, 127, -127.786, 0, 127.786, 0, -61, -1, -128.512, 1.25992, 128.512, -1.25992, 611, -1, 0, 0, 0, 0, 739, 127, 0, 0, 0, 0, 739, 191 )
 }
 
 [sub_resource type="Curve2D" id=13]
@@ -52,7 +53,7 @@ transform_2d_array = PoolVector2Array( 1, 0, 0, 1, 4.99416, 0, 1, 0, 0, 1, 14.98
 [sub_resource type="Curve2D" id=17]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, -96, 0, 0, 0, 0, 0, -256, 94.8594, 0.471937, -94.8594, -0.471937, -96, -352, 0, 0, 0, 0, -192, -352, 0, -127.399, 0, 127.399, -320, -224, 0, 0, 0, 0, -320, -96, 112.794, 0, -112.794, 0, -432, 0, 0, 0, 0, 0, -544, -96, 0, 0, 0, 0, -544, -256, -129.16, 0.119193, 129.16, -0.119193, -416, -384, -128.289, 0.890899, 128.289, -0.890899, -96, -384, 0, 0, 0, 0, 32, -256, 0, 0, 0, 0, 32, -224, -128.289, 0.890899, 128.289, -0.890899, 160, -96 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, -96, 0, 0, 0, 0, 0, -256, 95.7503, 1.36284, -95.7503, -1.36284, -96, -352, 0, 0, 0, 0, -224, -352, 0, -94.8812, 0, 94.8812, -320, -256, 0, -96.6625, 0, 96.6625, -320, -96, 0, 0, 0, 0, -416, 0, 95.0725, -0.523889, -95.0725, 0.523889, -480, 0, 0, 0, 0, 0, -576, -96, 0, 0, 0, 0, -576, -288, -96.1969, 0.119193, 96.1969, -0.119193, -480, -384, -128.289, 0.890899, 128.289, -0.890899, -96, -384, 0, 0, 0, 0, 32, -256, 0, 0, 0, 0, 32, -224, -128.289, 0.890899, 128.289, -0.890899, 160, -96 )
 }
 
 [sub_resource type="Curve2D" id=18]
@@ -64,7 +65,7 @@ _data = {
 [sub_resource type="Curve2D" id=19]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -63.9999, 0, 0, 0, 0, 0, -63.9999, 64.0979, -200.452, 0.256856, 200.452, -0.256856, 135.72, 256.392, 0, 0, 0, 0, 468.587, 256.392 )
+"points": PoolVector2Array( 0, 0, 0, 0, -63.9999, -64.0979, 0, 0, 0, 0, -63.9999, 128.196, -132.302, 0.88778, 132.302, -0.88778, 69.1469, 256.392, 0, 0, 0, 0, 468.587, 256.392 )
 }
 
 [sub_resource type="Curve2D" id=20]
@@ -96,9 +97,13 @@ script = ExtResource( 5 )
 
 [node name="TestWorld" parent="." instance=ExtResource( 4 )]
 
+[node name="Godot" type="Sprite" parent="TestWorld"]
+position = Vector2( 256, 416 )
+texture = ExtResource( 6 )
+
 [node name="TrainEngine" parent="." instance=ExtResource( 2 )]
 scale = Vector2( 0.999998, 1 )
-max_force = 2200
+max_force = 1500
 
 [node name="Tracks" type="Node2D" parent="."]
 
@@ -148,7 +153,7 @@ offset = 128.019
 points = PoolVector2Array( 0, 0, 4.99416, 0, 9.9853, 0, 14.984, 0, 19.993, 0, 24.9835, 0, 29.9699, 0, 34.9596, 0, 39.9472, 0, 44.948, 0, 49.9372, 0, 54.952, 0, 59.9618, 0, 64.9562, 0, 69.9642, 0, 74.958, 0, 79.946, 0, 84.9505, 0, 89.951, 0, 94.9536, 0, 99.9653, 0, 104.968, 0, 109.966, 0, 114.975, 0, 119.979, 0, 124.981, 0, 128, 0 )
 
 [node name="Pointer" parent="Tracks/TrackSwitch2/RightTrack" index="5"]
-position = Vector2( 66.7038, 0 )
+position = Vector2( 66.7158, 0 )
 rotation = 0.0
 
 [node name="Button" parent="Tracks/TrackSwitch2" index="2"]
@@ -156,6 +161,7 @@ margin_left = -24.0
 margin_top = -88.0
 margin_right = 52.0
 margin_bottom = -40.0
+focus_mode = 0
 
 [node name="Track2" parent="Tracks" instance=ExtResource( 1 )]
 position = Vector2( 704, 480 )
@@ -218,14 +224,15 @@ points = PoolVector2Array( 0, 0, 4.99455, 0.0878025, 10.0173, 0.31382, 15.005, 0
 
 [node name="Pointer" parent="Tracks/TrackSwitch/RightTrack" index="5"]
 visible = false
-position = Vector2( 64.4999, 14.5849 )
-rotation = 0.504818
+position = Vector2( 64.5105, 14.5905 )
+rotation = 0.50493
 
 [node name="Button" parent="Tracks/TrackSwitch" index="2"]
 margin_top = 39.9997
 margin_right = 35.9998
 margin_bottom = 87.9997
 rect_rotation = 449.999
+focus_mode = 0
 pressed = false
 
 [node name="Timer" type="Timer" parent="."]

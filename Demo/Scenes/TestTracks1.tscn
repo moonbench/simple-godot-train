@@ -18,7 +18,7 @@ script = ExtResource( 4 )
 
 [node name="TrainEngine" parent="." instance=ExtResource( 2 )]
 scale = Vector2( 0.999998, 1 )
-max_force = 2500
+max_force = 1500
 
 [node name="Tracks" type="Node2D" parent="."]
 

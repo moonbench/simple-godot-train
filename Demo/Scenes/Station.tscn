@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Demo/Assets/station.png" type="Texture" id=1]
+
+[node name="Station" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -128.0
+margin_top = -32.0
+margin_right = 128.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 128, 32 )
+texture = ExtResource( 1 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://Scenes/Track.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Demo/Assets/warn.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Demo/Scenes/ChaseCamera.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Demo/Assets/godot.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/TrackSwitch.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Demo/Scenes/Station.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Curve2D" id=1]
 resource_local_to_scene = true
@@ -121,7 +122,7 @@ _data = {
 [sub_resource type="Curve2D" id=19]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -191.521, -1.41581, 191.521, 1.41581, 448, 0, 0, 0, 0, 0, 640, 192, 0, 0, 0, 0, 640, 320, 0, 0, 0, 0, 640, 448, -126.975, -127.816, 126.975, 127.816, 768, 832, 0, 0, 0, 0, 960, 1024, 0, 0, 0, 0, 1408, 1472, -150.444, -0.529732, 150.444, 0.529732, 1616, 1536, 0, 0, 0, 0, 3904, 1536 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -191.521, -1.41581, 191.521, 1.41581, 448, 0, 0, 0, 0, 0, 640, 192, 0, 0, 0, 0, 640, 320, 0, 0, 0, 0, 640, 448, -126.975, -127.816, 126.975, 127.816, 768, 832, 0, 0, 0, 0, 960, 1024, 0, 0, 0, 0, 1408, 1472, -150.444, -0.529732, 150.444, 0.529732, 1616, 1536, 0, 0, 0, 0, 2712, 1536, 0, 0, 0, 0, 3904, 1536 )
 }
 
 [sub_resource type="Curve2D" id=24]
@@ -157,7 +158,7 @@ transform_2d_array = PoolVector2Array( 0.997947, 0.0640496, -0.0640496, 0.997947
 [sub_resource type="Curve2D" id=29]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -159.429, -0.471937, 159.429, 0.471937, 192, 0, 0, 0, 0, 0, 352, 160, 0, 0, 0, 0, 352, 288, 0, 0, 0, 0, 352, 344, 0, 0, 0, 0, 352, 416, -122.771, -128.657, 122.771, 128.657, 472, 800, 0, 0, 0, 0, 664, 992, 0, 0, 0, 0, 1136, 1464, -145.146, -0.529732, 145.146, 0.529732, 1336, 1536, 0, 0, 0, 0, 3648, 1536 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -159.429, -0.471937, 159.429, 0.471937, 192, 0, 0, 0, 0, 0, 352, 160, 0, 0, 0, 0, 352, 288, 0, 0, 0, 0, 352, 344, 0, 0, 0, 0, 352, 416, -122.771, -128.657, 122.771, 128.657, 472, 800, 0, 0, 0, 0, 664, 992, 0, 0, 0, 0, 1136, 1464, -145.146, -0.529732, 145.146, 0.529732, 1336, 1536, 0, 0, 0, 0, 2456, 1536, 0, 0, 0, 0, 3648, 1536 )
 }
 
 [sub_resource type="Curve2D" id=30]
@@ -271,13 +272,13 @@ _data = {
 [sub_resource type="Curve2D" id=79]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -448.198, 0, 448.198, 0, 1216, 0, -449.284, 0, 449.284, 0, 4800, 224, 0, 0, 0, 0, 5376, 224 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -448.198, 0, 448.198, 0, 1216, 0, 0, 0, 0, 0, 3688, 160, -449.284, 0, 449.284, 0, 4800, 224, 0, 0, 0, 0, 5376, 224 )
 }
 
 [sub_resource type="Curve2D" id=80]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -448.198, -0.840896, 448.198, 0.840896, 1216, 0, -448.34, 0.943874, 448.34, -0.943874, 4800, 224, 0, 0, 0, 0, 5376, 224 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -448.198, -0.840896, 448.198, 0.840896, 1216, 0, 0, 0, 0, 0, 3672, 160, -448.34, 0.943874, 448.34, -0.943874, 4800, 224, 0, 0, 0, 0, 5376, 224 )
 }
 
 [sub_resource type="Curve2D" id=81]
@@ -421,28 +422,27 @@ __meta__ = {
 }
 
 [node name="TextureRect" parent="TestWorld" index="0"]
-margin_left = -2856.0
-margin_top = -2496.0
-margin_right = 20504.0
-margin_bottom = 4504.0
+margin_left = -8336.0
+margin_top = -5504.0
+margin_right = 25024.0
+margin_bottom = 6496.0
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Godot3" type="Sprite" parent="TestWorld"]
-position = Vector2( 8272, 568 )
-rotation = -0.541052
-scale = Vector2( 4, 4 )
+position = Vector2( 8368, 576 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
 
 [node name="Godot2" type="Sprite" parent="TestWorld"]
-position = Vector2( 448, 736 )
+position = Vector2( 344, 616 )
 rotation = 2.35619
 scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
 
 [node name="Godot" type="Sprite" parent="TestWorld"]
-position = Vector2( 17336, 512 )
+position = Vector2( 17424, 512 )
 rotation = 1.5708
 scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
@@ -469,6 +469,18 @@ rotation = 1.5708
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
+[node name="Station" parent="TestWorld" instance=ExtResource( 9 )]
+position = Vector2( 17104, 224 )
+
+[node name="Station2" parent="TestWorld" instance=ExtResource( 9 )]
+position = Vector2( 17360, 224 )
+
+[node name="Station3" parent="TestWorld" instance=ExtResource( 9 )]
+position = Vector2( 752, 16 )
+
+[node name="Station4" parent="TestWorld" instance=ExtResource( 9 )]
+position = Vector2( 496, 16 )
+
 [node name="TrainEngine" parent="." instance=ExtResource( 4 )]
 max_force = 3000
 
@@ -477,8 +489,7 @@ position = Vector2( 32, 0 )
 rotation = -1.5708
 rotating = true
 current = true
-smoothing_speed = 10.0
-min_zoom = 4.0
+min_zoom = 6.0
 
 [node name="Tracks" type="Node2D" parent="."]
 
