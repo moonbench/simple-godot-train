@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Demo/Assets/font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Demo/Scenes/World.tscn" type="PackedScene" id=2]
@@ -7,11 +7,13 @@
 [ext_resource path="res://Scenes/TrackSwitch.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Demo/Resources/UITheme.tres" type="Theme" id=6]
 [ext_resource path="res://Demo/Assets/DePixelSchmal.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Demo/Assets/godot.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/TrainEngine.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Curve2D" id=1]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 520, 0 )
+"points": PoolVector2Array( 0.000350952, 0.66742, -0.000350952, -0.66742, 64, -64, -193.007, 0.46365, 193.007, -0.46365, 256, 0, 0, 0, 0, 0, 520, 0 )
 }
 
 [sub_resource type="Curve2D" id=4]
@@ -54,7 +56,7 @@ transform_2d_array = PoolVector2Array( 1, 0, 0, 1, 4.99416, 0, 1, 0, 0, 1, 14.98
 [sub_resource type="Curve2D" id=10]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -89, 163, 0, 0, 0, 0, 359, -285 )
+"points": PoolVector2Array( 0, 0, 0, 0, -89, 163, 0, 0, 0, 0, 423, -349, 0, 0, 0, 0, -33, -349 )
 }
 
 [sub_resource type="Curve2D" id=11]
@@ -66,13 +68,19 @@ _data = {
 [sub_resource type="Curve2D" id=12]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 256, 0 )
+"points": PoolVector2Array( -248.275, 0, 248.275, 0, 0, 0, 0, 0, 0, 0, 312, 128 )
 }
 
 [sub_resource type="Curve2D" id=13]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 256, -256 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 312, -312, 0, 0, 0, 0, 312, -448, 0, 0, 0, 0, 184, -576, 0, 0, 0, 0, -264, -576 )
+}
+
+[sub_resource type="Curve2D" id=16]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 112, 168, 0, 0, 0, 0, 112, 264, 0, 0, 0, 0, 240, 392, 0, 0, 0, 0, 1392, 392, 0, 0, 0, 0, 1456, 328 )
 }
 
 [sub_resource type="DynamicFont" id=14]
@@ -89,6 +97,12 @@ outline_color = Color( 0.305882, 0.305882, 0.305882, 1 )
 use_mipmaps = true
 font_data = ExtResource( 7 )
 
+[sub_resource type="Curve2D" id=17]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 64, 144, 0, 0, 0, 0, 64, -144, 0, 0, 0, 0, 320, -408, 0, 0, 0, 0, 704, -400 )
+}
+
 [node name="Game" type="Node"]
 script = ExtResource( 4 )
 
@@ -96,6 +110,10 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Godot" type="Sprite" parent="World"]
+position = Vector2( 224, 416 )
+texture = ExtResource( 8 )
 
 [node name="Tracks" type="Node2D" parent="."]
 
@@ -219,6 +237,10 @@ curve = SubResource( 12 )
 position = Vector2( 840, 416 )
 curve = SubResource( 13 )
 
+[node name="Track6" parent="Tracks" instance=ExtResource( 3 )]
+position = Vector2( -304, 312 )
+curve = SubResource( 16 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2( 2, 2 )
 transform = Transform2D( 2, 0, 0, 2, 0, 0 )
@@ -311,12 +333,36 @@ custom_fonts/font = SubResource( 15 )
 text = "Moonbench Games 2023"
 align = 1
 
+[node name="TrackSwitch2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -64, 448 )
+rotation = -3.14159
+
+[node name="TrackSwitch" parent="." instance=ExtResource( 5 )]
+position = Vector2( 448, -128 )
+
+[node name="Track" parent="." instance=ExtResource( 3 )]
+position = Vector2( -256, 272 )
+curve = SubResource( 17 )
+
+[node name="TrainEngine" parent="." instance=ExtResource( 9 )]
+position = Vector2( -152, 504 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 512, 304 )
+current = true
+
 [connection signal="pressed" from="CanvasLayer/Control/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Button3" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Button4" to="." method="_on_Button4_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Button5" to="." method="_on_Button5_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Button6" to="." method="_on_Button6_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="Tracks/TrackSwitch"]
 [editable path="Tracks/TrackSwitch/LeftTrack"]
