@@ -1,52 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Track.gd" type="Script" id=1]
-[ext_resource path="res://Demo/Assets/arrow.png" type="Texture" id=2]
 [ext_resource path="res://Demo/Assets/track.png" type="Texture" id=3]
 [ext_resource path="res://Demo/Assets/crosstie.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/TrackJunction.tscn" type="PackedScene" id=7]
-
-[sub_resource type="VisualShaderNodeTexture" id=2]
-output_port_for_preview = 0
-texture = ExtResource( 2 )
-
-[sub_resource type="VisualShader" id=3]
-code = "shader_type spatial;
-render_mode specular_schlick_ggx, async_visible;
-
-uniform sampler2D tex_frg_2;
-
-
-
-void vertex() {
-// Output:0
-
-}
-
-void fragment() {
-// Texture:2
-	vec4 tex_frg_2_read = texture(tex_frg_2, UV.xy);
-	vec3 n_out2p0 = tex_frg_2_read.rgb;
-	float n_out2p1 = tex_frg_2_read.a;
-
-// Output:0
-	ALBEDO = n_out2p0;
-
-}
-
-void light() {
-// Output:0
-
-}
-"
-graph_offset = Vector2( -223.056, -154.924 )
-nodes/fragment/0/position = Vector2( 280, 40 )
-nodes/fragment/2/node = SubResource( 2 )
-nodes/fragment/2/position = Vector2( -40, -80 )
-nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0 )
-
-[sub_resource type="ShaderMaterial" id=4]
-shader = SubResource( 3 )
 
 [sub_resource type="Curve2D" id=1]
 resource_local_to_scene = true
@@ -74,7 +31,6 @@ mesh = SubResource( 7 )
 transform_2d_array = PoolVector2Array( 1, 0, 0, 1, 5.01034, 0, 1, 0, 0, 1, 15.0017, 0, 1, 0, 0, 1, 24.9891, 0, 1, 0, 0, 1, 35.0054, 0, 1, 0, 0, 1, 45.0315, 0, 1, 0, 0, 1, 55.0127, 0, 1, 0, 0, 1, 65.03, 0, 1, 0, 0, 1, 75.0442, 0, 1, 0, 0, 1, 85.102, 0, 1, 0, 0, 1, 95.143, 0, 1, 0, 0, 1, 105.122, 0, 1, 0, 0, 1, 115.157, 0, 1, 0, 0, 1, 125.15, 0, 1, 0, 0, 1, 135.122, 0, 1, 0, 0, 1, 145.092, 0, 1, 0, 0, 1, 155.153, 0, 1, 0, 0, 1, 165.131, 0, 1, 0, 0, 1, 175.105, 0, 1, 0, 0, 1, 185.131, 0, 1, 0, 0, 1, 195.104, 0, 1, 0, 0, 1, 205.116, 0, 1, 0, 0, 1, 215.125, 0, 1, 0, 0, 1, 225.146, 0, 1, 0, 0, 1, 235.159, 0, 1, 0, 0, 1, 245.163, 0, 1, 0, 0, 1, 255.168, 0 )
 
 [node name="Track" type="Path2D"]
-material = SubResource( 4 )
 curve = SubResource( 1 )
 script = ExtResource( 1 )
 

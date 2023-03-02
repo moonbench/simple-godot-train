@@ -46,6 +46,7 @@ func follow(leader, distance):
 
 # Move by some distance
 func move(distance):
+	if !current_track: return
 	var original_offset = offset
 	offset += distance if direction == Directions.TAILWARD else -distance
 	_change_track_if_end(original_offset, distance)

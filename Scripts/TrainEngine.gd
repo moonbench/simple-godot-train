@@ -20,6 +20,9 @@ var applied_force = 0
 var brake_force = 0
 var velocity = 0
 
+func _ready():
+	_update_frictions()
+
 # Update the friction forces that depend on mass when the towed mass changes
 func change_towed_mass(mass_delta):
 	.change_towed_mass(mass_delta)
