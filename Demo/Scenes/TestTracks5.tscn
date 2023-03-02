@@ -314,7 +314,7 @@ transform_2d_array = PoolVector2Array( 1, 0, 0, 1, 4.99416, 0, 1, 0, 0, 1, 14.98
 [sub_resource type="Curve2D" id=53]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -285.994, 0, 285.994, 0, 1792, 0, 0, 0, 0, 0, 2080, 288, 0, 0, 0, 0, 2080, 672 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -285.994, 0, 285.994, 0, 1792, 0, 0, 0, 0, 0, 2080, 288, 0, 0, 0, 0, 2079.9, 736 )
 }
 
 [sub_resource type="Curve2D" id=54]
@@ -362,7 +362,7 @@ transform_2d_array = PoolVector2Array( 0.998989, 0.044949, -0.044949, 0.998989, 
 [sub_resource type="Curve2D" id=59]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -544, 864, 255.633, 0, -255.633, 0, -1568, 864, 0, 0, 0, 0, -1824, 608, 0, 0, 0, 0, -1824, 256, -254.792, 1.68179, 254.792, -1.68179, -1568, 0, 0, 0, 0, 0, 256, 0 )
+"points": PoolVector2Array( 0, 0, 0, 0, -544, 864, 255.633, 0, -255.633, 0, -1568, 864, 0, 0, 0, 0, -1824, 608, 0, 0, 0, 0, -1824.1, 320, -254.792, 1.68179, 254.792, -1.68179, -1568.1, 64, 0, 0, 0, 0, 255.9, 64 )
 }
 
 [sub_resource type="Curve2D" id=60]
@@ -392,7 +392,7 @@ transform_2d_array = PoolVector2Array( 1, -4.76837e-06, 4.76837e-06, 1, 4.99416,
 [sub_resource type="Curve2D" id=64]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 8, 128, 253.62, -1.33484, -253.62, 1.33484, -248, 384, 320.362, -1.33484, -320.362, 1.33484, -1368, 384, -319.027, 0, 319.027, 0, -1368, 832, 0, 0, 0, 0, -920.1, 832 )
+"points": PoolVector2Array( 0, 0, 0, 0, 7.90039, 64, 0, 0, 0, 0, 8, 128, 253.62, 1.04626, -253.62, -1.04626, -248, 384, 320.362, -1.33484, -320.362, 1.33484, -1368, 384, -319.027, 0, 319.027, 0, -1368, 832, 0, 0, 0, 0, -920.1, 832 )
 }
 
 [node name="TestTracks5" type="Node2D"]
@@ -410,8 +410,8 @@ margin_right = 25552.0
 margin_bottom = 6432.0
 
 [node name="Godot" type="Sprite" parent="TestWorld"]
-position = Vector2( 17920, -960 )
-scale = Vector2( 4.00482, 3.99905 )
+position = Vector2( 16864, 160 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
 
 [node name="Warn" type="Sprite" parent="TestWorld"]
@@ -451,8 +451,8 @@ scale = Vector2( 2.00514, 2.00514 )
 texture = ExtResource( 8 )
 
 [node name="Godot2" type="Sprite" parent="TestWorld"]
-position = Vector2( -672, 1248 )
-scale = Vector2( 5, 5 )
+position = Vector2( -736, 1248 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
 
 [node name="Godot3" type="Sprite" parent="TestWorld"]
@@ -481,9 +481,8 @@ position = Vector2( 17088, -1328 )
 [node name="TrainEngine" parent="." instance=ExtResource( 4 )]
 max_force = 2500
 
-[node name="ChaseCamera" parent="TrainEngine/Body" index="2" instance=ExtResource( 6 )]
+[node name="ChaseCamera" parent="TrainEngine" instance=ExtResource( 6 )]
 position = Vector2( 24, 0 )
-rotation = -1.57081
 current = true
 min_zoom = 6.0
 
@@ -1063,7 +1062,7 @@ focus_mode = 0
 pressed = false
 
 [node name="TrackSwitch11" parent="Tracks" instance=ExtResource( 2 )]
-position = Vector2( 18232.1, -576 )
+position = Vector2( 18232, -512 )
 rotation = 1.57079
 direction = 0
 

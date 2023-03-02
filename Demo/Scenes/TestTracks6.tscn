@@ -484,9 +484,9 @@ position = Vector2( 496, 16 )
 [node name="TrainEngine" parent="." instance=ExtResource( 4 )]
 max_force = 3000
 
-[node name="ChaseCamera" parent="TrainEngine/Body" index="0" instance=ExtResource( 6 )]
+[node name="ChaseCamera" parent="TrainEngine" instance=ExtResource( 6 )]
 position = Vector2( 32, 0 )
-rotation = -1.5708
+rotation = 1.5708
 rotating = true
 current = true
 min_zoom = 6.0
