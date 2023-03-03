@@ -33,11 +33,13 @@ When a train wheel reaches the head or tail of a section of track it emits a `at
 The train engine ([Scenes/TrainEngine.tscn](Scenes/TrainEngine.tscn)) is another train vehicle that applies power to its front wheel to move it. This front wheel pulls the engine's back wheel, which in turn follows the front wheel of the next following car, and so on.
 
 ## The Process
-When the level scene loads, the track junctions use their `area_entered` signal to detect overlapping junctions with other tracks. Tracks are connected by linking the `wheel_at_head` or `wheel_at_tail` of one track segment to the correct `enter_from_head` or `enter_from_tail` of another track (and vice versa.) For switches the `wheel_at_tail` and `enter_from_tail` are replaced with `wheel_at_right` or `wheel_at_left` and `enter_from_right` or `enter_from_left`.
+When the level scene loads, the track junctions use their `area_entered` signal to detect overlapping junctions with other tracks. Tracks are connected by linking the `wheel_at_head` or `wheel_at_tail` of one track segment to the correct `enter_from_head` or `enter_from_tail` of another track (and vice versa.) 
 
-Trains are placed on the track by calling the `add_to_track` method on a train and providing the track as an argument. Train vehicles can be configured to follow each other by calling the `set_follower_car` on each lead vehicle.
+For switches the `wheel_at_tail` and `enter_from_tail` are replaced with `wheel_at_right` or `wheel_at_left` and `enter_from_right` or `enter_from_left`.
 
-When "force" is applied to the train engine (which is built on top of the TrainVehicle parent class) it pushes its front wheel and thus the rest of the train. When the front wheel moves, it calles the `move_as_follower` method on the back wheel, which moves and then calls the `move_as_follower` on the next car's front wheel, and this is repeated for all wheels along the train. This method is responsible for either moving the "follower" to the correct distance behind the leader on the track, or if they are on different tracks (because one is on the other side of a junction) it moves the follower by the same distance the leader moved.
+Trains are placed on the track by calling the `add_to_track()` method on a train and providing the track as an argument. Train vehicles can be configured to follow each other by calling the `set_follower_car()` on each lead vehicle.
+
+When "force" is applied to the train engine (which is built on top of the TrainVehicle parent class) it pushes its front wheel and thus the rest of the train. When the front wheel moves, it calles the `move_as_follower()` method on the back wheel, which moves and then calls the `move_as_follower()` on the next car's front wheel, and this is repeated for all wheels along the train. This method is responsible for either moving the "follower" to the correct distance behind the leader on the track, or if they are on different tracks (because one is on the other side of a junction) it moves the follower by the same distance the leader moved.
 
 ## Parameters
 There are a number of elements you can change to make the trains behave as you want. Specifically:
