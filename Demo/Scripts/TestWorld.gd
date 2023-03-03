@@ -1,6 +1,8 @@
 # A background and simple hud for demo scenes
 extends Node2D
 
+export var allows_camera_control = false
+
 onready var throttle_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer/Throttle
 onready var force_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer2/Force
 onready var brake_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer7/Brake
@@ -10,8 +12,11 @@ onready var friction_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/
 onready var drag_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer6/Drag
 onready var controls_box = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ControlsPanel
 onready var info_box = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox
+onready var camera_control_box = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ControlsPanel/VBoxContainer/CameraInfoControls
+
 
 func _ready():
+	camera_control_box.visible = allows_camera_control
 	$CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/VBoxContainer/ControlsButton.focus_mode = Control.FOCUS_NONE
 	$CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/VBoxContainer/InfoButton.focus_mode = Control.FOCUS_NONE
 
