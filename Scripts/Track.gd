@@ -23,22 +23,22 @@ func link_track(other_track, from_side, to_side):
 # A wheel enters from the head side
 func enter_from_head(wheel: PathFollow2D, extra, is_forward):
 	wheel.set_track(self)
-	wheel.offset = extra
+	wheel.progress = extra
 	wheel.head_to_tail() if is_forward else wheel.tail_to_head()
 
 # A wheel enters from the tail side
 func enter_from_tail(wheel: PathFollow2D, extra, is_forward):
 	wheel.set_track(self)
 	wheel.progress_ratio = 1
-	wheel.offset -= extra
+	wheel.progress -= extra
 	wheel.tail_to_head() if is_forward else wheel.head_to_tail()
 
 # The wheel has reached the head
-func wheel_at_head(wheel, extra, is_forward):
+func on_wheel_at_head(wheel, extra, is_forward):
 	emit_signal("wheel_at_head", wheel, extra, is_forward)
 
 # The wheel has reached the tail
-func wheel_at_tail(wheel, extra, is_forward):
+func on_wheel_at_tail(wheel, extra, is_forward):
 	emit_signal("wheel_at_tail", wheel, extra, is_forward)
 
 func _update_sprites():
@@ -57,8 +57,8 @@ func _update_crossties():
 	
 	for i in range(crosstie_count):
 		var t = Transform2D()
-		var crosstie_position = curve.interpolate_baked((i * crosstie_distance) + crosstie_distance/2)
-		var next_position = curve.interpolate_baked((i + 1) * crosstie_distance)
+		var crosstie_position = curve.sample_baked((i * crosstie_distance) + crosstie_distance/2)
+		var next_position = curve.sample_baked((i + 1) * crosstie_distance)
 		t = t.rotated((next_position - crosstie_position).normalized().angle())
 		t.origin = crosstie_position
 		crossties.set_instance_transform_2d(i, t)

@@ -79,7 +79,7 @@ func _update_sprites():
 		left_track.z_index = 1
 
 func _on_Button_pressed():
-	 switch()
+	switch()
 
 func _on_RightTrack_wheel_at_tail(wheel, extra, is_forward):
 	emit_signal("wheel_at_right", wheel, extra, is_forward)

@@ -4,21 +4,21 @@ extends TrainVehicle
 
 signal train_info
 
-@export var max_force = 1000
-@export var gravity = 9.8
-@export var friction_coefficient = 0.1
-@export var rolling_resistance_coefficient = 0.005
-@export var air_resistance_coefficient = 0.10
-@export var air_density = 1.0
-@export var velocity_multiplier = 1.5
-@export var brake_power = 12
-@export var brake_application_speed = 5
+@export var max_force := 1000.0
+@export var gravity := 9.8
+@export var friction_coefficient := 0.1
+@export var rolling_resistance_coefficient := 0.005
+@export var air_resistance_coefficient := 0.10
+@export var air_density := 1.0
+@export var velocity_multiplier := 1.5
+@export var brake_power := 12.0
+@export var brake_application_speed := 5.0
 
-var friction_force
-var target_force_percent = 0
-var applied_force = 0
-var brake_force = 0
-var velocity = 0
+var friction_force := 0.0
+var target_force_percent := 0.0
+var applied_force := 0.0
+var brake_force := 0.0
+var velocity := 0.0
 
 func _ready():
 	_update_frictions()
@@ -82,6 +82,7 @@ func _move_with_friction(delta):
 
 # Lerp the actual engine force from its current value to the throttle position
 func _updated_applied_force(delta):
+	prints(applied_force, max_force, target_force_percent, delta)
 	applied_force = lerp(applied_force, max_force * target_force_percent, delta)
 	if abs(applied_force) < 0.1: applied_force = 0
 

@@ -23,8 +23,8 @@ func set_track(track: Path2D):
 	track.add_child(self)
 	current_track = track
 	current_track_length = track.curve.get_baked_length()
-	connect("at_track_head", Callable(track, "wheel_at_head"))
-	connect("at_track_tail", Callable(track, "wheel_at_tail"))
+	connect("at_track_head", Callable(track, "on_wheel_at_head"))
+	connect("at_track_tail", Callable(track, "on_wheel_at_tail"))
 
 # Set the direction of "forward travel" along the track to be towards the tail
 func head_to_tail():
@@ -41,16 +41,16 @@ func follow(leader, distance):
 	follow_distance = distance
 	direction = leader.direction
 	set_track(leader.current_track)
-	offset = leader.offset
-	move_as_follower(-distance, leader.offset, leader.direction, leader.current_track, leader.current_track_length)
+	progress = leader.progress
+	move_as_follower(-distance, leader.progress, leader.direction, leader.current_track, leader.current_track_length)
 
 # Move by some distance
 func move(distance):
 	if !current_track: return
-	var original_offset = offset
-	offset += distance if direction == Directions.TAILWARD else -distance
+	var original_offset = progress
+	progress += distance if direction == Directions.TAILWARD else -distance
 	_change_track_if_end(original_offset, distance)
-	emit_signal("moved", distance, offset, direction, current_track, current_track_length)
+	emit_signal("moved", distance, progress, direction, current_track, current_track_length)
 
 # Jump to the predefined follow distance if there's room, or else just move the specified distance
 func move_as_follower(distance, leader_offset, leader_direction, leader_track, leader_track_length):
@@ -69,10 +69,10 @@ func _put_on_leader_track(leader_track, leader_direction):
 
 # Position exactly at predetermined distance from the wheel it's following
 func _set_at_distance_from_leader(distance, leader_offset, leader_direction):
-	var original_offset = offset
-	offset = leader_offset + (-follow_distance if leader_direction == Directions.TAILWARD else follow_distance)
+	var original_offset = progress
+	progress = leader_offset + (-follow_distance if leader_direction == Directions.TAILWARD else follow_distance)
 	_change_track_if_end(original_offset, distance)
-	emit_signal("moved", distance, offset, direction, current_track, current_track_length)
+	emit_signal("moved", distance, progress, direction, current_track, current_track_length)
 
 # Signal that the wheel has reached the end of the segment
 func _change_track_if_end(original_offset, distance_moved):

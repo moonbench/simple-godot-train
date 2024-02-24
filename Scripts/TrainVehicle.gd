@@ -26,7 +26,7 @@ func _process(delta):
 func add_to_track(track: Path2D, offset = 1):
 	front_wheel.set_track(track)
 	back_wheel.set_track(track)
-	front_wheel.offset = offset
+	front_wheel.progress = offset
 	back_wheel.follow(front_wheel, wheel_distance)
 	global_position = front_wheel.global_position
 
