@@ -1,14 +1,14 @@
+@tool
 # A piece of track that TrainWheel nodes follow along
-tool
 class_name Track
 extends Path2D
 
 signal wheel_at_head
 signal wheel_at_tail
 
-export var crosstie_distance = 10
-onready var _crosstie_mesh_instance = $Crosstie
-onready var _crosstie_multimesh = $MultiMeshInstance2D
+@export var crosstie_distance = 10
+@onready var _crosstie_mesh_instance = $Crosstie
+@onready var _crosstie_multimesh = $MultiMeshInstance2D
 
 func _ready():
 	_update_sprites()
@@ -17,8 +17,8 @@ func _ready():
 #
 # This links both tracks to each other, so only call it once per connection
 func link_track(other_track, from_side, to_side):
-	connect("wheel_at_" + from_side, other_track, "enter_from_" + to_side)
-	other_track.connect("wheel_at_" + to_side, self, "enter_from_" + from_side)
+	connect("wheel_at_" + from_side, Callable(other_track, "enter_from_" + to_side))
+	other_track.connect("wheel_at_" + to_side, Callable(self, "enter_from_" + from_side))
 
 # A wheel enters from the head side
 func enter_from_head(wheel: PathFollow2D, extra, is_forward):
@@ -29,7 +29,7 @@ func enter_from_head(wheel: PathFollow2D, extra, is_forward):
 # A wheel enters from the tail side
 func enter_from_tail(wheel: PathFollow2D, extra, is_forward):
 	wheel.set_track(self)
-	wheel.unit_offset = 1
+	wheel.progress_ratio = 1
 	wheel.offset -= extra
 	wheel.tail_to_head() if is_forward else wheel.head_to_tail()
 
@@ -44,8 +44,8 @@ func wheel_at_tail(wheel, extra, is_forward):
 func _update_sprites():
 	$Line2D.points = curve.get_baked_points()
 	_update_crossties()
-	$HeadPoint.unit_offset = 0
-	$TailPoint.unit_offset = 1
+	$HeadPoint.progress_ratio = 0
+	$TailPoint.progress_ratio = 1
 
 func _update_crossties():
 	var crossties = _crosstie_multimesh.multimesh

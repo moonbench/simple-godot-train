@@ -1,9 +1,9 @@
 [gd_resource type="Theme" load_steps=11 format=2]
 
-[ext_resource path="res://Demo/Assets/font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Demo/Assets/DePixelSchmal.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Demo/Assets/font.tres" type="FontFile" id=1]
+[ext_resource path="res://Demo/Assets/DePixelSchmal.ttf" type="FontFile" id=2]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="FontFile" id=1]
 size = 12
 use_mipmaps = true
 font_data = ExtResource( 2 )

@@ -14,7 +14,7 @@ var direction = Directions.TAILWARD
 var follow_distance
 var current_track
 var current_track_length
-onready var sprite = $Sprite
+@onready var sprite = $Sprite2D
 
 # Put the wheel on a track
 func set_track(track: Path2D):
@@ -23,8 +23,8 @@ func set_track(track: Path2D):
 	track.add_child(self)
 	current_track = track
 	current_track_length = track.curve.get_baked_length()
-	connect("at_track_head", track, "wheel_at_head")
-	connect("at_track_tail", track, "wheel_at_tail")
+	connect("at_track_head", Callable(track, "wheel_at_head"))
+	connect("at_track_tail", Callable(track, "wheel_at_tail"))
 
 # Set the direction of "forward travel" along the track to be towards the tail
 func head_to_tail():
@@ -77,13 +77,13 @@ func _set_at_distance_from_leader(distance, leader_offset, leader_direction):
 # Signal that the wheel has reached the end of the segment
 func _change_track_if_end(original_offset, distance_moved):
 	if !current_track: return
-	if unit_offset <= 0:
+	if progress_ratio <= 0:
 		emit_signal("at_track_head", self, abs(original_offset - abs(distance_moved)), distance_moved > 0)
-	elif unit_offset >= 1:
+	elif progress_ratio >= 1:
 		emit_signal("at_track_tail", self, original_offset + abs(distance_moved) - current_track_length, distance_moved > 0)
 
 # Disconnect signals
 func _disconnect_from_track():
 	if current_track:
-		disconnect("at_track_head", current_track, "wheel_at_head")
-		disconnect("at_track_tail", current_track, "wheel_at_tail")
+		disconnect("at_track_head", Callable(current_track, "wheel_at_head"))
+		disconnect("at_track_tail", Callable(current_track, "wheel_at_tail"))

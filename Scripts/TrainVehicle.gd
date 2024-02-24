@@ -4,19 +4,19 @@ extends Node2D
 
 signal towed_mass_changed
 
-export var wheel_distance = 58
-export var follow_distance = 26
-export var mass = 10
+@export var wheel_distance = 58
+@export var follow_distance = 26
+@export var mass = 10
 
 var towed_mass = 0
 var total_mass = mass
 
-onready var front_wheel = $RailFollower
-onready var back_wheel = $RailFollower2
-onready var body = $Body
+@onready var front_wheel = $RailFollower
+@onready var back_wheel = $RailFollower2
+@onready var body = $Body
 
 func _ready():
-	front_wheel.connect("moved", back_wheel, "move_as_follower")
+	front_wheel.connect("moved", Callable(back_wheel, "move_as_follower"))
 
 func _process(delta):
 	global_position = lerp(global_position, front_wheel.global_position, 0.8)
@@ -35,14 +35,14 @@ func set_follower_car(car):
 	car.add_to_track(back_wheel.current_track)
 	car.front_wheel.follow(back_wheel, follow_distance)
 	car.back_wheel.follow(car.front_wheel, car.wheel_distance)
-	back_wheel.connect("moved", car.front_wheel, "move_as_follower")
-	car.connect("towed_mass_changed", self, "change_towed_mass")
+	back_wheel.connect("moved", Callable(car.front_wheel, "move_as_follower"))
+	car.connect("towed_mass_changed", Callable(self, "change_towed_mass"))
 	change_towed_mass(car.total_mass)
 
 # Disconnect this car's signals from its followers
 func remove_follower_car(car):
-	back_wheel.disconnect("moved", car.front_wheel, "move_as_follower")
-	car.disconnect("towed_mass_changed", self, "change_towed_mass")
+	back_wheel.disconnect("moved", Callable(car.front_wheel, "move_as_follower"))
+	car.disconnect("towed_mass_changed", Callable(self, "change_towed_mass"))
 	change_towed_mass(-car.total_mass)
 
 # Share the knowledge of the new total mass

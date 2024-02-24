@@ -1,9 +1,9 @@
 extends Camera2D
 
-export var max_zoom = 0.1
-export var min_zoom = 1.5
-export var zoom_step = 0.25
-export var zoom_speed = 3
+@export var max_zoom = 0.1
+@export var min_zoom = 1.5
+@export var zoom_step = 0.25
+@export var zoom_speed = 3
 
 var desired_zoom = zoom.x
 

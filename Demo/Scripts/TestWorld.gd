@@ -1,18 +1,18 @@
 # A background and simple hud for demo scenes
 extends Node2D
 
-export var allows_camera_control = false
+@export var allows_camera_control = false
 
-onready var throttle_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer/Throttle
-onready var force_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer2/Force
-onready var brake_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer7/Brake
-onready var velocity_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer3/Velocity
-onready var mass_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer4/Mass
-onready var friction_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer5/Friction
-onready var drag_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer6/Drag
-onready var controls_box = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ControlsPanel
-onready var info_box = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox
-onready var camera_control_box = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ControlsPanel/VBoxContainer/CameraInfoControls
+@onready var throttle_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer/Throttle
+@onready var force_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer2/Force
+@onready var brake_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer7/Brake
+@onready var velocity_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer3/Velocity
+@onready var mass_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer4/Mass
+@onready var friction_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer5/Friction
+@onready var drag_label = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox/MarginContainer/VBoxContainer/HBoxContainer6/Drag
+@onready var controls_box = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ControlsPanel
+@onready var info_box = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/InfoBox
+@onready var camera_control_box = $CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ControlsPanel/VBoxContainer/CameraInfoControls
 
 
 func _ready():
@@ -21,7 +21,7 @@ func _ready():
 	$CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/VBoxContainer/InfoButton.focus_mode = Control.FOCUS_NONE
 
 func _on_Button_pressed():
-	get_tree().change_scene_to(load("res://Demo/Scenes/Game.tscn"))
+	get_tree().change_scene_to_packed(load("res://Demo/Scenes/Game.tscn"))
 
 func update_train_info(info):
 	throttle_label.text = "%0.1f%%" % (info["throttle"]*100)
