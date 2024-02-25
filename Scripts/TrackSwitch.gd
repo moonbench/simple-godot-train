@@ -1,7 +1,7 @@
+@tool
 # A node that allows switching between two tracks
 #
 # Vehicles that enter at the head will be placed on the active track
-tool
 class_name TrackSwitch
 extends Node2D
 
@@ -11,10 +11,10 @@ signal wheel_at_right
 
 enum Directions {LEFT, RIGHT}
 
-export var direction = Directions.RIGHT
-onready var left_track = $LeftTrack
-onready var right_track = $RightTrack
-onready var checkbutton = $Button
+@export var direction = Directions.RIGHT
+@onready var left_track = $LeftTrack
+@onready var right_track = $RightTrack
+@onready var checkbutton = $Button
 
 func _ready():
 	_update_checkbutton()
@@ -31,14 +31,14 @@ func switch():
 	_update_checkbutton()
 
 func _update_checkbutton():
-	checkbutton.pressed = true if direction == Directions.RIGHT else Directions.LEFT
+	checkbutton.button_pressed = true if direction == Directions.RIGHT else Directions.LEFT
 
 # Connect the "from_side" of this track to the "to_side" of the other track
 #
 # This links both tracks to each other, so only call it once per connection
 func link_track(other_track, from_side, to_side):
-	connect("wheel_at_" + from_side, other_track, "enter_from_" + to_side)
-	other_track.connect("wheel_at_" + to_side, self, "enter_from_" + from_side)
+	connect("wheel_at_" + from_side, Callable(other_track, "enter_from_" + to_side))
+	other_track.connect("wheel_at_" + to_side, Callable(self, "enter_from_" + from_side))
 
 # Wheel entering from the head
 #
@@ -79,16 +79,16 @@ func _update_sprites():
 		left_track.z_index = 1
 
 func _on_Button_pressed():
-	 switch()
+	switch()
 
 func _on_RightTrack_wheel_at_tail(wheel, extra, is_forward):
-	emit_signal("wheel_at_right", wheel, extra, is_forward)
+	wheel_at_right.emit(wheel, extra, is_forward)
 
 func _on_LeftTrack_wheel_at_tail(wheel, extra, is_forward):
-	emit_signal("wheel_at_left", wheel, extra, is_forward)
+	wheel_at_left.emit(wheel, extra, is_forward)
 
 func _on_RightTrack_wheel_at_head(wheel, extra, is_forward):
-	emit_signal("wheel_at_head", wheel, extra, is_forward)
+	wheel_at_head.emit(wheel, extra, is_forward)
 
 func _on_LeftTrack_wheel_at_head(wheel, extra, is_forward):
-	emit_signal("wheel_at_head", wheel, extra, is_forward)
+	wheel_at_head.emit(wheel, extra, is_forward)

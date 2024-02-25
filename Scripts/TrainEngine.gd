@@ -4,35 +4,37 @@ extends TrainVehicle
 
 signal train_info
 
-export var max_force = 1000
-export var gravity = 9.8
-export var friction_coefficient = 0.1
-export var rolling_resistance_coefficient = 0.005
-export var air_resistance_coefficient = 0.10
-export var air_density = 1.0
-export var velocity_multiplier = 1.5
-export var brake_power = 12
-export var brake_application_speed = 5
+@export var max_force := 1000.0
+@export var gravity := 9.8
+@export var friction_coefficient := 0.1
+@export var rolling_resistance_coefficient := 0.005
+@export var air_resistance_coefficient := 0.10
+@export var air_density := 1.0
+@export var velocity_multiplier := 1.5
+@export var brake_power := 12.0
+@export var brake_application_speed := 5.0
 
-var friction_force
-var target_force_percent = 0
-var applied_force = 0
-var brake_force = 0
-var velocity = 0
+var friction_force := 0.0
+var target_force_percent := 0.0
+var applied_force := 0.0
+var brake_force := 0.0
+var velocity := 0.0
 
 func _ready():
+	super()
 	_update_frictions()
 
 # Update the friction forces that depend on mass when the towed mass changes
 func change_towed_mass(mass_delta):
-	.change_towed_mass(mass_delta)
+	super.change_towed_mass(mass_delta)
 	_update_frictions()
 
 # Emit a signal to update the HUD
 func _process(delta):
+	super(delta)
 	_update_throttle(delta)
 	_update_brake(delta)
-	emit_signal("train_info", {
+	train_info.emit({
 		"throttle": target_force_percent,
 		"force_applied": applied_force,
 		"force_max": max_force,

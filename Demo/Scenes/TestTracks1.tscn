@@ -1,30 +1,32 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://dsdv5sbpxoeue"]
 
-[ext_resource path="res://Scenes/Track.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/TrainEngine.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Demo/Scenes/TestWorld.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Demo/Scripts/TestTracks1.gd" type="Script" id=4]
+[ext_resource type="PackedScene" path="res://Scenes/Track.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://c2qsc24ng38ir" path="res://Scenes/TrainEngine.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bjqtvbefblx2e" path="res://Scenes/TrainVehicle.tscn" id="2_y5rsu"]
+[ext_resource type="PackedScene" uid="uid://cuwbubanwowgv" path="res://Demo/Scenes/TestWorld.tscn" id="3"]
+[ext_resource type="Script" path="res://Demo/Scripts/TestTracks1.gd" id="4"]
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id="1"]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 320, -64, -192.565, 0.840896, 192.565, -0.840896, 544, -64, 0, 0, 0, 0, 736, 128, 0, 0, 0, 0, 736, 160, 192.565, 0, -192.565, 0, 544, 352, 190.883, 0, -190.883, 0, 0, 424, 0, 0, 0, 0, -192, 224, 0, 0, 0, 0, -192, 128, -191.724, 0.840896, 191.724, -0.840896, 0, -64, 0, 0, 0, 0, 320, -64 )
+"points": PackedVector2Array(0, 0, 0, 0, 320, -64, -192.565, 0.840896, 192.565, -0.840896, 544, -64, 0, 0, 0, 0, 736, 128, 0, 0, 0, 0, 736, 160, 192.565, 0, -192.565, 0, 544, 352, 190.883, 0, -190.883, 0, 0, 424, 0, 0, 0, 0, -192, 224, 0, 0, 0, 0, -192, 128, -191.724, 0.840896, 191.724, -0.840896, 0, -64, 0, 0, 0, 0, 320, -64)
 }
+point_count = 10
 
 [node name="TestTracks1" type="Node2D"]
-script = ExtResource( 4 )
+script = ExtResource("4")
+train_vehicle_reference = ExtResource("2_y5rsu")
 
-[node name="TestWorld" parent="." instance=ExtResource( 3 )]
+[node name="TestWorld" parent="." instance=ExtResource("3")]
 
-[node name="TrainEngine" parent="." instance=ExtResource( 2 )]
-scale = Vector2( 0.999998, 1 )
-max_force = 1500
+[node name="TrainEngine" parent="." instance=ExtResource("2")]
+scale = Vector2(0.999998, 1)
 
 [node name="Tracks" type="Node2D" parent="."]
 
-[node name="Track" parent="Tracks" instance=ExtResource( 1 )]
-position = Vector2( 256, 128 )
-curve = SubResource( 1 )
+[node name="Track" parent="Tracks" instance=ExtResource("1")]
+position = Vector2(256, 128)
+curve = SubResource("1")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1

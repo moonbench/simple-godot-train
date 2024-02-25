@@ -1,119 +1,142 @@
-[gd_resource type="Theme" load_steps=11 format=2]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://dhkt4uo1jjcia"]
 
-[ext_resource path="res://Demo/Assets/font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Demo/Assets/DePixelSchmal.ttf" type="DynamicFontData" id=2]
+[ext_resource type="FontFile" path="res://Demo/Assets/font.tres" id="1"]
+[ext_resource type="FontFile" uid="uid://chnn7o53hp1wh" path="res://Demo/Assets/DePixelSchmal.ttf" id="2"]
 
-[sub_resource type="DynamicFont" id=1]
-size = 12
-use_mipmaps = true
-font_data = ExtResource( 2 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("2")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/12/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/12/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/12/0/kerning_overrides/12/0 = Vector2(0, 0)
+cache/0/12/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/14/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/12/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/14/0 = Vector2(0, 0)
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.4, 0.25098, 0, 1 )
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(0.4, 0.25098, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
+border_color = Color(0, 0, 0, 1)
 expand_margin_left = 2.0
-expand_margin_right = 2.0
 expand_margin_top = 2.0
+expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 shadow_size = 1
-shadow_offset = Vector2( 2, 2 )
+shadow_offset = Vector2(2, 2)
 
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.843137, 0.537255, 0.00392157, 1 )
+[sub_resource type="StyleBoxFlat" id="3"]
+bg_color = Color(0.843137, 0.537255, 0.00392157, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
+border_color = Color(0, 0, 0, 1)
 expand_margin_left = 2.0
-expand_margin_right = 2.0
 expand_margin_top = 2.0
+expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 shadow_size = 2
-shadow_offset = Vector2( 2, 2 )
+shadow_offset = Vector2(2, 2)
 
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.635294, 0.239216, 0, 1 )
+[sub_resource type="StyleBoxFlat" id="6"]
+bg_color = Color(0.635294, 0.239216, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
+border_color = Color(0, 0, 0, 1)
 expand_margin_left = 2.0
-expand_margin_right = 2.0
 expand_margin_top = 2.0
+expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 shadow_size = 1
-shadow_offset = Vector2( 2, 2 )
+shadow_offset = Vector2(2, 2)
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.74902, 0.482353, 0.0235294, 1 )
+[sub_resource type="StyleBoxFlat" id="4"]
+bg_color = Color(0.74902, 0.482353, 0.0235294, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
+border_color = Color(0, 0, 0, 1)
 expand_margin_left = 2.0
-expand_margin_right = 2.0
 expand_margin_top = 2.0
+expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 shadow_size = 1
-shadow_offset = Vector2( 2, 2 )
+shadow_offset = Vector2(2, 2)
 
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.74902, 0.482353, 0.0235294, 1 )
+[sub_resource type="StyleBoxFlat" id="5"]
+bg_color = Color(0.74902, 0.482353, 0.0235294, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
+border_color = Color(0, 0, 0, 1)
 expand_margin_left = 2.0
-expand_margin_right = 2.0
 expand_margin_top = 2.0
+expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
-[sub_resource type="StyleBoxEmpty" id=8]
+[sub_resource type="StyleBoxEmpty" id="8"]
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id="7"]
 content_margin_left = 10.0
-content_margin_right = 10.0
 content_margin_top = 10.0
+content_margin_right = 10.0
 content_margin_bottom = 10.0
-bg_color = Color( 0.145098, 0.14902, 0.164706, 0.752941 )
+bg_color = Color(0.145098, 0.14902, 0.164706, 0.752941)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
+border_color = Color(0, 0, 0, 1)
 shadow_size = 2
-shadow_offset = Vector2( 2, 2 )
+shadow_offset = Vector2(2, 2)
 
 [resource]
-Button/colors/font_color = Color( 0, 0, 0, 1 )
-Button/colors/font_color_focus = Color( 0, 0, 0, 1 )
-Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
-Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
-Button/fonts/font = SubResource( 1 )
-Button/styles/disabled = SubResource( 2 )
-Button/styles/focus = SubResource( 3 )
-Button/styles/hover = SubResource( 6 )
-Button/styles/normal = SubResource( 4 )
-Button/styles/pressed = SubResource( 5 )
-CheckButton/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
-CheckButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
-CheckButton/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
-CheckButton/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
-CheckButton/colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
-CheckButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
-CheckButton/styles/disabled = SubResource( 8 )
-CheckButton/styles/focus = SubResource( 8 )
-CheckButton/styles/hover = SubResource( 8 )
-CheckButton/styles/hover_pressed = SubResource( 8 )
-CheckButton/styles/normal = SubResource( 8 )
-CheckButton/styles/pressed = SubResource( 8 )
-Label/fonts/font = ExtResource( 1 )
-PanelContainer/styles/panel = SubResource( 7 )
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_color_focus = Color(0, 0, 0, 1)
+Button/colors/font_color_hover = Color(0, 0, 0, 1)
+Button/colors/font_color_pressed = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 12
+Button/fonts/font = SubResource("1")
+Button/styles/disabled = SubResource("2")
+Button/styles/focus = SubResource("3")
+Button/styles/hover = SubResource("6")
+Button/styles/normal = SubResource("4")
+Button/styles/pressed = SubResource("5")
+CheckButton/colors/font_color = Color(0.88, 0.88, 0.88, 1)
+CheckButton/colors/font_color_disabled = Color(0.9, 0.9, 0.9, 0.2)
+CheckButton/colors/font_color_focus = Color(0.94, 0.94, 0.94, 1)
+CheckButton/colors/font_color_hover = Color(0.94, 0.94, 0.94, 1)
+CheckButton/colors/font_color_hover_pressed = Color(1, 1, 1, 1)
+CheckButton/colors/font_color_pressed = Color(1, 1, 1, 1)
+CheckButton/styles/disabled = SubResource("8")
+CheckButton/styles/focus = SubResource("8")
+CheckButton/styles/hover = SubResource("8")
+CheckButton/styles/hover_pressed = SubResource("8")
+CheckButton/styles/normal = SubResource("8")
+CheckButton/styles/pressed = SubResource("8")
+Label/fonts/font = ExtResource("1")
+PanelContainer/styles/panel = SubResource("7")

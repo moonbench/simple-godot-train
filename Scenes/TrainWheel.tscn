@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://dt488rqstaeu8"]
 
-[ext_resource path="res://Demo/Assets/train_wheels.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/TrainWheel.gd" type="Script" id=2]
+[ext_resource type="Texture2D" uid="uid://dgqkrwdl4wdf5" path="res://Demo/Assets/train_wheels.png" id="1"]
+[ext_resource type="Script" path="res://Scripts/TrainWheel.gd" id="2"]
 
 [node name="TrainWheel" type="PathFollow2D" groups=["train_wheels"]]
 z_index = 5
 loop = false
-script = ExtResource( 2 )
+script = ExtResource("2")
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.57079
-texture = ExtResource( 1 )
+texture = ExtResource("1")
