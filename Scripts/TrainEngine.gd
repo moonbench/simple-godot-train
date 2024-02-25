@@ -31,6 +31,7 @@ func change_towed_mass(mass_delta):
 
 # Emit a signal to update the HUD
 func _process(delta):
+	super(delta)
 	_update_throttle(delta)
 	_update_brake(delta)
 	emit_signal("train_info", {

@@ -1,6 +1,6 @@
 extends Node
 
-@export var car_count = 2
+@export var car_count = 8
 @export var train_vehicle_reference : PackedScene
 
 @onready var engine : TrainEngine = $TrainEngine

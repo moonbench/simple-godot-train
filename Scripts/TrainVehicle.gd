@@ -11,8 +11,8 @@ signal towed_mass_changed
 var towed_mass = 0
 var total_mass = mass
 
-@onready var front_wheel : TrainWheel = $RailFollower
-@onready var back_wheel : TrainWheel = $RailFollower2
+@onready var front_wheel : TrainWheel = $TrainWheel
+@onready var back_wheel : TrainWheel = $TrainWheel2
 @onready var body : Node2D = $Body
 
 func _ready():

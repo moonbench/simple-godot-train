@@ -16,7 +16,5 @@ velocity_multiplier = 1.5
 brake_power = 12.0
 brake_application_speed = 5.0
 
-[node name="RailFollower" parent="." index="0" groups=["train_engine_front_wheels"]]
-
 [node name="TextureRect" parent="Body/Node2D2" index="0"]
 texture = ExtResource("3")
