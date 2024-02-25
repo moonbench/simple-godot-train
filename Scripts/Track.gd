@@ -35,11 +35,11 @@ func enter_from_tail(wheel: PathFollow2D, extra, is_forward):
 
 # The wheel has reached the head
 func on_wheel_at_head(wheel, extra, is_forward):
-	emit_signal("wheel_at_head", wheel, extra, is_forward)
+	wheel_at_head.emit(wheel, extra, is_forward)
 
 # The wheel has reached the tail
 func on_wheel_at_tail(wheel, extra, is_forward):
-	emit_signal("wheel_at_tail", wheel, extra, is_forward)
+	wheel_at_tail.emit(wheel, extra, is_forward)
 
 func _update_sprites():
 	$Line2D.points = curve.get_baked_points()

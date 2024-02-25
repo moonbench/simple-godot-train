@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://delplckh6lx3o"]
 
-[ext_resource path="res://Demo/Scripts/ChaseCamera.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://Demo/Scripts/ChaseCamera.gd" id="1"]
 
 [node name="ChaseCamera" type="Camera2D"]
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
-script = ExtResource( 1 )
+script = ExtResource("1")

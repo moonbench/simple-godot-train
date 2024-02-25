@@ -35,21 +35,21 @@ func set_follower_car(car):
 	car.add_to_track(back_wheel.current_track)
 	car.front_wheel.follow(back_wheel, follow_distance)
 	car.back_wheel.follow(car.front_wheel, car.wheel_distance)
-	back_wheel.connect("moved", Callable(car.front_wheel, "move_as_follower"))
-	car.connect("towed_mass_changed", Callable(self, "change_towed_mass"))
+	back_wheel.moved.connect(car.front_wheel.move_as_follower)
+	car.towed_mass_changed.connect(change_towed_mass)
 	change_towed_mass(car.total_mass)
 
 # Disconnect this car's signals from its followers
 func remove_follower_car(car):
-	back_wheel.disconnect("moved", Callable(car.front_wheel, "move_as_follower"))
-	car.disconnect("towed_mass_changed", Callable(self, "change_towed_mass"))
+	back_wheel.moved.disconnect(car.front_wheel.move_as_follower)
+	car.towed_mass_changed.disconnect(change_towed_mass)
 	change_towed_mass(-car.total_mass)
 
 # Share the knowledge of the new total mass
 func change_towed_mass(mass_delta):
 	towed_mass += mass_delta
 	total_mass = mass + towed_mass
-	emit_signal("towed_mass_changed", mass_delta)
+	towed_mass_changed.emit(mass_delta)
 
 func _on_RailFollower_track_changed():
 	add_to_track(front_wheel.get_parent(), front_wheel.offset)

@@ -1,10 +1,10 @@
 # Runs the demo's main scene
 extends Node
 
-@export var car_count = 6
+@export var car_count := 6
 
 @onready var train_vehicle_reference = load("res://Scenes/TrainVehicle.tscn")
-@onready var engine = $TrainEngine
+@onready var engine := $TrainEngine
 
 func _setup_train():
 	engine.add_to_track($Tracks/Track, 400)

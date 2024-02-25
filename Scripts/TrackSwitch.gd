@@ -82,13 +82,13 @@ func _on_Button_pressed():
 	switch()
 
 func _on_RightTrack_wheel_at_tail(wheel, extra, is_forward):
-	emit_signal("wheel_at_right", wheel, extra, is_forward)
+	wheel_at_right.emit(wheel, extra, is_forward)
 
 func _on_LeftTrack_wheel_at_tail(wheel, extra, is_forward):
-	emit_signal("wheel_at_left", wheel, extra, is_forward)
+	wheel_at_left.emit(wheel, extra, is_forward)
 
 func _on_RightTrack_wheel_at_head(wheel, extra, is_forward):
-	emit_signal("wheel_at_head", wheel, extra, is_forward)
+	wheel_at_head.emit(wheel, extra, is_forward)
 
 func _on_LeftTrack_wheel_at_head(wheel, extra, is_forward):
-	emit_signal("wheel_at_head", wheel, extra, is_forward)
+	wheel_at_head.emit(wheel, extra, is_forward)

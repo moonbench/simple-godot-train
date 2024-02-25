@@ -34,7 +34,7 @@ func _process(delta):
 	super(delta)
 	_update_throttle(delta)
 	_update_brake(delta)
-	emit_signal("train_info", {
+	train_info.emit({
 		"throttle": target_force_percent,
 		"force_applied": applied_force,
 		"force_max": max_force,
