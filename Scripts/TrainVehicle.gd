@@ -11,12 +11,12 @@ signal towed_mass_changed
 var towed_mass = 0
 var total_mass = mass
 
-@onready var front_wheel = $RailFollower
-@onready var back_wheel = $RailFollower2
-@onready var body = $Body
+@onready var front_wheel : TrainWheel = $RailFollower
+@onready var back_wheel : TrainWheel = $RailFollower2
+@onready var body : Node2D = $Body
 
 func _ready():
-	front_wheel.connect("moved", Callable(back_wheel, "move_as_follower"))
+	front_wheel.moved.connect(back_wheel.move_as_follower)
 
 func _process(delta):
 	global_position = lerp(global_position, front_wheel.global_position, 0.8)

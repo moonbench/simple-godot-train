@@ -8,7 +8,7 @@
 [ext_resource type="Theme" uid="uid://dhkt4uo1jjcia" path="res://Demo/Resources/UITheme.tres" id="6"]
 [ext_resource type="FontFile" uid="uid://chnn7o53hp1wh" path="res://Demo/Assets/DePixelSchmal.ttf" id="7"]
 [ext_resource type="Texture2D" uid="uid://cirsea0damm3q" path="res://Demo/Assets/godot.png" id="8"]
-[ext_resource type="PackedScene" path="res://Scenes/TrainEngine.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://c2qsc24ng38ir" path="res://Scenes/TrainEngine.tscn" id="9"]
 
 [sub_resource type="Curve2D" id="1"]
 resource_local_to_scene = true

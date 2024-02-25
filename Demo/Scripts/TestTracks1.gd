@@ -1,12 +1,12 @@
 extends Node
 
-@export var car_count = 8
+@export var car_count = 2
+@export var train_vehicle_reference : PackedScene
 
-@onready var train_vehicle_reference = load("res://Scenes/TrainVehicle.tscn")
-@onready var engine = $TrainEngine
+@onready var engine : TrainEngine = $TrainEngine
 
 func _setup_train():
-	engine.connect("train_info", Callable($TestWorld, "update_train_info"))
+	engine.train_info.connect($TestWorld.update_train_info)
 	engine.add_to_track($Tracks/Track)
 	
 	var last_car = engine

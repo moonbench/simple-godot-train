@@ -50,7 +50,7 @@ func move(distance):
 	var original_offset = progress
 	progress += distance if direction == Directions.TAILWARD else -distance
 	_change_track_if_end(original_offset, distance)
-	emit_signal("moved", distance, progress, direction, current_track, current_track_length)
+	moved.emit(distance, progress, direction, current_track, current_track_length)
 
 # Jump to the predefined follow distance if there's room, or else just move the specified distance
 func move_as_follower(distance, leader_offset, leader_direction, leader_track, leader_track_length):
@@ -85,5 +85,5 @@ func _change_track_if_end(original_offset, distance_moved):
 # Disconnect signals
 func _disconnect_from_track():
 	if current_track:
-		disconnect("at_track_head", Callable(current_track, "wheel_at_head"))
-		disconnect("at_track_tail", Callable(current_track, "wheel_at_tail"))
+		at_track_head.disconnect(current_track.on_wheel_at_head)
+		at_track_tail.disconnect(current_track.on_wheel_at_tail)

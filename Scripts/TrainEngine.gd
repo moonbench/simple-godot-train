@@ -21,6 +21,7 @@ var brake_force := 0.0
 var velocity := 0.0
 
 func _ready():
+	super()
 	_update_frictions()
 
 # Update the friction forces that depend on mass when the towed mass changes
@@ -82,7 +83,6 @@ func _move_with_friction(delta):
 
 # Lerp the actual engine force from its current value to the throttle position
 func _updated_applied_force(delta):
-	prints(applied_force, max_force, target_force_percent, delta)
 	applied_force = lerp(applied_force, max_force * target_force_percent, delta)
 	if abs(applied_force) < 0.1: applied_force = 0
 

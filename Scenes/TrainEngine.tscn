@@ -1,22 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://c2qsc24ng38ir"]
 
-[ext_resource path="res://Scenes/TrainVehicle.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/TrainEngine.gd" type="Script" id=2]
-[ext_resource path="res://Demo/Assets/train_engine.png" type="Texture2D" id=3]
+[ext_resource type="PackedScene" uid="uid://bjqtvbefblx2e" path="res://Scenes/TrainVehicle.tscn" id="1"]
+[ext_resource type="Script" path="res://Scripts/TrainEngine.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cvutg2fumvmco" path="res://Demo/Assets/train_engine.png" id="3"]
 
-[node name="TrainEngine" groups=["train_engines"] instance=ExtResource( 1 )]
-script = ExtResource( 2 )
-max_force = 1000
+[node name="TrainEngine" groups=["train_engines"] instance=ExtResource("1")]
+script = ExtResource("2")
+max_force = 1000.0
 gravity = 9.8
 friction_coefficient = 0.1
 rolling_resistance_coefficient = 0.005
 air_resistance_coefficient = 0.1
 air_density = 1.0
 velocity_multiplier = 1.5
-brake_power = 12
-brake_application_speed = 5
+brake_power = 12.0
+brake_application_speed = 5.0
 
 [node name="RailFollower" parent="." index="0" groups=["train_engine_front_wheels"]]
 
 [node name="TextureRect" parent="Body/Node2D2" index="0"]
-texture = ExtResource( 3 )
+texture = ExtResource("3")
