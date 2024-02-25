@@ -73,21 +73,21 @@ point_count = 2
 [sub_resource type="Curve2D" id="12"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(-248.275, 0, 248.275, 0, 0, 0, 0, 0, 0, 0, 312, 128)
+"points": PackedVector2Array(-248.275, 0, 248.275, 0, 0, 0, 0, 0, 0, 0, 344, 168)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="13"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 312, -312, 0, 0, 0, 0, 312, -448, 0, 0, 0, 0, 184, -576, 0, 0, 0, 0, -264, -576)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 432, -424, 0, 0, 0, 0, 184, -576, 0, 0, 0, 0, -264, -576)
 }
-point_count = 5
+point_count = 4
 
 [sub_resource type="Curve2D" id="16"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 48, 168, 0, 0, 0, 0, 240, 392, 0, 0, 0, 0, 1392, 392, 0, 0, 0, 0, 1456, 328)
+"points": PackedVector2Array(0, 0, 0, 0, 48, 168, 0, 0, 0, 0, 240, 392, 0, 0, 0, 0, 1392, 392, 0, 0, 0, 0, 1488, 368)
 }
 point_count = 4
 
@@ -373,7 +373,7 @@ theme = ExtResource("6")
 theme_override_colors/font_color = Color(0.858824, 0.858824, 0.858824, 1)
 theme_override_fonts/font = SubResource("15")
 theme_override_font_sizes/font_size = 8
-text = "Version 1.1 (Godot 4) -  Moonbench Games 2024"
+text = "Version 0.2 -  Moonbench 2023-2024"
 
 [node name="TrackSwitch2" parent="." instance=ExtResource("5")]
 position = Vector2(-128, 448)
