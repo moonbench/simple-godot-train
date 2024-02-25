@@ -6,7 +6,7 @@ A demo train/railroad implementation that can be used in games built using Godot
 ![Screenshot](https://raw.githubusercontent.com/moonbench/simple-godot-train/master/Demo/Resources/Screenshot.png)
 
 ## Running the demo
-* Open the project in Godot (tested in Godot 3.5)
+* Open the project in Godot (tested in Godot 4.2)
 * Press Play
 
 ## Mechanism Concept
