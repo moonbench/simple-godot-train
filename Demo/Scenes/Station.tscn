@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://5e13vjt40jij"]
 
-[ext_resource path="res://Demo/Assets/station.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://fi6xetsaf3us" path="res://Demo/Assets/station.png" id="1"]
 
 [node name="Station" type="Node2D"]
 
@@ -9,5 +9,5 @@ offset_left = -128.0
 offset_top = -32.0
 offset_right = 128.0
 offset_bottom = 32.0
-pivot_offset = Vector2( 128, 32 )
-texture = ExtResource( 1 )
+pivot_offset = Vector2(128, 32)
+texture = ExtResource("1")

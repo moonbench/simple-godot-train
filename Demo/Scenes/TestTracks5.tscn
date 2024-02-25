@@ -1,14 +1,15 @@
-[gd_scene load_steps=103 format=3 uid="uid://b0qighwfq7mip"]
+[gd_scene load_steps=104 format=3 uid="uid://b0qighwfq7mip"]
 
 [ext_resource type="PackedScene" path="res://Scenes/Track.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://jvakchg2s8i4" path="res://Scenes/TrackSwitch.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bjqtvbefblx2e" path="res://Scenes/TrainVehicle.tscn" id="2_n5moa"]
 [ext_resource type="PackedScene" uid="uid://cuwbubanwowgv" path="res://Demo/Scenes/TestWorld.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://c2qsc24ng38ir" path="res://Scenes/TrainEngine.tscn" id="4"]
 [ext_resource type="Script" path="res://Demo/Scripts/TestTracks5.gd" id="5"]
 [ext_resource type="PackedScene" uid="uid://delplckh6lx3o" path="res://Demo/Scenes/ChaseCamera.tscn" id="6"]
 [ext_resource type="Texture2D" uid="uid://cirsea0damm3q" path="res://Demo/Assets/godot.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://ci1gjepialewv" path="res://Demo/Assets/warn.png" id="8"]
-[ext_resource type="PackedScene" path="res://Demo/Scenes/Station.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://5e13vjt40jij" path="res://Demo/Scenes/Station.tscn" id="9"]
 
 [sub_resource type="Curve2D" id="1"]
 resource_local_to_scene = true
@@ -633,6 +634,7 @@ buffer = PackedFloat32Array(0.999139, -0.0414907, 0, 4.99932, 0.0414907, 0.99913
 
 [node name="TestTracks5" type="Node2D"]
 script = ExtResource("5")
+train_vehicle_reference = ExtResource("2_n5moa")
 
 [node name="TestWorld" parent="." instance=ExtResource("3")]
 allows_camera_control = true
@@ -713,7 +715,6 @@ position = Vector2(17600, -1328)
 position = Vector2(17088, -1328)
 
 [node name="TrainEngine" parent="." instance=ExtResource("4")]
-max_force = 2500
 
 [node name="ChaseCamera" parent="TrainEngine" instance=ExtResource("6")]
 position = Vector2(24, 0)

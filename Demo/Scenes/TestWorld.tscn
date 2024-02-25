@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://rekipk5xspb1" path="res://Demo/Scenes/World.tscn" id="1"]
 [ext_resource type="Theme" uid="uid://dhkt4uo1jjcia" path="res://Demo/Resources/UITheme.tres" id="2"]
 [ext_resource type="Script" path="res://Demo/Scripts/TestWorld.gd" id="3"]
-[ext_resource type="PackedScene" path="res://Demo/Scenes/UIInfoBox.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://oafvawlaifee" path="res://Demo/Scenes/UIInfoBox.tscn" id="4"]
 
 [node name="TestWorld" instance=ExtResource("1")]
 script = ExtResource("3")

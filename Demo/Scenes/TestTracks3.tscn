@@ -109,7 +109,6 @@ train_vehicle_reference = ExtResource("2_cyjw1")
 [node name="TrainEngine" parent="." instance=ExtResource("2")]
 position = Vector2(280.001, 128)
 scale = Vector2(0.999998, 1)
-max_force = 2000
 
 [node name="Tracks" type="Node2D" parent="."]
 

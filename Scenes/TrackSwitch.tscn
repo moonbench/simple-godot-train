@@ -46,8 +46,8 @@ mesh = SubResource("7")
 buffer = PackedFloat32Array(0.998161, -0.0606138, 0, 4.9967, 0.0606138, 0.998161, 0, 0.169335, 0.992718, -0.120463, 0, 14.9649, 0.120463, 0.992718, 0, 0.941528, 0.984056, -0.17786, 0, 24.8746, 0.17786, 0.984056, 0, 2.27126, 0.969438, -0.245335, 0, 34.6825, 0.245335, 0.969438, 0, 4.2115, 0.94476, -0.327764, 0, 44.323, 0.327764, 0.94476, 0, 6.85737, 0.900677, -0.43449, 0, 53.6727, 0.43449, 0.900677, 0, 10.3905, 0.845457, -0.534044, 0, 62.5101, 0.534044, 0.845457, 0, 15.0492, 0.909687, -0.415296, 0, 71.1238, 0.415296, 0.909687, 0, 20.116, 0.949046, -0.315138, 0, 80.3315, 0.315138, 0.949046, 0, 24.0022, 0.971927, -0.235281, 0, 89.8852, 0.235281, 0.971927, 0, 26.9436, 0.985685, -0.168599, 0, 99.6437, 0.168599, 0.985685, 0, 29.1183, 0.993825, -0.110961, 0, 109.523, 0.110961, 0.993825, 0, 30.6579, 0.998585, -0.0531744, 0, 119.475, 0.0531744, 0.998585, 0, 31.6286)
 
 [sub_resource type="Theme" id="10"]
-CheckButton/icons/off = ExtResource("5")
-CheckButton/icons/on = ExtResource("4")
+CheckButton/icons/checked = ExtResource("4")
+CheckButton/icons/unchecked = ExtResource("5")
 CheckButton/styles/normal = null
 
 [node name="TrackSwitch" type="Node2D"]
@@ -120,11 +120,10 @@ texture = ExtResource("3")
 
 [node name="Button" type="CheckButton" parent="."]
 offset_left = -40.0
-offset_top = -104.0
+offset_top = -120.0
 offset_right = 36.0
-offset_bottom = -56.0
+offset_bottom = -72.0
 rotation = 1.5708
-scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(38, 24)
 focus_mode = 0
 theme = SubResource("10")

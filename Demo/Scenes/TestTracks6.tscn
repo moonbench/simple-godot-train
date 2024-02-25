@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://delplckh6lx3o" path="res://Demo/Scenes/ChaseCamera.tscn" id="6"]
 [ext_resource type="Texture2D" uid="uid://cirsea0damm3q" path="res://Demo/Assets/godot.png" id="7"]
 [ext_resource type="PackedScene" uid="uid://jvakchg2s8i4" path="res://Scenes/TrackSwitch.tscn" id="8"]
-[ext_resource type="PackedScene" path="res://Demo/Scenes/Station.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://5e13vjt40jij" path="res://Demo/Scenes/Station.tscn" id="9"]
 
 [sub_resource type="Curve2D" id="135"]
 resource_local_to_scene = true

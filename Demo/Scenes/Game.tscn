@@ -99,6 +99,24 @@ cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/24/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/32/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/32/0 = Vector2(0, 0)
 
 [sub_resource type="FontFile" id="15"]
 fallbacks = Array[Font]([ExtResource("7")])
@@ -108,6 +126,14 @@ cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/8/0 = Vector2(0, 0)
+cache/0/8/0/ascent = 0.0
+cache/0/8/0/descent = 0.0
+cache/0/8/0/underline_position = 0.0
+cache/0/8/0/underline_thickness = 0.0
+cache/0/8/0/scale = 1.0
+cache/0/8/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/8/0/kerning_overrides/8/0 = Vector2(0, 0)
 
 [sub_resource type="Curve2D" id="17"]
 resource_local_to_scene = true
@@ -120,7 +146,6 @@ point_count = 4
 script = ExtResource("4")
 
 [node name="World" parent="." instance=ExtResource("2")]
-position = Vector2(-64, -24)
 
 [node name="Godot" type="Sprite2D" parent="World"]
 position = Vector2(224, 416)
@@ -251,16 +276,19 @@ scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 4.0
+offset_left = 24.0
 offset_top = 60.0
-offset_right = 260.0
+offset_right = 280.0
 offset_bottom = 79.0
 theme = ExtResource("6")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1")
 text = "Select a Track"
+horizontal_alignment = 1
 
 [node name="Line2D" type="Line2D" parent="CanvasLayer"]
-position = Vector2(67.072, 43.6001)
+position = Vector2(87.072, 43.6001)
 scale = Vector2(1.088, 0.399999)
 points = PackedVector2Array(176, 96, -64, 96)
 width = 5.0
@@ -268,9 +296,9 @@ width = 5.0
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -8.0
+offset_left = 12.0
 offset_top = 32.0
-offset_right = 32.0
+offset_right = 52.0
 offset_bottom = 72.0
 theme = ExtResource("6")
 
@@ -323,24 +351,29 @@ offset_bottom = 128.0
 text = "Track 6"
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
-offset_left = -8.0
+offset_left = 12.0
 offset_top = 20.0
-offset_right = 270.0
-offset_bottom = 48.0
+offset_right = 329.0
+offset_bottom = 58.0
 scale = Vector2(0.962034, 0.962034)
 pivot_offset = Vector2(139, 14)
 theme = ExtResource("6")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = SubResource("14")
+theme_override_font_sizes/font_size = 32
 text = "2D Train Sim Demo"
 
 [node name="Label3" type="Label" parent="CanvasLayer"]
-offset_top = 284.0
-offset_right = 511.0
-offset_bottom = 302.0
+offset_left = 4.0
+offset_top = 308.0
+offset_right = 515.0
+offset_bottom = 326.0
 theme = ExtResource("6")
-theme_override_colors/font_color = Color(0.670588, 0.670588, 0.670588, 1)
+theme_override_colors/font_color = Color(0.858824, 0.858824, 0.858824, 1)
 theme_override_fonts/font = SubResource("15")
-text = "Moonbench Games 2023"
+theme_override_font_sizes/font_size = 8
+text = "Version 1.1 (Godot 4) -  Moonbench Games 2024"
 
 [node name="TrackSwitch2" parent="." instance=ExtResource("5")]
 position = Vector2(-128, 448)
@@ -362,7 +395,7 @@ one_shot = true
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(512, 304)
+position = Vector2(576, 328)
 
 [connection signal="pressed" from="CanvasLayer/Control/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Button2" to="." method="_on_Button2_pressed"]
