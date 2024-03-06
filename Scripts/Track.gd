@@ -19,7 +19,7 @@ func _process(_delta):
 	if Engine.is_editor_hint():
 		# Update the sprites in the editor only if the curve has changed
 		var latest_curve_points := curve.get_baked_points()
-		if not are_packed_vector2_arrays_equal(latest_curve_points, curve_points):
+		if latest_curve_points != curve_points:
 			curve_points = latest_curve_points
 			_update_sprites()
 
@@ -72,12 +72,3 @@ func _update_crossties():
 		t = t.rotated((next_position - crosstie_position).normalized().angle())
 		t.origin = crosstie_position
 		crossties.set_instance_transform_2d(i, t)
-
-# Compares two PackedVector2Array instances for equality
-func are_packed_vector2_arrays_equal(array1: PackedVector2Array, array2: PackedVector2Array) -> bool:
-	if array1.size() != array2.size():
-		return false
-	for i in range(array1.size()):
-		if array1[i] != array2[i]:
-			return false
-	return true
