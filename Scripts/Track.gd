@@ -9,9 +9,19 @@ signal wheel_at_tail
 @export var crosstie_distance = 10
 @onready var _crosstie_mesh_instance = $Crosstie
 @onready var _crosstie_multimesh = $MultiMeshInstance2D
+@onready var curve_points = []
 
 func _ready():
+	curve_points = curve.get_baked_points()
 	_update_sprites()
+
+func _process(_delta):
+	if Engine.is_editor_hint():
+		# Update the sprites in the editor only if the curve has changed
+		var latest_curve_points := curve.get_baked_points()
+		if latest_curve_points != curve_points:
+			curve_points = latest_curve_points
+			_update_sprites()
 
 # Connect the "from_side" of this track to the "to_side" of the other track
 #
@@ -42,7 +52,7 @@ func on_wheel_at_tail(wheel, extra, is_forward):
 	wheel_at_tail.emit(wheel, extra, is_forward)
 
 func _update_sprites():
-	$Line2D.points = curve.get_baked_points()
+	$Line2D.points = curve_points
 	_update_crossties()
 	$HeadPoint.progress_ratio = 0
 	$TailPoint.progress_ratio = 1
@@ -57,7 +67,7 @@ func _update_crossties():
 	
 	for i in range(crosstie_count):
 		var t = Transform2D()
-		var crosstie_position = curve.sample_baked((i * crosstie_distance) + crosstie_distance/2)
+		var crosstie_position = curve.sample_baked((i * crosstie_distance) + crosstie_distance / 2.0)
 		var next_position = curve.sample_baked((i + 1) * crosstie_distance)
 		t = t.rotated((next_position - crosstie_position).normalized().angle())
 		t.origin = crosstie_position
