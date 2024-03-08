@@ -17,7 +17,7 @@ Visually, the rails of the track are applied as a texture on a Line2D node that 
 
 The tracks have TrackJunction ([Scenes/TrackJunction.tscn](Scenes/TrackJunction.tscn)) instances at their head and tail ends. These junctions are small Area2D nodes that detect the overlap with other junctions. These allow track pieces to automatically connect to each other.
 
-Tracks are marked as `tool` in their scripts, so they can render the rail and crosstie sprites along the path in the editor. However, this only happens once when the scene is loaded in the editor, so to see any changes you have to close and re-open the scene. (I'd like to fix this but am not sure how to have the path emit any sort of signal when it is changed.)
+Tracks are marked as `tool` in their scripts, so they can render the rail and crosstie sprites along the path in the editor, in addition to rendering in games.
 
 ### Track Switches
 Switches ([Scenes/TrackSwitch.tscn](Scenes/TrackSwitch.tscn)) are a wrapper around two tracks, with the logic to change which of the two tracks has a wheel added to it when the switch recieves an `enter_from_head` signal.
