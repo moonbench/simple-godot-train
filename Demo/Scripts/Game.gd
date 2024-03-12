@@ -36,3 +36,10 @@ func _on_Button5_pressed():
 
 func _on_Button6_pressed():
 	get_tree().change_scene_to_packed(load("res://Demo/Scenes/TestTracks6.tscn"))
+
+func _on_version_pressed() -> void:
+	OS.shell_open("https://github.com/moonbench/simple-godot-train") 
+
+func _on_exit_button_pressed() -> void:
+	get_tree().get_root().propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
+	get_tree().quit.call_deferred()

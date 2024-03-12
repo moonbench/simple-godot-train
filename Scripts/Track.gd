@@ -3,29 +3,22 @@
 class_name Track
 extends Path2D
 
+signal points_changed
 signal bogie_at_head(bogie: Bogie, extra: float, is_forward: bool)
 signal bogie_at_tail(bogie: Bogie, extra: float, is_forward: bool)
 
-@export var crosstie_distance := 10.0
-
-@onready var line : Line2D = $Line2D
 @onready var head_point : PathFollow2D = $HeadPoint
 @onready var tail_point : PathFollow2D = $TailPoint
-@onready var _crosstie_mesh_instance : MeshInstance2D = $Crosstie
-@onready var _crosstie_multimesh : MultiMeshInstance2D = $MultiMeshInstance2D
 @onready var curve_points : PackedVector2Array = []
 
 func _ready() -> void:
-	curve_points = curve.get_baked_points()
-	_update_sprites()
+	_update_points()
 	set_process(Engine.is_editor_hint())
 
-func _process(_delta) -> void:
+func _process(_delta: float) -> void:
 	# Update the sprites in the editor only if the curve has changed
-	var latest_curve_points := curve.get_baked_points()
-	if latest_curve_points != curve_points:
-		curve_points = latest_curve_points
-		_update_sprites()
+	if curve.get_baked_points() != curve_points:
+		_update_points()
 
 # Connect the "from_side" of this track to the "to_side" of the other track
 #
@@ -55,24 +48,11 @@ func on_bogie_at_head(bogie: Bogie, extra: float, is_forward: bool) -> void:
 func on_bogie_at_tail(bogie: Bogie, extra: float, is_forward: bool) -> void:
 	bogie_at_tail.emit(bogie, extra, is_forward)
 
-func _update_sprites() -> void:
-	line.points = curve_points
-	_update_crossties()
+func _update_points():
+	curve_points = curve.get_baked_points()
+	_update_head_and_tail()
+	points_changed.emit()
+
+func _update_head_and_tail():
 	head_point.progress_ratio = 0.0
 	tail_point.progress_ratio = 1.0
-
-func _update_crossties() -> void:
-	var crossties = _crosstie_multimesh.multimesh
-	crossties.mesh = _crosstie_mesh_instance.mesh
-	
-	var curve_length = curve.get_baked_length()
-	var crosstie_count = round(curve_length / crosstie_distance)
-	crossties.instance_count = crosstie_count
-	
-	for i in range(crosstie_count):
-		var t = Transform2D()
-		var crosstie_position = curve.sample_baked((i * crosstie_distance) + crosstie_distance / 2.0)
-		var next_position = curve.sample_baked((i + 1) * crosstie_distance)
-		t = t.rotated((next_position - crosstie_position).normalized().angle())
-		t.origin = crosstie_position
-		crossties.set_instance_transform_2d(i, t)

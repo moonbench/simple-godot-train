@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbowhq83f53iy"]
+
+[ext_resource type="Texture2D" uid="uid://bd6aqim053fjy" path="res://Demo/Assets/track.png" id="1_03mqx"]
+[ext_resource type="Script" path="res://Scripts/components/track_visual_component.gd" id="2_4y0qp"]
+[ext_resource type="Texture2D" uid="uid://cjpxukf4376xo" path="res://Demo/Assets/crosstie.png" id="3_adcjx"]
+
+[sub_resource type="ArrayMesh" id="7"]
+_surfaces = [{
+"aabb": AABB(-1.5, -12.5, 0, 3.00001, 25, 0),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0),
+"format": 34360004625,
+"index_count": 6,
+"index_data": PackedByteArray(3, 0, 0, 0, 1, 0, 1, 0, 2, 0, 3, 0),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 192, 63, 0, 0, 72, 65, 114, 0, 0, 0, 0, 0, 192, 191, 0, 0, 72, 65, 120, 0, 0, 0, 0, 0, 192, 191, 0, 0, 72, 193, 111, 0, 0, 0, 0, 0, 192, 63, 0, 0, 72, 193, 116, 0, 0, 0)
+}]
+
+[sub_resource type="MultiMesh" id="6"]
+resource_local_to_scene = true
+instance_count = 15
+mesh = SubResource("7")
+buffer = PackedFloat32Array(1, 0, 0, 6.5, 0, 1, 0, 0, 1, 0, 0, 19.5, 0, 1, 0, 0, 1, 0, 0, 32.5, 0, 1, 0, 0, 1, 0, 0, 45.5, 0, 1, 0, 0, 1, 0, 0, 58.5, 0, 1, 0, 0, 1, 0, 0, 71.5, 0, 1, 0, 0, 1, 0, 0, 84.5, 0, 1, 0, 0, 1, 0, 0, 97.5, 0, 1, 0, 0, 1, 0, 0, 110.5, 0, 1, 0, 0, 1, 0, 0, 123.5, 0, 1, 0, 0, 1, 0, 0, 136.5, 0, 1, 0, 0, 1, 0, 0, 149.5, 0, 1, 0, 0, 1, 0, 0, 162.5, 0, 1, 0, 0, 1, 0, 0, 175.5, 0, 1, 0, 0, 1, 0, 0, 188.5, 0, 1, 0, 0)
+
+[node name="TrackVisualComponent" type="Line2D"]
+z_index = 2
+points = PackedVector2Array(0, 0, 2.15625, 0, 4.74609, 0, 8.25, 0, 12.5977, 0, 15.0659, 0, 17.7188, 0, 20.5474, 0, 23.543, 0, 26.6968, 0, 30, 0, 33.4438, 0, 37.0195, 0, 40.7183, 0, 44.5312, 0, 48.4497, 0, 52.4648, 0, 56.5679, 0, 60.75, 0, 65.0024, 0, 69.3164, 0, 73.6831, 0, 78.0938, 0, 82.5396, 0, 87.0117, 0, 91.5015, 0, 96, 0, 100.499, 0, 104.988, 0, 109.46, 0, 113.906, 0, 118.317, 0, 122.684, 0, 126.998, 0, 131.25, 0, 135.432, 0, 139.535, 0, 143.55, 0, 147.469, 0, 151.282, 0, 154.98, 0, 158.556, 0, 162, 0, 165.303, 0, 168.457, 0, 171.453, 0, 174.281, 0, 176.934, 0, 179.402, 0, 183.75, 0, 187.254, 0, 189.844, 0, 192, 0)
+width = 20.0
+texture = ExtResource("1_03mqx")
+texture_mode = 1
+script = ExtResource("2_4y0qp")
+metadata/_edit_lock_ = true
+
+[node name="Crosstie" type="MeshInstance2D" parent="."]
+visible = false
+show_behind_parent = true
+mesh = SubResource("7")
+texture = ExtResource("3_adcjx")
+
+[node name="MultiMeshInstance2D" type="MultiMeshInstance2D" parent="."]
+show_behind_parent = true
+multimesh = SubResource("6")
+texture = ExtResource("3_adcjx")
