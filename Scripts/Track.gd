@@ -11,11 +11,11 @@ signal bogie_at_tail(bogie: Bogie, extra: float, is_forward: bool)
 @onready var _crosstie_multimesh = $MultiMeshInstance2D
 @onready var curve_points = []
 
-func _ready():
+func _ready() -> void:
 	curve_points = curve.get_baked_points()
 	_update_sprites()
 
-func _process(_delta):
+func _process(_delta) -> void:
 	if Engine.is_editor_hint():
 		# Update the sprites in the editor only if the curve has changed
 		var latest_curve_points := curve.get_baked_points()
@@ -26,38 +26,38 @@ func _process(_delta):
 # Connect the "from_side" of this track to the "to_side" of the other track
 #
 # This links both tracks to each other, so only call it once per connection
-func link_track(other_track, from_side, to_side):
+func link_track(other_track, from_side: String, to_side: String) -> void:
 	connect("bogie_at_" + from_side, Callable(other_track, "enter_from_" + to_side))
 	other_track.connect("bogie_at_" + to_side, Callable(self, "enter_from_" + from_side))
 
 # A bogie enters from the head side
-func enter_from_head(bogie: Bogie, extra, is_forward):
+func enter_from_head(bogie: Bogie, extra: float, is_forward: bool) -> void:
 	bogie.set_track(self)
 	bogie.progress = extra
 	bogie.head_to_tail() if is_forward else bogie.tail_to_head()
 
 # A bogie enters from the tail side
-func enter_from_tail(bogie: Bogie, extra, is_forward):
+func enter_from_tail(bogie: Bogie, extra: float, is_forward: bool) -> void:
 	bogie.set_track(self)
 	bogie.progress_ratio = 1
 	bogie.progress -= extra
 	bogie.tail_to_head() if is_forward else bogie.head_to_tail()
 
 # The bogie has reached the head
-func on_bogie_at_head(bogie: Bogie, extra: float, is_forward: bool):
+func on_bogie_at_head(bogie: Bogie, extra: float, is_forward: bool) -> void:
 	bogie_at_head.emit(bogie, extra, is_forward)
 
 # The bogie has reached the tail
-func on_bogie_at_tail(bogie: Bogie, extra: float, is_forward: bool):
+func on_bogie_at_tail(bogie: Bogie, extra: float, is_forward: bool) -> void:
 	bogie_at_tail.emit(bogie, extra, is_forward)
 
-func _update_sprites():
+func _update_sprites() -> void:
 	$Line2D.points = curve_points
 	_update_crossties()
 	$HeadPoint.progress_ratio = 0
 	$TailPoint.progress_ratio = 1
 
-func _update_crossties():
+func _update_crossties() -> void:
 	var crossties = _crosstie_multimesh.multimesh
 	crossties.mesh = _crosstie_mesh_instance.mesh
 	

@@ -14,13 +14,12 @@ var direction : Directions = Directions.TAILWARD
 var follow_distance : float
 var current_track : Track
 var current_track_length : float
-@onready var sprite := $Sprite2D
+@onready var sprite : Sprite2D = $Sprite2D
 
 # Put the bogie on a track
 func set_track(track: Path2D) -> void:
 	_disconnect_from_track()
-	get_parent().remove_child(self)
-	track.add_child(self)
+	reparent(track, false)
 	current_track = track
 	current_track_length = track.curve.get_baked_length()
 	at_track_head.connect(track.on_bogie_at_head)
@@ -77,9 +76,9 @@ func _set_at_distance_from_leader(distance, leader_offset, leader_direction) -> 
 # Signal that the bogie has reached the end of the segment
 func _change_track_if_end(original_offset, distance_moved) -> void:
 	if !current_track: return
-	if progress_ratio <= 0:
+	if progress_ratio <= 0.0:
 		at_track_head.emit(self, abs(original_offset - abs(distance_moved)), distance_moved > 0)
-	elif progress_ratio >= 1:
+	elif progress_ratio >= 1.0:
 		at_track_tail.emit(self, original_offset + abs(distance_moved) - current_track_length, distance_moved > 0)
 
 # Disconnect signals
