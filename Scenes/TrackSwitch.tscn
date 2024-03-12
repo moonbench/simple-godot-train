@@ -48,13 +48,13 @@ buffer = PackedFloat32Array(0.998161, -0.0606138, 0, 4.9967, 0.0606138, 0.998161
 [sub_resource type="Theme" id="10"]
 CheckButton/icons/checked = ExtResource("4")
 CheckButton/icons/unchecked = ExtResource("5")
-CheckButton/styles/normal = null
 
 [node name="TrackSwitch" type="Node2D"]
 script = ExtResource("1")
 
 [node name="LeftTrack" parent="." instance=ExtResource("2")]
 curve = SubResource("3")
+crosstie_distance = 10.0
 
 [node name="MultiMeshInstance2D" parent="LeftTrack" index="1"]
 multimesh = SubResource("8")
@@ -90,6 +90,7 @@ texture = ExtResource("3")
 [node name="RightTrack" parent="." instance=ExtResource("2")]
 z_index = 1
 curve = SubResource("4")
+crosstie_distance = 10.0
 
 [node name="MultiMeshInstance2D" parent="RightTrack" index="1"]
 multimesh = SubResource("9")
@@ -123,12 +124,13 @@ progress = 66.7674
 texture = ExtResource("3")
 
 [node name="Button" type="CheckButton" parent="."]
-offset_left = -40.0
-offset_top = -120.0
-offset_right = 36.0
-offset_bottom = -72.0
+custom_minimum_size = Vector2(0, 92)
+offset_left = -64.0
+offset_top = -80.0
+offset_right = 12.0
+offset_bottom = 12.0
 rotation = 1.5708
-pivot_offset = Vector2(38, 24)
+pivot_offset = Vector2(64, 46)
 focus_mode = 0
 theme = SubResource("10")
 button_pressed = true
@@ -139,7 +141,7 @@ shortcut_in_tooltip = false
 [connection signal="bogie_at_tail" from="LeftTrack" to="." method="_on_left_track_bogie_at_tail"]
 [connection signal="bogie_at_head" from="RightTrack" to="." method="_on_right_track_bogie_at_head"]
 [connection signal="bogie_at_tail" from="RightTrack" to="." method="_on_right_track_bogie_at_tail"]
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button" to="." method="switch"]
 
 [editable path="LeftTrack"]
 [editable path="RightTrack"]

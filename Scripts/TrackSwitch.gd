@@ -10,28 +10,22 @@ signal bogie_at_left(bogie: Bogie, extra: float, is_forward: bool)
 signal bogie_at_right(bogie: Bogie, extra: float, is_forward: bool)
 
 enum Directions {LEFT, RIGHT}
-@export var direction : Directions = Directions.RIGHT
+@export var direction : Directions = Directions.RIGHT : set = set_direction
 
 @onready var left_track : Track = $LeftTrack
 @onready var right_track : Track = $RightTrack
 @onready var checkbutton : Button = $Button
 
 func _ready() -> void:
-	_update_checkbutton()
-	_update_sprites()
-	checkbutton.focus_mode = Control.FOCUS_NONE
+	set_direction.call_deferred(direction)
 
 # Change the direction of the switch
 func switch() -> void:
 	if _has_bogies_on():
-		_update_checkbutton()
-		return
-	direction = Directions.LEFT if direction == Directions.RIGHT else Directions.RIGHT
-	_update_sprites()
-	_update_checkbutton()
-
-func _update_checkbutton() -> void:
-	checkbutton.button_pressed = true if direction == Directions.RIGHT else false
+		# Keep the same direction, but make sure the visuls are in sync
+		set_direction(direction)
+	else:
+		set_direction(Directions.LEFT if direction == Directions.RIGHT else Directions.RIGHT)
 
 # Connect the "from_side" of this track to the "to_side" of the other track
 #
@@ -67,22 +61,35 @@ func _has_bogies_on() -> bool:
 			return true
 	return false
 
+# Handle everything involved with changing the track
+func set_direction(new_direction: Directions):
+	direction = new_direction
+	
+	_update_sprites()
+	_update_checkbutton()
+
 # Update z-index and sprite visibility for current direction
 func _update_sprites() -> void:
-	left_track.get_node("Pointer").hide()
-	right_track.get_node("Pointer").hide()
-	left_track.z_index = 0
-	right_track.z_index = 0
+	if !left_track || !right_track:
+		return
 	
-	if direction == Directions.RIGHT:
-		right_track.get_node("Pointer").show()
-		right_track.z_index = 1
-	else:
-		left_track.get_node("Pointer").show()
-		left_track.z_index = 1
+	match direction:
+		Directions.RIGHT:
+			left_track.get_node("Pointer").hide()
+			right_track.get_node("Pointer").show()
+			left_track.z_index = 0
+			right_track.z_index = 1
+		Directions.LEFT:
+			left_track.get_node("Pointer").show()
+			right_track.get_node("Pointer").hide()
+			left_track.z_index = 1
+			right_track.z_index = 0
 
-func _on_Button_pressed() -> void:
-	switch()
+func _update_checkbutton() -> void:
+	if !checkbutton:
+		return
+	
+	checkbutton.button_pressed = (direction == Directions.RIGHT)
 
 func _on_right_track_bogie_at_head(bogie: Bogie, extra: float, is_forward: bool) -> void:
 	bogie_at_head.emit(bogie, extra, is_forward)
