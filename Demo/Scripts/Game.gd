@@ -6,6 +6,9 @@ extends Node
 @onready var train_vehicle_reference = load("res://Scenes/TrainVehicle.tscn")
 @onready var engine := $TrainEngine
 
+func _ready() -> void:
+	_setup_train.call_deferred()
+
 func _setup_train():
 	engine.add_to_track($Tracks/Track, 400)
 	
@@ -15,9 +18,6 @@ func _setup_train():
 		add_child(car)
 		last_car.set_follower_car(car)
 		last_car = car
-
-func _on_Timer_timeout():
-	_setup_train()
 
 func _on_Button_pressed():
 	get_tree().change_scene_to_packed(load("res://Demo/Scenes/TestTracks1.tscn"))

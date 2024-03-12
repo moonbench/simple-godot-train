@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ch0nptrh6l6ab"]
+[gd_scene load_steps=22 format=3 uid="uid://ch0nptrh6l6ab"]
 
 [ext_resource type="FontFile" path="res://Demo/Assets/font.tres" id="1"]
 [ext_resource type="PackedScene" uid="uid://rekipk5xspb1" path="res://Demo/Scenes/World.tscn" id="2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://jvakchg2s8i4" path="res://Scenes/TrackSwitch.tscn" id="5"]
 [ext_resource type="Theme" uid="uid://dhkt4uo1jjcia" path="res://Demo/Resources/UITheme.tres" id="6"]
 [ext_resource type="FontFile" uid="uid://chnn7o53hp1wh" path="res://Demo/Assets/DePixelSchmal.ttf" id="7"]
+[ext_resource type="PackedScene" uid="uid://dk4kss5yu35xs" path="res://Scenes/components/player_control_component.tscn" id="7_3fkc2"]
 [ext_resource type="Texture2D" uid="uid://cirsea0damm3q" path="res://Demo/Assets/godot.png" id="8"]
 [ext_resource type="PackedScene" uid="uid://c2qsc24ng38ir" path="res://Scenes/TrainEngine.tscn" id="9"]
 
@@ -66,6 +67,13 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="Curve2D" id="17"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 144, 0, 0, 0, 0, 128, -336, 0, 0, 0, 0, 320, -408, 0, 0, 0, 0, 704, -400)
+}
+point_count = 4
+
 [sub_resource type="FontFile" id="14"]
 fallbacks = Array[Font]([ExtResource("7")])
 cache/0/16/0/ascent = 0.0
@@ -109,13 +117,6 @@ cache/0/8/0/underline_thickness = 0.0
 cache/0/8/0/scale = 1.0
 cache/0/8/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/8/0/kerning_overrides/8/0 = Vector2(0, 0)
-
-[sub_resource type="Curve2D" id="17"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 144, 0, 0, 0, 0, 128, -336, 0, 0, 0, 0, 320, -408, 0, 0, 0, 0, 704, -400)
-}
-point_count = 4
 
 [node name="Game" type="Node2D"]
 script = ExtResource("4")
@@ -239,6 +240,22 @@ curve = SubResource("13")
 position = Vector2(-304, 312)
 curve = SubResource("16")
 
+[node name="TrackSwitch3" parent="Tracks" instance=ExtResource("5")]
+position = Vector2(-128, 448)
+rotation = -3.14159
+
+[node name="TrackSwitch4" parent="Tracks" instance=ExtResource("5")]
+position = Vector2(448, -128)
+
+[node name="Track7" parent="Tracks" instance=ExtResource("3")]
+position = Vector2(-256, 272)
+curve = SubResource("17")
+
+[node name="TrainEngine" parent="." instance=ExtResource("9")]
+position = Vector2(-152, 504)
+
+[node name="PlayerControlComponent" parent="TrainEngine" instance=ExtResource("7_3fkc2")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
@@ -351,25 +368,6 @@ theme_override_fonts/font = SubResource("15")
 theme_override_font_sizes/font_size = 8
 text = "Version 0.2.1"
 
-[node name="TrackSwitch2" parent="." instance=ExtResource("5")]
-position = Vector2(-128, 448)
-rotation = -3.14159
-
-[node name="TrackSwitch" parent="." instance=ExtResource("5")]
-position = Vector2(448, -128)
-
-[node name="Track" parent="." instance=ExtResource("3")]
-position = Vector2(-256, 272)
-curve = SubResource("17")
-
-[node name="TrainEngine" parent="." instance=ExtResource("9")]
-position = Vector2(-152, 504)
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
-one_shot = true
-autostart = true
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 328)
 
@@ -381,7 +379,6 @@ position = Vector2(576, 328)
 [connection signal="pressed" from="CanvasLayer/Control/Button6" to="." method="_on_Button6_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Version" to="." method="_on_version_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="Tracks/TrackSwitch"]
 [editable path="Tracks/TrackSwitch/LeftTrack"]

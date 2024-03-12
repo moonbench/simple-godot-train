@@ -16,5 +16,5 @@ func _setup_train():
 		last_car.set_follower_car(car)
 		last_car = car
 
-func _on_Timer_timeout():
+func _on_timer_timeout() -> void:
 	_setup_train()

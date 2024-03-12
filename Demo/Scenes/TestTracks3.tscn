@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bu4aw1ixjxyao"]
+[gd_scene load_steps=16 format=3 uid="uid://bu4aw1ixjxyao"]
 
 [ext_resource type="PackedScene" uid="uid://isd3o7ji1m5j" path="res://Scenes/Track.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://c2qsc24ng38ir" path="res://Scenes/TrainEngine.tscn" id="2"]
@@ -6,11 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://jvakchg2s8i4" path="res://Scenes/TrackSwitch.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://cuwbubanwowgv" path="res://Demo/Scenes/TestWorld.tscn" id="4"]
 [ext_resource type="Script" path="res://Demo/Scripts/TestTracks3.gd" id="5"]
+[ext_resource type="PackedScene" uid="uid://dk4kss5yu35xs" path="res://Scenes/components/player_control_component.tscn" id="7_npgun"]
 
 [sub_resource type="Curve2D" id="8"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 256, 0, -192.768, 0, 192.768, 0, 576, 0, 0, 0, 0, 0, 768, 192, 0, 0, 0, 0, 768, 256, 190.248, 0.629961, -190.248, -0.629961, 576, 448, 0, 0, 0, 0, 384, 448)
+"points": PackedVector2Array(0, 0, 0, 0, 256, 0, -192.768, 0, 192.768, 0, 704, 0, 0, 0, 0, 0, 896, 192, 0, 0, 0, 0, 896, 256, 190.248, 0.629961, -190.248, -0.629961, 704, 448, 0, 0, 0, 0, 384, 448)
 }
 point_count = 6
 
@@ -38,7 +39,7 @@ point_count = 2
 [sub_resource type="Curve2D" id="13"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0.561231, 127.399, -0.561231, -127.399, 0, -160, 0, 0, 0, 0, 128, -288, -128.022, -0.0840771, 128.022, 0.0840771, 320, -288, 0, 0, 0, 0, 448, -160, 0, 0, 0, 0, 448, -128, 127.961, 0, -127.961, 0, 320, 0, 128.195, -0.529732, -128.195, 0.529732, 0, -64, 0, 0, 0, 0, -256, -64)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0.561231, 127.399, -0.561231, -127.399, 0, -160, 0, 0, 0, 0, 128, -288, -182.971, 0.477154, 182.971, -0.477154, 352, -288, 0, 0, 0, 0, 536, -120, 0, 0, 0, 0, 536, -96, 198.861, 0.671939, -198.861, -0.671939, 336, 72, 128.195, -0.529732, -128.195, 0.529732, 0, -64, 0, 0, 0, 0, -256, -64)
 }
 point_count = 9
 
@@ -65,13 +66,10 @@ point_count = 2
 
 [node name="TestTracks3" type="Node2D"]
 script = ExtResource("5")
+car_count = 16
 train_vehicle_reference = ExtResource("2_cyjw1")
 
 [node name="TestWorld" parent="." instance=ExtResource("4")]
-
-[node name="TrainEngine" parent="." instance=ExtResource("2")]
-position = Vector2(280.001, 128)
-scale = Vector2(0.999998, 1)
 
 [node name="Tracks" type="Node2D" parent="."]
 
@@ -179,6 +177,12 @@ offset_left = -39.9995
 offset_top = -88.0002
 offset_right = 36.0005
 offset_bottom = -40.0002
+
+[node name="TrainEngine" parent="." instance=ExtResource("2")]
+position = Vector2(280.001, 128)
+scale = Vector2(0.999998, 1)
+
+[node name="PlayerControlComponent" parent="TrainEngine" instance=ExtResource("7_npgun")]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
