@@ -31,7 +31,7 @@ func switch():
 	_update_checkbutton()
 
 func _update_checkbutton():
-	checkbutton.button_pressed = true if direction == Directions.RIGHT else Directions.LEFT
+	checkbutton.button_pressed = true if direction == Directions.RIGHT else false
 
 # Connect the "from_side" of this track to the "to_side" of the other track
 #

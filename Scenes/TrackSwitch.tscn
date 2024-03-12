@@ -81,7 +81,7 @@ points = PackedVector2Array(0, 0, 1.76492, -0.031049, 6.62258, -0.249311, 10.006
 visible = false
 z_index = 2
 position = Vector2(64, -16)
-rotation = -0.587813
+rotation = -0.587812
 progress = 66.7531
 
 [node name="Sprite2D" type="Sprite2D" parent="LeftTrack/Pointer"]
@@ -116,7 +116,7 @@ points = PackedVector2Array(0, 0, 1.76964, 0.0286086, 6.63878, 0.240944, 10.0295
 [node name="Pointer" type="PathFollow2D" parent="RightTrack"]
 z_index = 2
 position = Vector2(64, 16)
-rotation = 0.591751
+rotation = 0.59175
 progress = 66.7674
 
 [node name="Sprite2D" type="Sprite2D" parent="RightTrack/Pointer"]
