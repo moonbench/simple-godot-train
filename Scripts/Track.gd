@@ -6,22 +6,26 @@ extends Path2D
 signal bogie_at_head(bogie: Bogie, extra: float, is_forward: bool)
 signal bogie_at_tail(bogie: Bogie, extra: float, is_forward: bool)
 
-@export var crosstie_distance = 10
-@onready var _crosstie_mesh_instance = $Crosstie
-@onready var _crosstie_multimesh = $MultiMeshInstance2D
-@onready var curve_points = []
+@export var crosstie_distance := 10.0
+
+@onready var line : Line2D = $Line2D
+@onready var head_point : PathFollow2D = $HeadPoint
+@onready var tail_point : PathFollow2D = $TailPoint
+@onready var _crosstie_mesh_instance : MeshInstance2D = $Crosstie
+@onready var _crosstie_multimesh : MultiMeshInstance2D = $MultiMeshInstance2D
+@onready var curve_points : PackedVector2Array = []
 
 func _ready() -> void:
 	curve_points = curve.get_baked_points()
 	_update_sprites()
+	set_process(Engine.is_editor_hint())
 
 func _process(_delta) -> void:
-	if Engine.is_editor_hint():
-		# Update the sprites in the editor only if the curve has changed
-		var latest_curve_points := curve.get_baked_points()
-		if latest_curve_points != curve_points:
-			curve_points = latest_curve_points
-			_update_sprites()
+	# Update the sprites in the editor only if the curve has changed
+	var latest_curve_points := curve.get_baked_points()
+	if latest_curve_points != curve_points:
+		curve_points = latest_curve_points
+		_update_sprites()
 
 # Connect the "from_side" of this track to the "to_side" of the other track
 #
@@ -52,10 +56,10 @@ func on_bogie_at_tail(bogie: Bogie, extra: float, is_forward: bool) -> void:
 	bogie_at_tail.emit(bogie, extra, is_forward)
 
 func _update_sprites() -> void:
-	$Line2D.points = curve_points
+	line.points = curve_points
 	_update_crossties()
-	$HeadPoint.progress_ratio = 0
-	$TailPoint.progress_ratio = 1
+	head_point.progress_ratio = 0.0
+	tail_point.progress_ratio = 1.0
 
 func _update_crossties() -> void:
 	var crossties = _crosstie_multimesh.multimesh
