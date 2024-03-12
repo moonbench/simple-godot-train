@@ -1,7 +1,7 @@
 # A set of wheels that follow along Tracks
 #
 # TrainVehicles generally have two of these
-class_name TrainWheel
+class_name Bogie
 extends PathFollow2D
 
 signal at_track_head
@@ -16,15 +16,15 @@ var current_track
 var current_track_length
 @onready var sprite = $Sprite2D
 
-# Put the wheel on a track
+# Put the bogie on a track
 func set_track(track: Path2D):
 	_disconnect_from_track()
 	get_parent().remove_child(self)
 	track.add_child(self)
 	current_track = track
 	current_track_length = track.curve.get_baked_length()
-	at_track_head.connect(track.on_wheel_at_head)
-	at_track_tail.connect(track.on_wheel_at_tail)
+	at_track_head.connect(track.on_bogie_at_head)
+	at_track_tail.connect(track.on_bogie_at_tail)
 
 # Set the direction of "forward travel" along the track to be towards the tail
 func head_to_tail():
@@ -36,7 +36,7 @@ func tail_to_head():
 	direction = Directions.HEADWARD
 	sprite.flip_v = true
 
-# Place this wheel a specific distance behind another one
+# Place this bogie a specific distance behind another one
 func follow(leader, distance):
 	follow_distance = distance
 	direction = leader.direction
@@ -61,20 +61,20 @@ func move_as_follower(distance, leader_offset, leader_direction, leader_track, l
 	else:
 		move(distance)
 
-# Put on the same track, with same orientation, as the wheel it's following
+# Put on the same track, with same orientation, as the bogie it's following
 func _put_on_leader_track(leader_track, leader_direction):
 	if leader_track != current_track:
 		set_track(leader_track)
 		head_to_tail() if leader_direction == Directions.TAILWARD else tail_to_head()
 
-# Position exactly at predetermined distance from the wheel it's following
+# Position exactly at predetermined distance from the bogie it's following
 func _set_at_distance_from_leader(distance, leader_offset, leader_direction):
 	var original_offset = progress
 	progress = leader_offset + (-follow_distance if leader_direction == Directions.TAILWARD else follow_distance)
 	_change_track_if_end(original_offset, distance)
 	moved.emit(distance, progress, direction, current_track, current_track_length)
 
-# Signal that the wheel has reached the end of the segment
+# Signal that the bogie has reached the end of the segment
 func _change_track_if_end(original_offset, distance_moved):
 	if !current_track: return
 	if progress_ratio <= 0:
@@ -85,5 +85,5 @@ func _change_track_if_end(original_offset, distance_moved):
 # Disconnect signals
 func _disconnect_from_track():
 	if current_track:
-		at_track_head.disconnect(current_track.on_wheel_at_head)
-		at_track_tail.disconnect(current_track.on_wheel_at_tail)
+		at_track_head.disconnect(current_track.on_bogie_at_head)
+		at_track_tail.disconnect(current_track.on_bogie_at_tail)

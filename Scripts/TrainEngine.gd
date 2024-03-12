@@ -1,4 +1,4 @@
-# Similar to TrainVehicle but it applies power to its front wheel
+# Similar to TrainVehicle but it applies power to its front bogie
 class_name TrainEngine
 extends TrainVehicle
 
@@ -67,7 +67,7 @@ func _update_brake(delta):
 	elif brake_force > 0:
 		brake_force = clamp(brake_force - brake_application_speed * delta, 0, 1)
 
-# Move the front wheel by the applied force, minus friction forces
+# Move the front bogie by the applied force, minus friction forces
 func _move_with_friction(delta):
 	var resistance = friction_force + _drag_force()
 	if applied_force == 0 && abs(velocity) < resistance / total_mass * delta:
@@ -80,7 +80,7 @@ func _move_with_friction(delta):
 		else:
 			velocity = velocity + (applied_force / total_mass * delta)
 	_apply_brake(delta)
-	front_wheel.move(velocity * velocity_multiplier * delta)
+	front_bogie.move(velocity * velocity_multiplier * delta)
 
 # Lerp the actual engine force from its current value to the throttle position
 func _updated_applied_force(delta):

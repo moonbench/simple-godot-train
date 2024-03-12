@@ -1,75 +1,75 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://isd3o7ji1m5j"]
 
-[ext_resource path="res://Scripts/Track.gd" type="Script" id=1]
-[ext_resource path="res://Demo/Assets/track.png" type="Texture2D" id=3]
-[ext_resource path="res://Demo/Assets/crosstie.png" type="Texture2D" id=6]
-[ext_resource path="res://Scenes/TrackJunction.tscn" type="PackedScene" id=7]
+[ext_resource type="Script" path="res://Scripts/Track.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bd6aqim053fjy" path="res://Demo/Assets/track.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cjpxukf4376xo" path="res://Demo/Assets/crosstie.png" id="6"]
+[ext_resource type="PackedScene" uid="uid://dmtyta68uolwr" path="res://Scenes/TrackJunction.tscn" id="7"]
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id="1"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 256, 0 )
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 256, 0)
 }
+point_count = 2
 
-[sub_resource type="ArrayMesh" id=7]
-surfaces/0 = {
-"aabb": AABB( -1.5, -12.5, 0, 3.00001, 25, 0 ),
-"array_data": PackedByteArray( 0, 0, 192, 63, 0, 0, 72, 65, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 192, 191, 0, 0, 72, 65, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 192, 191, 0, 0, 72, 193, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 63, 0, 0, 72, 193, 0, 0, 128, 63, 0, 0, 0, 0 ),
-"array_index_data": PackedByteArray( 3, 0, 0, 0, 1, 0, 1, 0, 2, 0, 3, 0 ),
-"blend_shape_data": [  ],
-"format": 262417,
+[sub_resource type="ArrayMesh" id="7"]
+_surfaces = [{
+"aabb": AABB(-1.5, -12.5, 0, 3.00001, 25, 0),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0),
+"format": 34360004625,
 "index_count": 6,
-"primitive": 4,
-"skeleton_aabb": [  ],
-"vertex_count": 4
-}
+"index_data": PackedByteArray(3, 0, 0, 0, 1, 0, 1, 0, 2, 0, 3, 0),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 192, 63, 0, 0, 72, 65, 114, 0, 0, 0, 0, 0, 192, 191, 0, 0, 72, 65, 120, 0, 0, 0, 0, 0, 192, 191, 0, 0, 72, 193, 111, 0, 0, 0, 0, 0, 192, 63, 0, 0, 72, 193, 116, 0, 0, 0)
+}]
 
-[sub_resource type="MultiMesh" id=6]
+[sub_resource type="MultiMesh" id="6"]
 resource_local_to_scene = true
 instance_count = 26
-mesh = SubResource( 7 )
-transform_2d_array = PackedVector2Array( 1, 0, 0, 1, 5.01034, 0, 1, 0, 0, 1, 15.0017, 0, 1, 0, 0, 1, 24.9891, 0, 1, 0, 0, 1, 35.0054, 0, 1, 0, 0, 1, 45.0315, 0, 1, 0, 0, 1, 55.0127, 0, 1, 0, 0, 1, 65.03, 0, 1, 0, 0, 1, 75.0442, 0, 1, 0, 0, 1, 85.102, 0, 1, 0, 0, 1, 95.143, 0, 1, 0, 0, 1, 105.122, 0, 1, 0, 0, 1, 115.157, 0, 1, 0, 0, 1, 125.15, 0, 1, 0, 0, 1, 135.122, 0, 1, 0, 0, 1, 145.092, 0, 1, 0, 0, 1, 155.153, 0, 1, 0, 0, 1, 165.131, 0, 1, 0, 0, 1, 175.105, 0, 1, 0, 0, 1, 185.131, 0, 1, 0, 0, 1, 195.104, 0, 1, 0, 0, 1, 205.116, 0, 1, 0, 0, 1, 215.125, 0, 1, 0, 0, 1, 225.146, 0, 1, 0, 0, 1, 235.159, 0, 1, 0, 0, 1, 245.163, 0, 1, 0, 0, 1, 255.168, 0 )
+mesh = SubResource("7")
+buffer = PackedFloat32Array(1, 0, 0, 5, 0, 1, 0, 0, 1, 0, 0, 15, 0, 1, 0, 0, 1, 0, 0, 25, 0, 1, 0, 0, 1, 0, 0, 35, 0, 1, 0, 0, 1, 0, 0, 45, 0, 1, 0, 0, 1, 0, 0, 55, 0, 1, 0, 0, 1, 0, 0, 65, 0, 1, 0, 0, 1, 0, 0, 75, 0, 1, 0, 0, 1, 0, 0, 85, 0, 1, 0, 0, 1, 0, 0, 95, 0, 1, 0, 0, 1, 0, 0, 105, 0, 1, 0, 0, 1, 0, 0, 115, 0, 1, 0, 0, 1, 0, 0, 125, 0, 1, 0, 0, 1, 0, 0, 135, 0, 1, 0, 0, 1, 0, 0, 145, 0, 1, 0, 0, 1, 0, 0, 155, 0, 1, 0, 0, 1, 0, 0, 165, 0, 1, 0, 0, 1, 0, 0, 175, 0, 1, 0, 0, 1, 0, 0, 185, 0, 1, 0, 0, 1, 0, 0, 195, 0, 1, 0, 0, 1, 0, 0, 205, 0, 1, 0, 0, 1, 0, 0, 215, 0, 1, 0, 0, 1, 0, 0, 225, 0, 1, 0, 0, 1, 0, 0, 235, 0, 1, 0, 0, 1, 0, 0, 245, 0, 1, 0, 0, 1, 0, 0, 255, 0, 1, 0, 0)
 
 [node name="Track" type="Path2D"]
-curve = SubResource( 1 )
-script = ExtResource( 1 )
+curve = SubResource("1")
+script = ExtResource("1")
 
 [node name="Crosstie" type="MeshInstance2D" parent="."]
 visible = false
-position = Vector2( -8, -16 )
 z_index = 1
-mesh = SubResource( 7 )
-texture = ExtResource( 6 )
+position = Vector2(-8, -16)
+mesh = SubResource("7")
+texture = ExtResource("6")
 
 [node name="MultiMeshInstance2D" type="MultiMeshInstance2D" parent="."]
 z_index = 1
-multimesh = SubResource( 6 )
-texture = ExtResource( 6 )
+multimesh = SubResource("6")
+texture = ExtResource("6")
 
 [node name="HeadPoint" type="PathFollow2D" parent="."]
 z_index = 3
 z_as_relative = false
 loop = false
 
-[node name="TrackJunction" parent="HeadPoint" instance=ExtResource( 7 )]
+[node name="TrackJunction" parent="HeadPoint" instance=ExtResource("7")]
 parent = NodePath("../..")
 side = "head"
 
 [node name="TailPoint" type="PathFollow2D" parent="."]
-position = Vector2( 256, 0 )
 z_index = 3
 z_as_relative = false
-offset = 255.832
+position = Vector2(256, 0)
+progress = 256.0
 loop = false
 
-[node name="TrackJunction" parent="TailPoint" instance=ExtResource( 7 )]
+[node name="TrackJunction" parent="TailPoint" instance=ExtResource("7")]
 parent = NodePath("../..")
 side = "tail"
 
 [node name="Line2D" type="Line2D" parent="."]
 z_index = 2
-points = PackedVector2Array( 0, 0, 5.01034, 0, 9.99618, 0, 15.0017, 0, 19.9919, 0, 24.9891, 0, 29.9807, 0, 35.0054, 0, 40.0141, 0, 45.0315, 0, 50.0128, 0, 55.0127, 0, 60.0368, 0, 65.03, 0, 70.0378, 0, 75.0442, 0, 80.0697, 0, 85.102, 0, 90.13, 0, 95.143, 0, 100.131, 0, 105.122, 0, 110.146, 0, 115.157, 0, 120.186, 0, 125.15, 0, 130.156, 0, 135.122, 0, 140.115, 0, 145.092, 0, 150.119, 0, 155.153, 0, 160.147, 0, 165.131, 0, 170.133, 0, 175.105, 0, 180.109, 0, 185.131, 0, 190.123, 0, 195.104, 0, 200.089, 0, 205.116, 0, 210.129, 0, 215.125, 0, 220.148, 0, 225.146, 0, 230.151, 0, 235.159, 0, 240.17, 0, 245.163, 0, 250.166, 0, 255.168, 0, 256, 0 )
+points = PackedVector2Array(0, 0, 2.875, 0, 6.32812, 0, 11, 0, 13.7637, 0, 16.7969, 0, 20.0879, 0, 23.625, 0, 27.3965, 0, 31.3906, 0, 35.5957, 0, 40, 0, 44.5918, 0, 49.3594, 0, 54.291, 0, 56.8147, 0, 59.375, 0, 61.9705, 0, 64.5996, 0, 67.261, 0, 69.9531, 0, 72.6746, 0, 75.4238, 0, 78.1995, 0, 81, 0, 83.824, 0, 86.6699, 0, 89.5364, 0, 92.4219, 0, 95.325, 0, 98.2441, 0, 101.178, 0, 104.125, 0, 107.084, 0, 110.053, 0, 113.031, 0, 116.016, 0, 119.007, 0, 122.002, 0, 125, 0, 128, 0, 131, 0, 133.998, 0, 136.993, 0, 139.984, 0, 142.969, 0, 145.947, 0, 148.916, 0, 151.875, 0, 154.822, 0, 157.756, 0, 160.675, 0, 163.578, 0, 166.464, 0, 169.33, 0, 172.176, 0, 175, 0, 177.801, 0, 180.576, 0, 183.325, 0, 186.047, 0, 188.739, 0, 191.4, 0, 194.03, 0, 196.625, 0, 199.185, 0, 201.709, 0, 206.641, 0, 211.408, 0, 216, 0, 220.404, 0, 224.609, 0, 228.604, 0, 232.375, 0, 235.912, 0, 239.203, 0, 242.236, 0, 245, 0, 249.672, 0, 253.125, 0, 256, 0)
 width = 20.0
-default_color = Color( 1, 1, 1, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 texture_mode = 1

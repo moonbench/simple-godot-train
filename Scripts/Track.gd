@@ -1,10 +1,10 @@
 @tool
-# A piece of track that TrainWheel nodes follow along
+# A piece of track that Bogie nodes follow along
 class_name Track
 extends Path2D
 
-signal wheel_at_head
-signal wheel_at_tail
+signal bogie_at_head(bogie: Bogie, extra: float, is_forward: bool)
+signal bogie_at_tail(bogie: Bogie, extra: float, is_forward: bool)
 
 @export var crosstie_distance = 10
 @onready var _crosstie_mesh_instance = $Crosstie
@@ -27,29 +27,29 @@ func _process(_delta):
 #
 # This links both tracks to each other, so only call it once per connection
 func link_track(other_track, from_side, to_side):
-	connect("wheel_at_" + from_side, Callable(other_track, "enter_from_" + to_side))
-	other_track.connect("wheel_at_" + to_side, Callable(self, "enter_from_" + from_side))
+	connect("bogie_at_" + from_side, Callable(other_track, "enter_from_" + to_side))
+	other_track.connect("bogie_at_" + to_side, Callable(self, "enter_from_" + from_side))
 
-# A wheel enters from the head side
-func enter_from_head(wheel: PathFollow2D, extra, is_forward):
-	wheel.set_track(self)
-	wheel.progress = extra
-	wheel.head_to_tail() if is_forward else wheel.tail_to_head()
+# A bogie enters from the head side
+func enter_from_head(bogie: Bogie, extra, is_forward):
+	bogie.set_track(self)
+	bogie.progress = extra
+	bogie.head_to_tail() if is_forward else bogie.tail_to_head()
 
-# A wheel enters from the tail side
-func enter_from_tail(wheel: PathFollow2D, extra, is_forward):
-	wheel.set_track(self)
-	wheel.progress_ratio = 1
-	wheel.progress -= extra
-	wheel.tail_to_head() if is_forward else wheel.head_to_tail()
+# A bogie enters from the tail side
+func enter_from_tail(bogie: Bogie, extra, is_forward):
+	bogie.set_track(self)
+	bogie.progress_ratio = 1
+	bogie.progress -= extra
+	bogie.tail_to_head() if is_forward else bogie.head_to_tail()
 
-# The wheel has reached the head
-func on_wheel_at_head(wheel, extra, is_forward):
-	wheel_at_head.emit(wheel, extra, is_forward)
+# The bogie has reached the head
+func on_bogie_at_head(bogie: Bogie, extra: float, is_forward: bool):
+	bogie_at_head.emit(bogie, extra, is_forward)
 
-# The wheel has reached the tail
-func on_wheel_at_tail(wheel, extra, is_forward):
-	wheel_at_tail.emit(wheel, extra, is_forward)
+# The bogie has reached the tail
+func on_bogie_at_tail(bogie: Bogie, extra: float, is_forward: bool):
+	bogie_at_tail.emit(bogie, extra, is_forward)
 
 func _update_sprites():
 	$Line2D.points = curve_points

@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://jvakchg2s8i4"]
 
 [ext_resource type="Script" path="res://Scripts/TrackSwitch.gd" id="1"]
-[ext_resource type="PackedScene" path="res://Scenes/Track.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://isd3o7ji1m5j" path="res://Scenes/Track.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://cjm22oirs0or4" path="res://Demo/Assets/arrow.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://cy6vudnfoiv4o" path="res://Demo/Assets/switch_right.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://cbhnr32w8moim" path="res://Demo/Assets/switch_left.png" id="5"]
@@ -131,10 +131,10 @@ button_pressed = true
 keep_pressed_outside = true
 shortcut_in_tooltip = false
 
-[connection signal="wheel_at_head" from="LeftTrack" to="." method="_on_LeftTrack_wheel_at_head"]
-[connection signal="wheel_at_tail" from="LeftTrack" to="." method="_on_LeftTrack_wheel_at_tail"]
-[connection signal="wheel_at_head" from="RightTrack" to="." method="_on_RightTrack_wheel_at_head"]
-[connection signal="wheel_at_tail" from="RightTrack" to="." method="_on_RightTrack_wheel_at_tail"]
+[connection signal="bogie_at_head" from="LeftTrack" to="." method="_on_left_track_bogie_at_head"]
+[connection signal="bogie_at_tail" from="LeftTrack" to="." method="_on_left_track_bogie_at_tail"]
+[connection signal="bogie_at_head" from="RightTrack" to="." method="_on_right_track_bogie_at_head"]
+[connection signal="bogie_at_tail" from="RightTrack" to="." method="_on_right_track_bogie_at_tail"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 
 [editable path="LeftTrack"]
