@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2qsc24ng38ir"]
+[gd_scene load_steps=5 format=3 uid="uid://c2qsc24ng38ir"]
 
 [ext_resource type="PackedScene" uid="uid://bjqtvbefblx2e" path="res://Scenes/TrainVehicle.tscn" id="1"]
 [ext_resource type="Script" path="res://Scripts/TrainEngine.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://cvutg2fumvmco" path="res://Demo/Assets/train_engine.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://dk4kss5yu35xs" path="res://Scenes/components/player_control_component.tscn" id="4_rfm4s"]
 
 [node name="TrainEngine" groups=["train_engines"] instance=ExtResource("1")]
 script = ExtResource("2")
@@ -18,3 +19,5 @@ brake_application_speed = 5.0
 
 [node name="TextureRect" parent="Body/Node2D2" index="0"]
 texture = ExtResource("3")
+
+[node name="PlayerControlComponent" parent="." index="3" instance=ExtResource("4_rfm4s")]
