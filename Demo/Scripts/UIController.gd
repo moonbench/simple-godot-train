@@ -3,6 +3,7 @@ extends Node2D
 @export var driving_ui_source : PackedScene
 
 var driving_ui : CanvasLayer
+@onready var transitions := $TransitionsLayer
 
 func add_driving_ui():
 	remove_driving_ui()

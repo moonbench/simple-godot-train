@@ -1,8 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck0tibxotfhn6"]
+[gd_scene load_steps=4 format=3 uid="uid://ck0tibxotfhn6"]
 
 [ext_resource type="Script" path="res://Demo/Scripts/UIController.gd" id="1_uqvbd"]
 [ext_resource type="PackedScene" uid="uid://br23x6bcucuuh" path="res://Demo/Scenes/driving_ui.tscn" id="2_553nm"]
+[ext_resource type="Script" path="res://Demo/Scripts/transitions_layer.gd" id="3_orwkx"]
 
 [node name="UIController" type="Node2D"]
 script = ExtResource("1_uqvbd")
 driving_ui_source = ExtResource("2_553nm")
+
+[node name="TransitionsLayer" type="CanvasLayer" parent="."]
+layer = 10
+script = ExtResource("3_orwkx")
+
+[node name="Node2D" type="Node2D" parent="TransitionsLayer"]
+skew = 0.349066
+
+[node name="ColorRect" type="ColorRect" parent="TransitionsLayer/Node2D"]
+offset_left = -100.0
+offset_top = -64.0
+offset_bottom = 1136.0
+color = Color(0, 0, 0, 1)

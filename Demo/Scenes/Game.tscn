@@ -272,6 +272,20 @@ theme_override_fonts/font = ExtResource("1")
 text = "Select a Track"
 horizontal_alignment = 1
 
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 17.2773
+offset_top = 20.5315
+offset_right = 334.277
+offset_bottom = 58.5315
+scale = Vector2(0.962034, 0.962034)
+pivot_offset = Vector2(139, 14)
+theme = ExtResource("6")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = SubResource("14")
+theme_override_font_sizes/font_size = 32
+text = "2D Train Sim Demo"
+
 [node name="Line2D" type="Line2D" parent="CanvasLayer"]
 position = Vector2(87.072, 43.6001)
 scale = Vector2(1.088, 0.399999)
@@ -342,20 +356,6 @@ offset_top = 128.0
 offset_right = 88.0
 offset_bottom = 148.0
 text = "Exit"
-
-[node name="Label2" type="Label" parent="CanvasLayer"]
-offset_left = 12.0
-offset_top = 20.0
-offset_right = 329.0
-offset_bottom = 58.0
-scale = Vector2(0.962034, 0.962034)
-pivot_offset = Vector2(139, 14)
-theme = ExtResource("6")
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = SubResource("14")
-theme_override_font_sizes/font_size = 32
-text = "2D Train Sim Demo"
 
 [node name="Version" type="Button" parent="CanvasLayer"]
 offset_left = -4.0

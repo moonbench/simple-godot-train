@@ -9,6 +9,7 @@ extends Node
 func _ready() -> void:
 	_setup_train.call_deferred()
 	UI.remove_driving_ui()
+	UI.transitions.swipe_off()
 
 func _setup_train():
 	engine.add_to_track($Tracks/Track, 200)
