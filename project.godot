@@ -24,6 +24,7 @@ UI="*res://Demo/Scenes/ui_controller.tscn"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [file_customization]

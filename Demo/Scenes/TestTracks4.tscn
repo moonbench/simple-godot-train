@@ -1,12 +1,13 @@
-[gd_scene load_steps=39 format=3 uid="uid://dph2m5x312g8h"]
+[gd_scene load_steps=40 format=3 uid="uid://dph2m5x312g8h"]
 
-[ext_resource type="PackedScene" uid="uid://cuwbubanwowgv" path="res://Demo/Scenes/TestWorld.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://rekipk5xspb1" path="res://Demo/Scenes/World.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://isd3o7ji1m5j" path="res://Scenes/Track.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://bjqtvbefblx2e" path="res://Scenes/TrainVehicle.tscn" id="2_minl0"]
 [ext_resource type="Script" path="res://Demo/Scripts/TestTracks4.gd" id="3"]
 [ext_resource type="PackedScene" uid="uid://c2qsc24ng38ir" path="res://Scenes/TrainEngine.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://delplckh6lx3o" path="res://Demo/Scenes/ChaseCamera.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://jvakchg2s8i4" path="res://Scenes/TrackSwitch.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://2aqi3h70khsf" path="res://Demo/Scenes/structure.tscn" id="6_fpp80"]
 [ext_resource type="Texture2D" uid="uid://cirsea0damm3q" path="res://Demo/Assets/godot.png" id="7"]
 [ext_resource type="PackedScene" uid="uid://5e13vjt40jij" path="res://Demo/Scenes/Station.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://dk4kss5yu35xs" path="res://Scenes/components/player_control_component.tscn" id="8_5lyqk"]
@@ -212,7 +213,6 @@ script = ExtResource("3")
 train_vehicle_reference = ExtResource("2_minl0")
 
 [node name="TestWorld" parent="." instance=ExtResource("1")]
-allows_camera_control = true
 
 [node name="TextureRect" parent="TestWorld" index="0"]
 offset_left = -1392.0
@@ -257,6 +257,15 @@ rotation = -3.14159
 [node name="Station7" parent="TestWorld" instance=ExtResource("8")]
 position = Vector2(3392, 1440)
 rotation = -3.14159
+
+[node name="Structure" parent="TestWorld" instance=ExtResource("6_fpp80")]
+position = Vector2(1696, 1216)
+
+[node name="Structure2" parent="TestWorld" instance=ExtResource("6_fpp80")]
+position = Vector2(1696, 1368)
+
+[node name="Structure3" parent="TestWorld" instance=ExtResource("6_fpp80")]
+position = Vector2(4504, 728)
 
 [node name="Tracks" type="Node2D" parent="."]
 

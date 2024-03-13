@@ -1,13 +1,14 @@
-[gd_scene load_steps=66 format=3 uid="uid://bln2jyh7gson8"]
+[gd_scene load_steps=67 format=3 uid="uid://bln2jyh7gson8"]
 
 [ext_resource type="PackedScene" uid="uid://isd3o7ji1m5j" path="res://Scenes/Track.tscn" id="1"]
-[ext_resource type="Texture2D" uid="uid://ci1gjepialewv" path="res://Demo/Assets/warn.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://bjqtvbefblx2e" path="res://Scenes/TrainVehicle.tscn" id="2_osfce"]
-[ext_resource type="PackedScene" uid="uid://cuwbubanwowgv" path="res://Demo/Scenes/TestWorld.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://rekipk5xspb1" path="res://Demo/Scenes/World.tscn" id="3_0kkq8"]
 [ext_resource type="PackedScene" uid="uid://c2qsc24ng38ir" path="res://Scenes/TrainEngine.tscn" id="4"]
 [ext_resource type="Script" path="res://Demo/Scripts/TestTracks6.gd" id="5"]
+[ext_resource type="PackedScene" uid="uid://2aqi3h70khsf" path="res://Demo/Scenes/structure.tscn" id="5_ymb1b"]
 [ext_resource type="PackedScene" uid="uid://delplckh6lx3o" path="res://Demo/Scenes/ChaseCamera.tscn" id="6"]
 [ext_resource type="Texture2D" uid="uid://cirsea0damm3q" path="res://Demo/Assets/godot.png" id="7"]
+[ext_resource type="PackedScene" uid="uid://sdhkmq6aj6w1" path="res://Demo/Scenes/structure_small.tscn" id="7_4hja0"]
 [ext_resource type="PackedScene" uid="uid://jvakchg2s8i4" path="res://Scenes/TrackSwitch.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://5e13vjt40jij" path="res://Demo/Scenes/Station.tscn" id="9"]
 [ext_resource type="PackedScene" uid="uid://dk4kss5yu35xs" path="res://Scenes/components/player_control_component.tscn" id="11_afxan"]
@@ -15,9 +16,9 @@
 [sub_resource type="Curve2D" id="135"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -4992, 1472, -575.231, -0.238386, 575.231, 0.238386, -3264, 1472, -194.941, -728.911, 194.941, 728.911, -1984, 2192, -796.716, 695.008, 796.716, -695.008, -320, 2784, 1008.61, 381.407, -1008.61, -381.407, -928, 1112, -385.004, -0.561231, 385.004, 0.561231, -320, 0, 0, 0, 0, 0, 256, 0)
+"points": PackedVector2Array(0, 0, 0, 0, -4992, 1472, -352.005, -1.18921, 352.005, 1.18921, -4520, 1472, -575.231, -0.238386, 575.231, 0.238386, -3248, 1032, -58.941, -880.911, 58.941, 880.911, -2104, 2384, -819.343, 536.616, 819.343, -536.616, -48, 3568, 840.8, 573.19, -840.8, -573.19, -584, 1280, -623.135, -0.073544, 623.135, 0.073544, -448, 0, 0, 0, 0, 0, 256, 0)
 }
-point_count = 7
+point_count = 8
 
 [sub_resource type="Curve2D" id="1"]
 resource_local_to_scene = true
@@ -302,9 +303,9 @@ point_count = 2
 [sub_resource type="Curve2D" id="97"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 256, 64, 0, 0, 0, 0, 128, 64, 127.477, 0.66742, -127.477, -0.66742, -320, 64, 0, 0, 0, 0, -448, -64, -0.66742, 126.81, 0.66742, -126.81, -448, -192, 0, 0, 0, 0, -320, -320, -128.812, -0.66742, 128.812, 0.66742, -128, -320, 0, 0, 0, 0, 0, -192, 0, 0, 0, 0, 0, -96, -127.128, -0.66742, 127.128, 0.66742, 128, 32, 0, 0, 0, 0, 256, 32)
+"points": PackedVector2Array(0, 0, 0, 0, 256, 64, 0, 0, 0, 0, 128, 64, 127.477, 0.66742, -127.477, -0.66742, -1048, 64, 0, 0, 0, 0, -1176, -64, -0.66742, 126.81, 0.66742, -126.81, -1176, -192, 0, 0, 0, 0, -1048, -320, -121.838, -2.11893, 121.838, 2.11893, -920, -320, -128.812, -0.66742, 128.812, 0.66742, -136, -256, 0, 0, 0, 0, 0, -128, 0, 0, 0, 0, 0, -96, -127.128, -0.66742, 127.128, 0.66742, 128, 32, 0, 0, 0, 0, 256, 32)
 }
-point_count = 11
+point_count = 12
 
 [sub_resource type="Curve2D" id="99"]
 resource_local_to_scene = true
@@ -323,7 +324,7 @@ point_count = 2
 [sub_resource type="Curve2D" id="116"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -286.869, 0, 286.869, 0, 824, 0, 0, 0, 0, 0, 1112, 280, 0, 0, 0, 0, 1112, 408, 258.472, -0.112251, -258.472, 0.112251, 856, 664, 0, 0, 0, 0, 552, 664, 126.508, 0, -126.508, 0, -296, 664, 0, 0, 0, 0, -424, 536, 0, 0, 0, 0, -424, 280, 128.289, 0, -128.289, 0, -552, 152, 0, 0, 0, 0, -744, 152)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -286.869, 0, 286.869, 0, 824, 0, 0, 0, 0, 0, 1112, 280, 0, 0, 0, 0, 1112, 472, 258.472, -0.112251, -258.472, 0.112251, 856, 712, 0, 0, 0, 0, 552, 712, 126.508, 0, -126.508, 0, -288, 712, 0, 0, 0, 0, -424, 600, 0, 0, 0, 0, -424, 280, 128.289, 0, -128.289, 0, -552, 152, 0, 0, 0, 0, -744, 152)
 }
 point_count = 11
 
@@ -395,116 +396,235 @@ script = ExtResource("5")
 car_count = 20
 train_vehicle_reference = ExtResource("2_osfce")
 
-[node name="TestWorld" parent="." instance=ExtResource("3")]
-allows_camera_control = true
+[node name="World" parent="." instance=ExtResource("3_0kkq8")]
+position = Vector2(-2624, -2656)
 
-[node name="TextureRect" parent="TestWorld" index="0"]
-offset_left = -8336.0
-offset_top = -5504.0
-offset_right = 25024.0
-offset_bottom = 6496.0
+[node name="TextureRect" parent="World" index="0"]
+offset_right = 23184.0
+offset_bottom = 8880.0
 
-[node name="Godot3" type="Sprite2D" parent="TestWorld"]
-position = Vector2(8368, 576)
-scale = Vector2(3, 3)
+[node name="Structures" type="Node2D" parent="."]
+
+[node name="Station" parent="Structures" instance=ExtResource("9")]
+position = Vector2(208, 8)
+
+[node name="Station2" parent="Structures" instance=ExtResource("9")]
+position = Vector2(464, 8)
+
+[node name="Station3" parent="Structures" instance=ExtResource("9")]
+position = Vector2(720, 8)
+
+[node name="Station4" parent="Structures" instance=ExtResource("9")]
+position = Vector2(976, 8)
+
+[node name="Station5" parent="Structures" instance=ExtResource("9")]
+position = Vector2(1232, 8)
+
+[node name="Station6" parent="Structures" instance=ExtResource("9")]
+position = Vector2(384, 400)
+
+[node name="Station7" parent="Structures" instance=ExtResource("9")]
+position = Vector2(640, 400)
+
+[node name="Station8" parent="Structures" instance=ExtResource("9")]
+position = Vector2(896, 400)
+
+[node name="Station9" parent="Structures" instance=ExtResource("9")]
+position = Vector2(1152, 400)
+
+[node name="Station10" parent="Structures" instance=ExtResource("9")]
+position = Vector2(16720, 120)
+
+[node name="Station11" parent="Structures" instance=ExtResource("9")]
+position = Vector2(16976, 120)
+
+[node name="Station12" parent="Structures" instance=ExtResource("9")]
+position = Vector2(17232, 120)
+
+[node name="Station13" parent="Structures" instance=ExtResource("9")]
+position = Vector2(17488, 120)
+
+[node name="Station14" parent="Structures" instance=ExtResource("9")]
+position = Vector2(16768, 928)
+rotation = -3.14159
+
+[node name="Station15" parent="Structures" instance=ExtResource("9")]
+position = Vector2(17024, 928)
+rotation = -3.14159
+
+[node name="Station16" parent="Structures" instance=ExtResource("9")]
+position = Vector2(17280, 928)
+rotation = -3.14159
+
+[node name="Station17" parent="Structures" instance=ExtResource("9")]
+position = Vector2(17536, 928)
+rotation = -3.14159
+
+[node name="Structure" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(328, 864)
+
+[node name="Structure2" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(328, 992)
+
+[node name="Structure3" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(592, 992)
+
+[node name="Structure4" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(-384, 992)
+
+[node name="Structure5" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(640, 336)
+
+[node name="Structure6" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(4736, 1504)
+
+[node name="Structure7" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(4416, 1504)
+
+[node name="Structure8" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(11008, 3552)
+
+[node name="Structure9" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(11008, 3424)
+
+[node name="Structure10" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(11328, 3424)
+
+[node name="Structure11" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(11648, 3424)
+
+[node name="Structure12" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(11648, 3552)
+
+[node name="Structure13" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(11008, 3680)
+
+[node name="Structure14" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(11648, 3680)
+
+[node name="Structure15" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(11008, 3808)
+
+[node name="Structure16" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(11648, 3808)
+
+[node name="Structure17" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(11264, 160)
+
+[node name="Structure18" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(15616, 96)
+
+[node name="Structure19" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(15872, 96)
+
+[node name="Structure20" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(16720, 32)
+
+[node name="Structure21" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(16768, 824)
+
+[node name="Structure22" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(17536, 992)
+
+[node name="Structure23" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(15488, 352)
+
+[node name="Structure24" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(5632, 1440)
+
+[node name="Structure25" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(1232, -56)
+
+[node name="Structure26" parent="Structures" instance=ExtResource("5_ymb1b")]
+position = Vector2(208, -56)
+
+[node name="Sprite2D" type="Sprite2D" parent="Structures"]
+position = Vector2(11328, 3560)
+scale = Vector2(2, 2)
 texture = ExtResource("7")
 
-[node name="Godot2" type="Sprite2D" parent="TestWorld"]
-position = Vector2(344, 616)
-rotation = 2.35619
-scale = Vector2(3, 3)
+[node name="Sprite2D2" type="Sprite2D" parent="Structures"]
+position = Vector2(15552, 0)
+scale = Vector2(2, 2)
 texture = ExtResource("7")
 
-[node name="Godot" type="Sprite2D" parent="TestWorld"]
-position = Vector2(17400, 520)
-scale = Vector2(3.75, 3.75)
+[node name="Sprite2D3" type="Sprite2D" parent="Structures"]
+position = Vector2(16768, 1024)
+scale = Vector2(2, 2)
 texture = ExtResource("7")
 
-[node name="Warn" type="Sprite2D" parent="TestWorld"]
-position = Vector2(2328, 544)
+[node name="Sprite2D4" type="Sprite2D" parent="Structures"]
+position = Vector2(4736, 1344)
 scale = Vector2(2, 2)
-texture = ExtResource("2")
+texture = ExtResource("7")
 
-[node name="Warn4" type="Sprite2D" parent="TestWorld"]
-position = Vector2(2168, 544)
+[node name="Sprite2D5" type="Sprite2D" parent="Structures"]
+position = Vector2(-32, 1216)
 scale = Vector2(2, 2)
-texture = ExtResource("2")
+texture = ExtResource("7")
 
-[node name="Warn2" type="Sprite2D" parent="TestWorld"]
-position = Vector2(15608, 352)
-rotation = 1.5708
-scale = Vector2(2, 2)
-texture = ExtResource("2")
+[node name="Structure27" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(512, 864)
 
-[node name="Warn3" type="Sprite2D" parent="TestWorld"]
-position = Vector2(15608, 192)
-rotation = 1.5708
-scale = Vector2(2, 2)
-texture = ExtResource("2")
+[node name="Structure28" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(712, -72)
 
-[node name="Station" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(17104, 216)
-rotation = -3.14159
+[node name="Structure29" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(5400, 1392)
 
-[node name="Station5" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(16848, 216)
-rotation = -3.14159
+[node name="Structure30" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(11328, 3680)
 
-[node name="Station2" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(17360, 216)
-rotation = -3.14159
+[node name="Structure31" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(11008, 3488)
 
-[node name="Station6" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(17104, 120)
+[node name="Structure32" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(11008, 3616)
 
-[node name="Station7" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(16848, 120)
+[node name="Structure33" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(11008, 3744)
 
-[node name="Station8" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(17360, 120)
+[node name="Structure34" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(11645.5, 3488)
 
-[node name="Station3" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(1168, 16)
+[node name="Structure37" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(9648, 656)
 
-[node name="Station4" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(912, 16)
+[node name="Structure38" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(7656, 888)
 
-[node name="Station9" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(656, 16)
+[node name="Structure39" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(11392, -104)
 
-[node name="Station10" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(400, 16)
+[node name="Structure40" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(15360, 160)
 
-[node name="Station11" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(144, 16)
+[node name="Structure41" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(17280, 1024)
 
-[node name="Station12" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(1088, 400)
+[node name="Structure42" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(17024, 1024)
 
-[node name="Station13" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(832, 400)
+[node name="Structure43" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(17152, 1024)
 
-[node name="Station14" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(576, 400)
+[node name="Structure44" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(16512, 32)
 
-[node name="Station15" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(320, 400)
+[node name="Structure45" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(16384, 32)
 
-[node name="Station16" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(320, 304)
-rotation = -3.14159
+[node name="Structure46" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(16256, 32)
 
-[node name="Station17" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(576, 304)
-rotation = -3.14159
+[node name="Structure47" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(16128, 32)
 
-[node name="Station18" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(832, 304)
-rotation = -3.14159
+[node name="Structure35" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(11645.5, 3616)
 
-[node name="Station19" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(1088, 304)
-rotation = -3.14159
+[node name="Structure36" parent="Structures" instance=ExtResource("7_4hja0")]
+position = Vector2(11645.5, 3744)
 
 [node name="Tracks" type="Node2D" parent="."]
 
@@ -1248,7 +1368,7 @@ autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
-[editable path="TestWorld"]
+[editable path="World"]
 [editable path="Tracks/TrackSwitch"]
 [editable path="Tracks/TrackSwitch/LeftTrack"]
 [editable path="Tracks/TrackSwitch/RightTrack"]

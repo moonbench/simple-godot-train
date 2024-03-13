@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuwbubanwowgv"]
-
-[ext_resource type="PackedScene" uid="uid://rekipk5xspb1" path="res://Demo/Scenes/World.tscn" id="1"]
-
-[node name="TestWorld" instance=ExtResource("1")]
-
-[node name="TextureRect" parent="." index="0"]
-mouse_filter = 2

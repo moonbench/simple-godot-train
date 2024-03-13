@@ -1,6 +1,6 @@
 extends Node
 
-@export var car_count := 6
+@export var car_count := 8
 @export var train_vehicle_reference : PackedScene
 
 @onready var engine = $TrainEngine
@@ -8,7 +8,7 @@ extends Node
 func _setup_train():
 	UI.add_driving_ui()
 	engine.train_info.connect(UI.driving_ui.update_train_info)
-	engine.add_to_track($Tracks/Track, 500)
+	engine.add_to_track($Tracks/Track, 900)
 	
 	var last_car = engine
 	for index in range(car_count):

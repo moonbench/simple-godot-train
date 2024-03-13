@@ -8,7 +8,7 @@ extends Node
 func _setup_train():
 	UI.add_driving_ui()
 	engine.train_info.connect(UI.driving_ui.update_train_info)
-	engine.add_to_track($Tracks/Track)
+	engine.add_to_track($Tracks/Track, 300)
 	
 	var last_car = engine
 	for index in range(car_count):

@@ -1,11 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://dxvl2s86lk52e"]
+[gd_scene load_steps=17 format=3 uid="uid://dxvl2s86lk52e"]
 
 [ext_resource type="PackedScene" uid="uid://isd3o7ji1m5j" path="res://Scenes/Track.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://c2qsc24ng38ir" path="res://Scenes/TrainEngine.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://bjqtvbefblx2e" path="res://Scenes/TrainVehicle.tscn" id="2_pqebc"]
 [ext_resource type="PackedScene" uid="uid://jvakchg2s8i4" path="res://Scenes/TrackSwitch.tscn" id="3"]
-[ext_resource type="PackedScene" uid="uid://cuwbubanwowgv" path="res://Demo/Scenes/TestWorld.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://rekipk5xspb1" path="res://Demo/Scenes/World.tscn" id="3_lcfne"]
 [ext_resource type="Script" path="res://Demo/Scripts/TestTracks2.gd" id="5"]
+[ext_resource type="PackedScene" uid="uid://sdhkmq6aj6w1" path="res://Demo/Scenes/structure_small.tscn" id="6_yfl0x"]
 [ext_resource type="PackedScene" uid="uid://dk4kss5yu35xs" path="res://Scenes/components/player_control_component.tscn" id="7_x0ked"]
 
 [sub_resource type="Curve2D" id="8"]
@@ -68,7 +69,7 @@ point_count = 2
 script = ExtResource("5")
 train_vehicle_reference = ExtResource("2_pqebc")
 
-[node name="TestWorld" parent="." instance=ExtResource("4")]
+[node name="World" parent="." instance=ExtResource("3_lcfne")]
 
 [node name="Tracks" type="Node2D" parent="."]
 
@@ -185,6 +186,14 @@ offset_right = 11.9997
 offset_bottom = 140.0
 rotation = 447.676
 button_pressed = false
+
+[node name="Structures" type="Node2D" parent="."]
+
+[node name="Structure" parent="Structures" instance=ExtResource("6_yfl0x")]
+position = Vector2(832, 448)
+
+[node name="Structure2" parent="Structures" instance=ExtResource("6_yfl0x")]
+position = Vector2(256, 256)
 
 [node name="TrainEngine" parent="." instance=ExtResource("2")]
 scale = Vector2(0.999998, 1)
