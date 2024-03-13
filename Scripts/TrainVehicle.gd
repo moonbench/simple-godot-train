@@ -4,12 +4,13 @@ extends Node2D
 
 signal towed_mass_changed(mass_delta: float)
 
+@export var mass := 10.0
 @export var bogie_distance := 58.0
 @export var follow_distance := 26.0
-@export var mass := 10.0
-
-var towed_mass := 0.0
-var total_mass := mass
+@export var friction_coefficient := 0.1
+@export var rolling_resistance_coefficient := 0.005
+@export var air_resistance_coefficient := 0.10
+@export var brake_power := 0.5
 
 @onready var front_bogie : Bogie = $Bogie
 @onready var back_bogie : Bogie = $Bogie2
@@ -36,20 +37,10 @@ func set_follower_car(car: TrainVehicle) -> void:
 	car.front_bogie.follow(back_bogie, follow_distance)
 	car.back_bogie.follow(car.front_bogie, car.bogie_distance)
 	back_bogie.moved.connect(car.front_bogie.move_as_follower)
-	car.towed_mass_changed.connect(change_towed_mass)
-	change_towed_mass(car.total_mass)
 
 # Disconnect this car's signals from its followers
 func remove_follower_car(car: TrainVehicle) -> void:
 	back_bogie.moved.disconnect(car.front_bogie.move_as_follower)
-	car.towed_mass_changed.disconnect(change_towed_mass)
-	change_towed_mass(-car.total_mass)
-
-# Share the knowledge of the new total mass
-func change_towed_mass(mass_delta: float) -> void:
-	towed_mass += mass_delta
-	total_mass = mass + towed_mass
-	towed_mass_changed.emit(mass_delta)
 
 func _on_RailFollower_track_changed() -> void:
 	add_to_track(front_bogie.get_parent(), front_bogie.offset)

@@ -124,7 +124,7 @@ script = ExtResource("4")
 [node name="World" parent="." instance=ExtResource("2")]
 
 [node name="Godot" type="Sprite2D" parent="World"]
-position = Vector2(840, 328)
+position = Vector2(896, 128)
 scale = Vector2(1.75, 1.75)
 texture = ExtResource("8")
 
@@ -179,8 +179,10 @@ offset_bottom = -40.0
 
 [node name="TrackSwitch2" parent="Tracks" instance=ExtResource("5")]
 position = Vector2(712, 512)
+direction = 0
 
 [node name="LeftTrack" parent="Tracks/TrackSwitch2" index="0"]
+z_index = 1
 curve = SubResource("4")
 
 [node name="HeadPoint" parent="Tracks/TrackSwitch2/LeftTrack" index="0"]
@@ -195,10 +197,12 @@ progress = 163.628
 points = PackedVector2Array(0, 0, 1.42002, -0.0459953, 5.44007, -0.443412, 8.31259, -0.895513, 11.7001, -1.5814, 15.5576, -2.54971, 19.8402, -3.8491, 24.5027, -5.5282, 26.9624, -6.52535, 29.5002, -7.63566, 32.1105, -8.86523, 34.7877, -10.2201, 37.5261, -11.7064, 40.3202, -13.3302, 43.1642, -15.0976, 46.0527, -17.0146, 48.9798, -19.0874, 51.9401, -21.322, 54.9279, -23.7244, 57.9376, -26.3009, 60.9635, -29.0574, 64, -32, 67.0365, -35.0344, 70.0624, -38.0585, 73.0721, -41.0666, 76.0599, -44.053, 79.0202, -47.0122, 81.9473, -49.9385, 84.8358, -52.8262, 87.6798, -55.6698, 90.4739, -58.4635, 93.2123, -61.2017, 95.8895, -63.8789, 98.4998, -66.4893, 101.038, -69.0274, 103.497, -71.4874, 105.873, -73.8638, 108.16, -76.1509, 110.351, -78.3431, 112.442, -80.4347, 114.427, -82.4201, 116.3, -84.2936, 119.687, -87.6826, 122.56, -90.5566, 124.872, -92.8704, 126.58, -94.579, 128, -96)
 
 [node name="Pointer" parent="Tracks/TrackSwitch2/LeftTrack" index="3"]
+visible = true
 position = Vector2(59.382, -27.5954)
 rotation = -0.738077
 
 [node name="RightTrack" parent="Tracks/TrackSwitch2" index="1"]
+z_index = 0
 curve = SubResource("5")
 
 [node name="HeadPoint" parent="Tracks/TrackSwitch2/RightTrack" index="0"]
@@ -213,12 +217,14 @@ progress = 128.0
 points = PackedVector2Array(0, 0, 1.4375, 0, 5.5, 0, 8.39844, 0, 11.8125, 0, 15.6953, 0, 20, 0, 24.6797, 0, 27.1455, 0, 29.6875, 0, 32.2998, 0, 34.9766, 0, 37.7119, 0, 40.5, 0, 43.335, 0, 46.2109, 0, 49.1221, 0, 52.0625, 0, 55.0264, 0, 58.0078, 0, 61.001, 0, 64, 0, 66.999, 0, 69.9922, 0, 72.9736, 0, 75.9375, 0, 78.8779, 0, 81.7891, 0, 84.665, 0, 87.5, 0, 90.2881, 0, 93.0234, 0, 95.7002, 0, 98.3125, 0, 100.854, 0, 103.32, 0, 108, 0, 112.305, 0, 116.188, 0, 119.602, 0, 122.5, 0, 126.562, 0, 128, 0)
 
 [node name="Pointer" parent="Tracks/TrackSwitch2/RightTrack" index="3"]
+visible = false
 position = Vector2(66.7676, 0)
 rotation = 0.0
 
 [node name="Button" parent="Tracks/TrackSwitch2" index="2"]
 offset_top = -88.0
 offset_bottom = -40.0
+button_pressed = false
 
 [node name="Track2" parent="Tracks" instance=ExtResource("3")]
 position = Vector2(609, 253)
@@ -366,7 +372,7 @@ focus_mode = 0
 theme_override_colors/font_color = Color(0.858824, 0.858824, 0.858824, 1)
 theme_override_fonts/font = SubResource("15")
 theme_override_font_sizes/font_size = 8
-text = "Version 0.2.1"
+text = "Version 0.2.2"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 328)

@@ -12,8 +12,8 @@ config_version=5
 
 config/name="2D Train Simulator"
 config/description="For Godot version 3.5"
-config/version="0.2.1"
-run/main_scene="res://Demo/Scenes/Game.tscn"
+config/version="0.2.2"
+run/main_scene="res://Demo/Scenes/TestTracks1.tscn"
 config/features=PackedStringArray("4.2")
 config/icon="res://icon.png"
 
@@ -24,7 +24,6 @@ UI="*res://Demo/Scenes/ui_controller.tscn"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="viewport"
 
 [file_customization]
