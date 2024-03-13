@@ -17,10 +17,19 @@ run/main_scene="res://Demo/Scenes/Game.tscn"
 config/features=PackedStringArray("4.2")
 config/icon="res://icon.png"
 
+[autoload]
+
+UIController="*res://Scenes/ui_controller.tscn"
+
 [display]
 
-window/size/mode=3
 window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://Demo/": "teal"
+}
 
 [global]
 

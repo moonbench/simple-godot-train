@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://rekipk5xspb1" path="res://Demo/Scenes/World.tscn" id="1"]
 [ext_resource type="Theme" uid="uid://dhkt4uo1jjcia" path="res://Demo/Resources/UITheme.tres" id="2"]
 [ext_resource type="Script" path="res://Demo/Scripts/TestWorld.gd" id="3"]
-[ext_resource type="PackedScene" uid="uid://oafvawlaifee" path="res://Demo/Scenes/UIInfoBox.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://oafvawlaifee" path="res://Demo/Scenes/components/ui_info_box.tscn" id="4"]
 
 [node name="TestWorld" instance=ExtResource("1")]
 script = ExtResource("3")
@@ -33,90 +33,58 @@ offset_right = -10.0
 offset_bottom = -10.0
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer" index="0"]
+[node name="InfoBox" parent="CanvasLayer/Control/MarginContainer" index="0" instance=ExtResource("4")]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
 mouse_filter = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" index="0"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_filter = 2
-
-[node name="Control" type="Control" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_filter = 2
-
-[node name="Control2" type="Control" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" index="1"]
-layout_mode = 2
-size_flags_vertical = 3
-mouse_filter = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" index="2"]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="InfoBox" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2" index="0" instance=ExtResource("4")]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="Control" type="Control" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2" index="1"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_filter = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2" index="2"]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="Control" type="Control" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" index="0"]
-layout_mode = 2
-size_flags_vertical = 3
-mouse_filter = 2
-
-[node name="ControlsPanel" type="PanelContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" index="1"]
+[node name="ControlsPanel" type="PanelContainer" parent="CanvasLayer/Control/MarginContainer" index="1"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ControlsPanel" index="0"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer/ControlsPanel" index="0"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ControlsPanel/VBoxContainer" index="0"]
+[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/ControlsPanel/VBoxContainer" index="0"]
 layout_mode = 2
 text = "W - Throttle Up     S - Throttle Down     X - Cut Throttle     Space - Brake"
 
-[node name="CameraInfoControls" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ControlsPanel/VBoxContainer" index="1"]
+[node name="CameraInfoControls" type="Label" parent="CanvasLayer/Control/MarginContainer/ControlsPanel/VBoxContainer" index="1"]
 visible = false
 layout_mode = 2
 text = "Middle Mouse - Pan Camera3D     Scroll Wheel - Zoom"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2" index="3"]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/MarginContainer" index="2"]
+unique_name_in_owner = true
 layout_mode = 2
-mouse_filter = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
 
-[node name="Control" type="Control" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" index="0"]
-layout_mode = 2
-size_flags_vertical = 3
-mouse_filter = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" index="1"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer/PanelContainer" index="0"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer" index="0"]
+[node name="ControlsButton" type="CheckButton" parent="CanvasLayer/Control/MarginContainer/PanelContainer/VBoxContainer" index="0"]
+unique_name_in_owner = true
 layout_mode = 2
-
-[node name="ControlsButton" type="CheckButton" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/VBoxContainer" index="0"]
-layout_mode = 2
+focus_mode = 0
 text = "Controls"
 
-[node name="InfoButton" type="CheckButton" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/VBoxContainer" index="1"]
+[node name="InfoButton" type="CheckButton" parent="CanvasLayer/Control/MarginContainer/PanelContainer/VBoxContainer" index="1"]
+unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
+button_pressed = true
 text = "Train Info"
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/VBoxContainer" index="2"]
+[node name="Button" type="Button" parent="CanvasLayer/Control/MarginContainer/PanelContainer/VBoxContainer" index="2"]
 layout_mode = 2
 text = "Main Menu"
 
-[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/VBoxContainer/ControlsButton" to="." method="_on_Button2_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/VBoxContainer/InfoButton" to="." method="_on_InfoButton_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="toggled" from="CanvasLayer/Control/MarginContainer/PanelContainer/VBoxContainer/ControlsButton" to="." method="_on_controls_button_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/MarginContainer/PanelContainer/VBoxContainer/InfoButton" to="." method="_on_info_button_toggled"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/PanelContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]

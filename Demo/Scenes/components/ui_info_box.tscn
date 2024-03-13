@@ -1,0 +1,91 @@
+[gd_scene load_steps=3 format=3 uid="uid://oafvawlaifee"]
+
+[ext_resource type="Theme" uid="uid://dhkt4uo1jjcia" path="res://Demo/Resources/UITheme.tres" id="1"]
+[ext_resource type="Script" path="res://Demo/Scripts/components/ui_info_box.gd" id="2_c4vwv"]
+
+[node name="InfoBox" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("1")
+script = ExtResource("2_c4vwv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+text = "Throttle: "
+horizontal_alignment = 2
+
+[node name="Throttle" type="Label" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+text = "Force: "
+horizontal_alignment = 2
+
+[node name="Force" type="Label" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+text = "Brake: "
+horizontal_alignment = 2
+
+[node name="Brake" type="Label" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+text = "Velocity: "
+horizontal_alignment = 2
+
+[node name="Velocity" type="Label" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+text = "Mass: "
+horizontal_alignment = 2
+
+[node name="Mass" type="Label" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+text = "Friction: "
+horizontal_alignment = 2
+
+[node name="Friction" type="Label" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+text = "Drag: "
+horizontal_alignment = 2
+
+[node name="Drag" type="Label" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
