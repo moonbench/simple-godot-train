@@ -14,7 +14,7 @@
 [sub_resource type="Curve2D" id="1"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(-189.644, 0.137689, 189.644, -0.137689, 0, -64, -193.007, 0.46365, 193.007, -0.46365, 320, 0, 0, 0, 0, 0, 520, 0)
+"points": PackedVector2Array(-61.4994, -34.5681, 61.4994, 34.5681, 0, -64, -193.007, 0.46365, 193.007, -0.46365, 320, 0, 0, 0, 0, 0, 520, 0)
 }
 point_count = 3
 
@@ -35,7 +35,7 @@ point_count = 2
 [sub_resource type="Curve2D" id="10"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -89, 163, -152.172, 152.172, 152.172, -152.172, 79, -5, 0, 0, 0, 0, 95, -317, 0, 0, 0, 0, -33, -349)
+"points": PackedVector2Array(0, 0, 0, 0, -89, 163, -152.172, 152.172, 152.172, -152.172, 79, -5, 0, 0, 0, 0, 95, -317, 0, 0, 0, 0, -33, -277)
 }
 point_count = 4
 
@@ -49,30 +49,30 @@ point_count = 2
 [sub_resource type="Curve2D" id="12"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(-248.275, 0, 248.275, 0, 0, 0, 0, 0, 0, 0, 344, 168)
+"points": PackedVector2Array(-248.275, 0, 248.275, 0, 0, 0, 0, 0, 0, 0, 312, 256)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="13"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -117.731, 118.921, 117.731, -118.921, 120, -120, 0, 0, 0, 0, 168, -480, 0, 0, 0, 0, -264, -576)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -117.731, 118.921, 117.731, -118.921, 120, -120, 0, 0, 0, 0, 168, -480, 0, 0, 0, 0, -264, -504)
 }
 point_count = 4
 
 [sub_resource type="Curve2D" id="16"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 48, 168, 0, 0, 0, 0, 240, 392, 0, 0, 0, 0, 1392, 392, 0, 0, 0, 0, 1488, 368)
+"points": PackedVector2Array(0, 0, 0, 0, 48, 168, 0, 0, 0, 0, 240, 392, 0, 0, 0, 0, 1456, 456)
 }
-point_count = 4
+point_count = 3
 
 [sub_resource type="Curve2D" id="17"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 144, 0, 0, 0, 0, 128, -336, 0, 0, 0, 0, 320, -408, 0, 0, 0, 0, 704, -400)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 144, 0, 0, 0, 0, 256, -328, 0, 0, 0, 0, 704, -328)
 }
-point_count = 4
+point_count = 3
 
 [sub_resource type="FontFile" id="14"]
 fallbacks = Array[Font]([ExtResource("7")])
@@ -245,7 +245,7 @@ position = Vector2(-128, 448)
 rotation = -3.14159
 
 [node name="TrackSwitch4" parent="Tracks" instance=ExtResource("5")]
-position = Vector2(448, -128)
+position = Vector2(448, -56)
 
 [node name="Track7" parent="Tracks" instance=ExtResource("3")]
 position = Vector2(-256, 272)

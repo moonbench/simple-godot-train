@@ -1,16 +1,18 @@
 # Runs the demo's main scene
 extends Node
 
-@export var car_count := 6
+@export var car_count := 12
 
 @onready var train_vehicle_reference = load("res://Scenes/TrainVehicle.tscn")
-@onready var engine := $TrainEngine
+@onready var engine : TrainEngine = $TrainEngine
 
 func _ready() -> void:
 	_setup_train.call_deferred()
 
 func _setup_train():
-	engine.add_to_track($Tracks/Track, 400)
+	engine.add_to_track($Tracks/Track, 200)
+	engine.target_force_percent = 0.5
+	engine.velocity = 46.0
 	
 	var last_car = engine
 	for index in range(car_count):

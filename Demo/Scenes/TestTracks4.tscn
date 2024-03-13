@@ -126,9 +126,9 @@ point_count = 3
 [sub_resource type="Curve2D" id="32"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1600, -1024, 319.068, -0.7937, -319.068, 0.7937, -1920, -1024, 0, 0, 0, 0, -2240, -704, 0, 0, 0, 0, -2232, -320, -318.051, -0.890899, 318.051, 0.890899, -1920, 0, -384.868, 0, 384.868, 0, -1400, 0, -258.361, 0, 258.361, 0, -752, -56, 0, 0, 0, 0, -488, -56, -343.596, 0.635903, 343.596, -0.635903, -80, -56, -271.266, 1.7818, 271.266, -1.7818, 536, 0, 0, 0, 0, 0, 808, 0)
+"points": PackedVector2Array(0, 0, 0, 0, -1600, -1024, 319.068, -0.7937, -319.068, 0.7937, -1920, -1024, 0, 0, 0, 0, -2240, -704, 0, 0, 0, 0, -2232, -320, -318.051, -0.890899, 318.051, 0.890899, -1920, 0, -384.868, 0, 384.868, 0, -1536, 0, -258.361, 0, 0, 0, -904, -320, -343.596, 0.635903, 343.596, -0.635903, -328, -320, -271.266, 1.7818, 271.266, -1.7818, 536, 0, 0, 0, 0, 0, 808, 0)
 }
-point_count = 11
+point_count = 10
 
 [sub_resource type="Curve2D" id="33"]
 resource_local_to_scene = true
@@ -182,7 +182,7 @@ point_count = 3
 [sub_resource type="Curve2D" id="44"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -160, 0, 0, 0, 0, 0, 864, 0, -0.66742, 279.649, 0.66742, -279.649, 1152, -280, 0, 0, 0, 0, 1152, -728, 319.861, 0.7937, -319.861, -0.7937, 832, -1048, 0, 0, 0, 0, 192, -1048)
+"points": PackedVector2Array(0, 0, 0, 0, -160, 0, 0, 0, 0, 0, 1584, 0, -0.66742, 279.649, 0.66742, -279.649, 1912, -280, 0, 0, 0, 0, 1912, -736, 319.861, 0.7937, -319.861, -0.7937, 1584, -1048, 0, 0, 0, 0, 192, -1048)
 }
 point_count = 6
 
@@ -217,17 +217,17 @@ allows_camera_control = true
 [node name="TextureRect" parent="TestWorld" index="0"]
 offset_left = -1392.0
 offset_top = -504.0
-offset_right = 5344.0
+offset_right = 7224.0
 offset_bottom = 2304.0
 
 [node name="Godot" type="Sprite2D" parent="TestWorld"]
-position = Vector2(3824, 712)
-scale = Vector2(3, 3)
+position = Vector2(4504, 912)
+scale = Vector2(3.75, 3.75)
 texture = ExtResource("7")
 
 [node name="Godot2" type="Sprite2D" parent="TestWorld"]
-position = Vector2(-48, 1096)
-scale = Vector2(3, 3)
+position = Vector2(1432, 1288)
+scale = Vector2(3.75, 3.75)
 texture = ExtResource("7")
 
 [node name="Station" parent="TestWorld" instance=ExtResource("8")]
@@ -241,6 +241,22 @@ rotation = 0.0872665
 [node name="Station3" parent="TestWorld" instance=ExtResource("8")]
 position = Vector2(1232, 320)
 rotation = 0.0872665
+
+[node name="Station4" parent="TestWorld" instance=ExtResource("8")]
+position = Vector2(4160, 1440)
+rotation = -3.14159
+
+[node name="Station5" parent="TestWorld" instance=ExtResource("8")]
+position = Vector2(3904, 1440)
+rotation = -3.14159
+
+[node name="Station6" parent="TestWorld" instance=ExtResource("8")]
+position = Vector2(3648, 1440)
+rotation = -3.14159
+
+[node name="Station7" parent="TestWorld" instance=ExtResource("8")]
+position = Vector2(3392, 1440)
+rotation = -3.14159
 
 [node name="Tracks" type="Node2D" parent="."]
 

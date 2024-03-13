@@ -418,8 +418,18 @@ offset_right = 25552.0
 offset_bottom = 6432.0
 
 [node name="Godot" type="Sprite2D" parent="TestWorld"]
-position = Vector2(16864, 160)
-scale = Vector2(3, 3)
+position = Vector2(15688, 136)
+scale = Vector2(1.74999, 1.75)
+texture = ExtResource("7")
+
+[node name="Godot4" type="Sprite2D" parent="TestWorld"]
+position = Vector2(17992, -1016)
+scale = Vector2(1.74999, 1.75)
+texture = ExtResource("7")
+
+[node name="Godot5" type="Sprite2D" parent="TestWorld"]
+position = Vector2(13256, -1016)
+scale = Vector2(1.74999, 1.75)
 texture = ExtResource("7")
 
 [node name="Warn" type="Sprite2D" parent="TestWorld"]
@@ -471,6 +481,28 @@ texture = ExtResource("7")
 [node name="Station" parent="TestWorld" instance=ExtResource("9")]
 position = Vector2(1792, 784)
 
+[node name="Station7" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(2048, 784)
+
+[node name="Station8" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(2304, 784)
+
+[node name="Station9" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(4296, 1200)
+rotation = -3.14159
+
+[node name="Station10" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(-704, 1720)
+rotation = -3.14159
+
+[node name="Station11" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(-960, 1720)
+rotation = -3.14159
+
+[node name="Station12" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(-1216, 1720)
+rotation = -3.14159
+
 [node name="Station2" parent="TestWorld" instance=ExtResource("9")]
 position = Vector2(1536, 784)
 
@@ -485,6 +517,85 @@ position = Vector2(17600, -1328)
 
 [node name="Station4" parent="TestWorld" instance=ExtResource("9")]
 position = Vector2(17088, -1328)
+
+[node name="Station13" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(16832, -1328)
+
+[node name="Station14" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(16576, -1328)
+
+[node name="Station15" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17856, -1328)
+
+[node name="Station16" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17856, -112)
+
+[node name="Station17" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17600, -112)
+
+[node name="Station18" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17344, -112)
+
+[node name="Station19" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17088, -112)
+
+[node name="Station20" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(16832, -112)
+
+[node name="Station31" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17856, -432)
+
+[node name="Station32" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17600, -432)
+
+[node name="Station33" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17344, -432)
+
+[node name="Station34" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17088, -432)
+
+[node name="Station35" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(16832, -432)
+
+[node name="Station21" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(16832, -336)
+rotation = -3.14159
+
+[node name="Station22" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17088, -336)
+rotation = -3.14159
+
+[node name="Station23" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17344, -336)
+rotation = -3.14159
+
+[node name="Station24" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17600, -336)
+rotation = -3.14159
+
+[node name="Station25" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17856, -336)
+rotation = -3.14159
+
+[node name="Station26" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(16832, -16)
+rotation = -3.14159
+
+[node name="Station27" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17088, -16)
+rotation = -3.14159
+
+[node name="Station28" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17344, -16)
+rotation = -3.14159
+
+[node name="Station29" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17600, -16)
+rotation = -3.14159
+
+[node name="Station30" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17856, -16)
+rotation = -3.14159
 
 [node name="Tracks" type="Node2D" parent="."]
 

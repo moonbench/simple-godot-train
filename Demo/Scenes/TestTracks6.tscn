@@ -15,9 +15,9 @@
 [sub_resource type="Curve2D" id="135"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -4992, 1472, -575.231, -0.238386, 575.231, 0.238386, -3264, 1472, -385.004, -0.561231, 385.004, 0.561231, -320, 0, 0, 0, 0, 0, 256, 0)
+"points": PackedVector2Array(0, 0, 0, 0, -4992, 1472, -575.231, -0.238386, 575.231, 0.238386, -3264, 1472, -194.941, -728.911, 194.941, 728.911, -1984, 2192, -796.716, 695.008, 796.716, -695.008, -320, 2784, 1008.61, 381.407, -1008.61, -381.407, -928, 1112, -385.004, -0.561231, 385.004, 0.561231, -320, 0, 0, 0, 0, 0, 256, 0)
 }
-point_count = 4
+point_count = 7
 
 [sub_resource type="Curve2D" id="1"]
 resource_local_to_scene = true
@@ -323,9 +323,9 @@ point_count = 2
 [sub_resource type="Curve2D" id="116"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -286.869, 0, 286.869, 0, 824, -8, 0, 0, 0, 0, 1112, 280, 0, -256.579, 0, 256.579, 1112, 408, 0, 0, 0, 0, 856, 664, 126.508, 0, -126.508, 0, -296, 664, 0, 0, 0, 0, -424, 536, 0, 0, 0, 0, -424, 280, 128.289, 0, -128.289, 0, -552, 152, 0, 0, 0, 0, -744, 152)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -286.869, 0, 286.869, 0, 824, 0, 0, 0, 0, 0, 1112, 280, 0, 0, 0, 0, 1112, 408, 258.472, -0.112251, -258.472, 0.112251, 856, 664, 0, 0, 0, 0, 552, 664, 126.508, 0, -126.508, 0, -296, 664, 0, 0, 0, 0, -424, 536, 0, 0, 0, 0, -424, 280, 128.289, 0, -128.289, 0, -552, 152, 0, 0, 0, 0, -744, 152)
 }
-point_count = 10
+point_count = 11
 
 [sub_resource type="Curve2D" id="117"]
 resource_local_to_scene = true
@@ -416,9 +416,8 @@ scale = Vector2(3, 3)
 texture = ExtResource("7")
 
 [node name="Godot" type="Sprite2D" parent="TestWorld"]
-position = Vector2(17424, 512)
-rotation = 1.5708
-scale = Vector2(3, 3)
+position = Vector2(17400, 520)
+scale = Vector2(3.75, 3.75)
 texture = ExtResource("7")
 
 [node name="Warn" type="Sprite2D" parent="TestWorld"]
@@ -444,16 +443,68 @@ scale = Vector2(2, 2)
 texture = ExtResource("2")
 
 [node name="Station" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(17104, 224)
+position = Vector2(17104, 216)
+rotation = -3.14159
+
+[node name="Station5" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(16848, 216)
+rotation = -3.14159
 
 [node name="Station2" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(17360, 224)
+position = Vector2(17360, 216)
+rotation = -3.14159
+
+[node name="Station6" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17104, 120)
+
+[node name="Station7" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(16848, 120)
+
+[node name="Station8" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(17360, 120)
 
 [node name="Station3" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(752, 16)
+position = Vector2(1168, 16)
 
 [node name="Station4" parent="TestWorld" instance=ExtResource("9")]
-position = Vector2(496, 16)
+position = Vector2(912, 16)
+
+[node name="Station9" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(656, 16)
+
+[node name="Station10" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(400, 16)
+
+[node name="Station11" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(144, 16)
+
+[node name="Station12" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(1088, 400)
+
+[node name="Station13" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(832, 400)
+
+[node name="Station14" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(576, 400)
+
+[node name="Station15" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(320, 400)
+
+[node name="Station16" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(320, 304)
+rotation = -3.14159
+
+[node name="Station17" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(576, 304)
+rotation = -3.14159
+
+[node name="Station18" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(832, 304)
+rotation = -3.14159
+
+[node name="Station19" parent="TestWorld" instance=ExtResource("9")]
+position = Vector2(1088, 304)
+rotation = -3.14159
 
 [node name="Tracks" type="Node2D" parent="."]
 
@@ -1181,6 +1232,7 @@ offset_top = -88.0
 offset_bottom = -40.0
 
 [node name="TrainEngine" parent="." instance=ExtResource("4")]
+max_force = 1500.0
 
 [node name="ChaseCamera" parent="TrainEngine" instance=ExtResource("6")]
 position = Vector2(32, 0)

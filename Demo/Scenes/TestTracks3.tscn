@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bu4aw1ixjxyao"]
+[gd_scene load_steps=21 format=3 uid="uid://bu4aw1ixjxyao"]
 
 [ext_resource type="PackedScene" uid="uid://isd3o7ji1m5j" path="res://Scenes/Track.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://c2qsc24ng38ir" path="res://Scenes/TrainEngine.tscn" id="2"]
@@ -11,7 +11,7 @@
 [sub_resource type="Curve2D" id="8"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 256, 0, -192.768, 0, 192.768, 0, 704, 0, 0, 0, 0, 0, 896, 192, 0, 0, 0, 0, 896, 256, 190.248, 0.629961, -190.248, -0.629961, 704, 448, 0, 0, 0, 0, 384, 448)
+"points": PackedVector2Array(0, 0, 0, 0, 256, 0, -192.768, 0, 192.768, 0, 704, 0, 0, 0, 0, 0, 896, 192, 0, 0, 0, 0, 896, 256, 190.248, 0.629961, -190.248, -0.629961, 704, 512, 0, 0, 0, 0, 512, 512)
 }
 point_count = 6
 
@@ -32,23 +32,23 @@ point_count = 2
 [sub_resource type="Curve2D" id="11"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(-128.367, 0.472263, 128.367, -0.472263, 0, 0, 0, 0, 0, 0, 128, 128)
+"points": PackedVector2Array(-129.161, 0.472265, 129.161, -0.472265, 0, 0, 0, 0, 0, 0, 128, 95.9997)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="13"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0.561231, 127.399, -0.561231, -127.399, 0, -160, 0, 0, 0, 0, 128, -288, -182.971, 0.477154, 182.971, -0.477154, 352, -288, 0, 0, 0, 0, 536, -120, 0, 0, 0, 0, 536, -96, 198.861, 0.671939, -198.861, -0.671939, 336, 72, 128.195, -0.529732, -128.195, 0.529732, 0, -64, 0, 0, 0, 0, -256, -64)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 96, 0.561231, 127.399, -0.561231, -127.399, 0, -160, 0, 0, 0, 0, 128, -288, -182.971, 0.477154, 182.971, -0.477154, 416, -288, 0, 0, 0, 0, 600, -120, 0, 0, 0, 0, 600, -96, 151.293, 0.671939, -151.293, -0.671939, 448, 64, 185.516, 1.18921, -185.516, -1.18921, 256, 64, 128.195, -0.529732, -128.195, 0.529732, -16, -96, 0, 0, 0, 0, -128, -96)
 }
-point_count = 9
+point_count = 10
 
 [sub_resource type="Curve2D" id="15"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -128, -192, 0, 0, 0, 0, -128, -128, -127.786, 0.39685, 127.786, -0.39685, 0, 0, 0, 0, 0, 0, 256, 0)
+"points": PackedVector2Array(0, -126.056, 0, 126.056, -128, -192, -138.056, -0.378414, 138.056, 0.378414, 88, 64, 0, 0, 0, 0, 256, 64)
 }
-point_count = 4
+point_count = 3
 
 [sub_resource type="Curve2D" id="16"]
 resource_local_to_scene = true
@@ -64,9 +64,43 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Curve2D" id="3"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -24.0172, 16.0049, 24.0172, -16.0049, 64, -16, 0, 0, 0, 0, 128, -32)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="4"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0.000549316)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_rwqxh"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -24.0172, 16.0049, 24.0172, -16.0049, 64, -16, 0, 0, 0, 0, 128, -32)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_6d3k0"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(-63.9252, 0.33003, 0, 0, 0, 0, -17.3529, -16.0181, 17.3529, 16.0181, 48, 16, 0, 0, 0, 0, 64, 64)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_vuqbh"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 127.399, 0, -127.399, 0, -192, 0, 0, 0, 0, 0, -320, -96, 0, 0, 0, 0, -320, -224)
+}
+point_count = 4
+
 [node name="TestTracks3" type="Node2D"]
 script = ExtResource("5")
-car_count = 16
 train_vehicle_reference = ExtResource("2_cyjw1")
 
 [node name="TestWorld" parent="." instance=ExtResource("4")]
@@ -81,7 +115,7 @@ curve = SubResource("8")
 curve = SubResource("14")
 
 [node name="TrackSwitch" parent="Tracks" instance=ExtResource("3")]
-position = Vector2(576, 512)
+position = Vector2(576, 576)
 rotation = -3.14159
 
 [node name="LeftTrack" parent="Tracks/TrackSwitch" index="0"]
@@ -106,19 +140,19 @@ rotation = -4.29153e-06
 curve = SubResource("11")
 
 [node name="HeadPoint" parent="Tracks/TrackSwitch/RightTrack" index="0"]
-rotation = -0.00367899
+rotation = -0.0036564
 
 [node name="TailPoint" parent="Tracks/TrackSwitch/RightTrack" index="1"]
-position = Vector2(128, 128)
-rotation = 0.785398
-progress = 203.314
+position = Vector2(128, 95.9997)
+rotation = 0.643499
+progress = 178.773
 
 [node name="TrackVisualComponent" parent="Tracks/TrackSwitch/RightTrack" index="2"]
-points = PackedVector2Array(0, 0, 2.98509, 0.012419, 5.92341, 0.0713225, 8.81532, 0.175974, 11.6612, 0.325637, 14.4614, 0.519575, 17.2163, 0.757051, 19.9263, 1.03733, 22.5917, 1.35967, 25.213, 1.72335, 27.7904, 2.12761, 30.3244, 2.57173, 32.8152, 3.05498, 37.6693, 4.13587, 42.3554, 5.36441, 46.8766, 6.73469, 51.2358, 8.24084, 55.4359, 9.87695, 59.48, 11.6371, 63.371, 13.5155, 67.1118, 15.5062, 70.7055, 17.6032, 74.1548, 19.8008, 77.4629, 22.0929, 80.6326, 24.4738, 83.667, 26.9376, 86.5689, 29.4782, 89.3413, 32.09, 91.9872, 34.7668, 94.5096, 37.503, 96.9113, 40.2925, 99.1954, 43.1295, 101.365, 46.008, 103.422, 48.9223, 105.371, 51.8664, 107.214, 54.8344, 108.954, 57.8204, 110.594, 60.8185, 112.138, 63.8229, 113.587, 66.8276, 114.945, 69.8268, 116.215, 72.8145, 117.4, 75.785, 118.502, 78.7321, 119.526, 81.6502, 120.473, 84.5333, 121.347, 87.3755, 122.15, 90.1709, 122.886, 92.9136, 123.558, 95.5977, 124.168, 98.2174, 124.719, 100.767, 125.215, 103.24, 126.052, 107.934, 126.701, 112.252, 127.188, 116.147, 127.534, 119.572, 127.765, 122.481, 127.973, 126.557, 128, 128)
+points = PackedVector2Array(0, 0, 3.0034, 0.00659007, 5.95946, 0.0481288, 8.86854, 0.124063, 11.731, 0.233839, 14.5473, 0.376903, 17.3177, 0.552703, 20.0427, 0.760684, 22.7225, 1.00029, 25.3577, 1.27098, 27.9485, 1.57219, 30.4953, 1.90336, 32.9986, 2.26395, 37.8758, 3.07116, 42.5833, 3.98939, 47.1239, 5.01422, 51.5006, 6.14121, 55.7166, 7.36593, 59.7748, 8.68397, 63.6782, 10.0909, 67.4298, 11.5823, 71.0326, 13.1537, 74.4897, 14.8007, 77.804, 16.5189, 80.9786, 18.3038, 84.0165, 20.1511, 86.9206, 22.0563, 89.6941, 24.0149, 92.3398, 26.0226, 94.8608, 28.0749, 97.2601, 30.1674, 99.5408, 32.2956, 101.706, 34.4552, 103.758, 36.6417, 105.701, 38.8506, 107.537, 41.0776, 109.269, 43.3183, 110.901, 45.5681, 112.435, 47.8227, 113.875, 50.0777, 115.223, 52.3286, 116.482, 54.5709, 117.656, 56.8004, 119.759, 61.2027, 121.556, 65.5002, 123.071, 69.6575, 124.328, 73.639, 125.351, 77.4094, 126.163, 80.9333, 126.791, 84.1753, 127.256, 87.0999, 127.798, 91.8553, 128, 95.9997)
 
 [node name="Pointer" parent="Tracks/TrackSwitch/RightTrack" index="3"]
-position = Vector2(64.5885, 14.1427)
-rotation = 0.482063
+position = Vector2(65.4984, 10.7968)
+rotation = 0.377842
 
 [node name="Button" parent="Tracks/TrackSwitch" index="2"]
 offset_top = 40.0001
@@ -178,6 +212,84 @@ offset_top = -88.0002
 offset_right = 36.0005
 offset_bottom = -40.0002
 
+[node name="TrackSwitch3" parent="Tracks" instance=ExtResource("3")]
+position = Vector2(704, 576)
+rotation = 3.14159
+
+[node name="LeftTrack" parent="Tracks/TrackSwitch3" index="0"]
+curve = SubResource("3")
+
+[node name="TailPoint" parent="Tracks/TrackSwitch3/LeftTrack" index="1"]
+position = Vector2(128, -32)
+
+[node name="TrackVisualComponent" parent="Tracks/TrackSwitch3/LeftTrack" index="2"]
+points = PackedVector2Array(0, 0, 1.76492, -0.031049, 6.62258, -0.249311, 10.0063, -0.487294, 13.9173, -0.842458, 18.2737, -1.33826, 22.9935, -1.99816, 25.4641, -2.39698, 27.9948, -2.84562, 30.5754, -3.34702, 33.1956, -3.9041, 35.8451, -4.5198, 38.5139, -5.19705, 41.1915, -5.93878, 43.8677, -6.74793, 46.5324, -7.62743, 49.1753, -8.58021, 51.786, -9.6092, 54.3544, -10.7173, 56.8703, -11.9076, 59.3233, -13.1828, 61.7033, -14.546, 64, -16, 66.2967, -17.454, 68.6767, -18.8172, 71.1297, -20.0924, 73.6456, -21.2827, 76.214, -22.3908, 78.8247, -23.4198, 81.4676, -24.3726, 84.1323, -25.2521, 86.8085, -26.0612, 89.4861, -26.803, 92.1549, -27.4802, 94.8044, -28.0959, 97.4246, -28.653, 100.005, -29.1544, 102.536, -29.603, 105.006, -30.0018, 109.726, -30.6617, 114.083, -31.1575, 117.994, -31.5127, 121.377, -31.7507, 126.235, -31.969, 128, -32)
+
+[node name="Pointer" parent="Tracks/TrackSwitch3/LeftTrack" index="3"]
+position = Vector2(64, -16)
+
+[node name="RightTrack" parent="Tracks/TrackSwitch3" index="1"]
+curve = SubResource("4")
+
+[node name="HeadPoint" parent="Tracks/TrackSwitch3/RightTrack" index="0"]
+rotation = 4.29153e-06
+
+[node name="TailPoint" parent="Tracks/TrackSwitch3/RightTrack" index="1"]
+position = Vector2(128, 0.000549316)
+rotation = 4.29153e-06
+progress = 128.0
+
+[node name="TrackVisualComponent" parent="Tracks/TrackSwitch3/RightTrack" index="2"]
+points = PackedVector2Array(0, 0, 1.4375, 6.16908e-06, 5.5, 2.36034e-05, 8.39844, 3.60422e-05, 11.8125, 5.06938e-05, 15.6953, 6.7357e-05, 20, 8.58307e-05, 24.6797, 0.000105914, 27.1455, 0.000116496, 29.6875, 0.000127405, 32.2998, 0.000138616, 34.9766, 0.000150103, 37.7119, 0.000161842, 40.5, 0.000173807, 43.335, 0.000185973, 46.2109, 0.000198316, 49.1221, 0.000210809, 52.0625, 0.000223428, 55.0264, 0.000236148, 58.0078, 0.000248943, 61.001, 0.000261788, 64, 0.000274658, 66.999, 0.000287529, 69.9922, 0.000300374, 72.9736, 0.000313169, 75.9375, 0.000325888, 78.8779, 0.000338507, 81.7891, 0.000351001, 84.665, 0.000363343, 87.5, 0.000375509, 90.2881, 0.000387474, 93.0234, 0.000399213, 95.7002, 0.000410701, 98.3125, 0.000421911, 100.854, 0.000432821, 103.32, 0.000443403, 108, 0.000463486, 112.305, 0.000481959, 116.188, 0.000498623, 119.602, 0.000513274, 122.5, 0.000525713, 126.562, 0.000543147, 128, 0.000549316)
+
+[node name="Pointer" parent="Tracks/TrackSwitch3/RightTrack" index="3"]
+position = Vector2(66.7676, 0.000286535)
+rotation = 4.29153e-06
+
+[node name="Button" parent="Tracks/TrackSwitch3" index="2"]
+offset_left = -40.0002
+offset_top = 39.9998
+offset_right = 35.9998
+offset_bottom = 132.0
+
+[node name="TrackSwitch4" parent="Tracks" instance=ExtResource("3")]
+position = Vector2(192, 320)
+
+[node name="LeftTrack" parent="Tracks/TrackSwitch4" index="0"]
+curve = SubResource("Curve2D_rwqxh")
+
+[node name="TailPoint" parent="Tracks/TrackSwitch4/LeftTrack" index="1"]
+position = Vector2(128, -32)
+
+[node name="TrackVisualComponent" parent="Tracks/TrackSwitch4/LeftTrack" index="2"]
+points = PackedVector2Array(0, 0, 1.76492, -0.031049, 6.62258, -0.249311, 10.0063, -0.487294, 13.9173, -0.842458, 18.2737, -1.33826, 22.9935, -1.99816, 25.4641, -2.39698, 27.9948, -2.84562, 30.5754, -3.34702, 33.1956, -3.9041, 35.8451, -4.5198, 38.5139, -5.19705, 41.1915, -5.93878, 43.8677, -6.74793, 46.5324, -7.62743, 49.1753, -8.58021, 51.786, -9.6092, 54.3544, -10.7173, 56.8703, -11.9076, 59.3233, -13.1828, 61.7033, -14.546, 64, -16, 66.2967, -17.454, 68.6767, -18.8172, 71.1297, -20.0924, 73.6456, -21.2827, 76.214, -22.3908, 78.8247, -23.4198, 81.4676, -24.3726, 84.1323, -25.2521, 86.8085, -26.0612, 89.4861, -26.803, 92.1549, -27.4802, 94.8044, -28.0959, 97.4246, -28.653, 100.005, -29.1544, 102.536, -29.603, 105.006, -30.0018, 109.726, -30.6617, 114.083, -31.1575, 117.994, -31.5127, 121.377, -31.7507, 126.235, -31.969, 128, -32)
+
+[node name="Pointer" parent="Tracks/TrackSwitch4/LeftTrack" index="3"]
+position = Vector2(64, -16)
+
+[node name="RightTrack" parent="Tracks/TrackSwitch4" index="1"]
+curve = SubResource("Curve2D_6d3k0")
+
+[node name="HeadPoint" parent="Tracks/TrackSwitch4/RightTrack" index="0"]
+rotation = 0.321751
+
+[node name="TailPoint" parent="Tracks/TrackSwitch4/RightTrack" index="1"]
+position = Vector2(64, 64)
+rotation = 1.24905
+progress = 103.577
+
+[node name="TrackVisualComponent" parent="Tracks/TrackSwitch4/RightTrack" index="2"]
+points = PackedVector2Array(0, 0, 1.35076, 0.0305085, 5.05975, 0.247458, 7.63766, 0.48464, 10.612, 0.838983, 13.9185, 1.334, 17.4927, 1.99322, 21.2702, 2.84015, 25.1867, 3.89831, 29.1778, 5.19121, 33.1792, 6.74237, 37.1265, 8.57532, 40.9553, 10.7136, 44.6013, 13.1806, 48, 16, 51.0394, 19.1788, 53.6697, 22.6614, 55.9204, 26.3778, 57.8208, 30.2576, 59.4003, 34.2307, 60.6883, 38.2267, 61.7142, 42.1755, 62.5073, 46.0068, 63.0971, 49.6504, 63.513, 53.036, 63.7842, 56.0935, 63.9403, 58.7525, 64.0242, 62.5945, 64, 64)
+
+[node name="Pointer" parent="Tracks/TrackSwitch4/RightTrack" index="3"]
+position = Vector2(50.8419, 18.9487)
+rotation = 0.85973
+progress = 55.6925
+
+[node name="Track4" parent="Tracks" instance=ExtResource("1")]
+position = Vector2(576, 608)
+curve = SubResource("Curve2D_vuqbh")
+
 [node name="TrainEngine" parent="." instance=ExtResource("2")]
 position = Vector2(280.001, 128)
 scale = Vector2(0.999998, 1)
@@ -197,3 +309,9 @@ autostart = true
 [editable path="Tracks/TrackSwitch2"]
 [editable path="Tracks/TrackSwitch2/LeftTrack"]
 [editable path="Tracks/TrackSwitch2/RightTrack"]
+[editable path="Tracks/TrackSwitch3"]
+[editable path="Tracks/TrackSwitch3/LeftTrack"]
+[editable path="Tracks/TrackSwitch3/RightTrack"]
+[editable path="Tracks/TrackSwitch4"]
+[editable path="Tracks/TrackSwitch4/LeftTrack"]
+[editable path="Tracks/TrackSwitch4/RightTrack"]

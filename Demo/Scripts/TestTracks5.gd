@@ -7,7 +7,7 @@ extends Node
 
 func _setup_train():
 	engine.train_info.connect($TestWorld.update_train_info)
-	engine.add_to_track($Tracks/Track, 900)
+	engine.add_to_track($Tracks/Track, 1900)
 	
 	var last_car = engine
 	for index in range(car_count):

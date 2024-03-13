@@ -180,9 +180,10 @@ position = Vector2(64.5004, 14.5853)
 rotation = 0.486419
 
 [node name="Button" parent="Tracks/TrackSwitch" index="2"]
-offset_top = 39.9997
-offset_bottom = 87.9997
-rotation = 449.999
+offset_top = 47.9996
+offset_right = 11.9997
+offset_bottom = 140.0
+rotation = 447.676
 button_pressed = false
 
 [node name="TrainEngine" parent="." instance=ExtResource("2")]
