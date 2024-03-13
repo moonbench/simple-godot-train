@@ -5,7 +5,9 @@
 [node name="World" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1248.0
-offset_bottom = 736.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 1240.0
+offset_bottom = 728.0
 texture = ExtResource("1")
 stretch_mode = 1

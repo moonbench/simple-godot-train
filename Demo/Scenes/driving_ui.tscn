@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://br23x6bcucuuh"]
+
+[ext_resource type="Script" path="res://Demo/Scripts/driving_ui.gd" id="1_gsfmu"]
+[ext_resource type="Theme" uid="uid://dhkt4uo1jjcia" path="res://Demo/Resources/UITheme.tres" id="1_mk7p2"]
+[ext_resource type="PackedScene" uid="uid://oafvawlaifee" path="res://Demo/Scenes/components/ui_info_box.tscn" id="2_mrpbw"]
+
+[node name="DrivingUILayer" type="CanvasLayer"]
+script = ExtResource("1_gsfmu")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_mk7p2")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+mouse_filter = 2
+
+[node name="InfoBox" parent="Control/MarginContainer" instance=ExtResource("2_mrpbw")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="ControlsPanel" type="PanelContainer" parent="Control/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/ControlsPanel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ControlsPanel/VBoxContainer"]
+layout_mode = 2
+text = "W - Throttle Up     S - Throttle Down     X - Cut Throttle     Space - Brake"
+
+[node name="CameraInfoControls" type="Label" parent="Control/MarginContainer/ControlsPanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Middle Mouse - Pan Camera3D     Scroll Wheel - Zoom"
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ControlsButton" type="CheckButton" parent="Control/MarginContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "Controls"
+
+[node name="InfoButton" type="CheckButton" parent="Control/MarginContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+button_pressed = true
+text = "Train Info"
+
+[node name="Button" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="Exit" type="Button" parent="Control/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit Game"
+
+[connection signal="toggled" from="Control/MarginContainer/PanelContainer/VBoxContainer/ControlsButton" to="." method="_on_controls_button_toggled"]
+[connection signal="toggled" from="Control/MarginContainer/PanelContainer/VBoxContainer/InfoButton" to="." method="_on_info_button_toggled"]
+[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/PanelContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -6,7 +6,8 @@ extends Node
 @onready var engine = $TrainEngine
 
 func _setup_train():
-	engine.train_info.connect($TestWorld.update_train_info)
+	UI.add_driving_ui()
+	engine.train_info.connect(UI.driving_ui.update_train_info)
 	engine.add_to_track($Tracks/Track, 800)
 	
 	var last_car = engine
