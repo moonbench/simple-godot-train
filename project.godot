@@ -20,6 +20,7 @@ config/icon="res://icon.png"
 [autoload]
 
 UIController="*res://Scenes/ui_controller.tscn"
+Game="*res://Demo/Scenes/game_controller.tscn"
 
 [display]
 

@@ -13,7 +13,7 @@ func _ready():
 	%InfoButton.toggled.emit(%InfoButton.button_pressed)
 
 func _on_Button_pressed():
-	get_tree().change_scene_to_packed(load("res://Demo/Scenes/Game.tscn"))
+	Game.switch_to_scene("res://Demo/Scenes/Game.tscn")
 
 func update_train_info(info):
 	info_box.update_info(info)

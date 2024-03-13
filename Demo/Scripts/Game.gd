@@ -22,26 +22,25 @@ func _setup_train():
 		last_car = car
 
 func _on_Button_pressed():
-	get_tree().change_scene_to_packed(load("res://Demo/Scenes/TestTracks1.tscn"))
+	Game.switch_to_scene("res://Demo/Scenes/TestTracks1.tscn")
 
 func _on_Button2_pressed():
-	get_tree().change_scene_to_packed(load("res://Demo/Scenes/TestTracks2.tscn"))
+	Game.switch_to_scene("res://Demo/Scenes/TestTracks2.tscn")
 
 func _on_Button3_pressed():
-	get_tree().change_scene_to_packed(load("res://Demo/Scenes/TestTracks3.tscn"))
+	Game.switch_to_scene("res://Demo/Scenes/TestTracks3.tscn")
 
 func _on_Button4_pressed():
-	get_tree().change_scene_to_packed(load("res://Demo/Scenes/TestTracks4.tscn"))
+	Game.switch_to_scene("res://Demo/Scenes/TestTracks4.tscn")
 
 func _on_Button5_pressed():
-	get_tree().change_scene_to_packed(load("res://Demo/Scenes/TestTracks5.tscn"))
+	Game.switch_to_scene("res://Demo/Scenes/TestTracks5.tscn")
 
 func _on_Button6_pressed():
-	get_tree().change_scene_to_packed(load("res://Demo/Scenes/TestTracks6.tscn"))
+	Game.switch_to_scene("res://Demo/Scenes/TestTracks6.tscn")
 
 func _on_version_pressed() -> void:
 	OS.shell_open("https://github.com/moonbench/simple-godot-train") 
 
 func _on_exit_button_pressed() -> void:
-	get_tree().get_root().propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
-	get_tree().quit.call_deferred()
+	Game.exit()
