@@ -16,13 +16,13 @@ var brake_percent := 0.0
 var cars : Array[TrainVehicle] = []
 var first_bogie : Bogie
 
-var total_available_force := 0.0
+var total_available_drive_force := 0.0
+var total_available_brake_force := 0.0
 var total_mass := 0.0
 var average_max_speed := 0.0
 var average_friction_coefficient := 0.0
 var average_rolling_resistance_coefficient := 0.0
 var average_air_resistance_coefficient := 0.0
-var average_brake_power := 0.0
 
 var applied_force := 0.0
 var velocity := 0.0
@@ -64,7 +64,7 @@ func add_vehicle_at_front(car: TrainVehicle):
 func _move(delta: float) -> void:
 	drag = _drag_force()
 	friction = _friction_force()
-	var brake = brake_percent * average_brake_power
+	var brake = brake_percent * total_available_brake_force
 	var resistance = drag + friction + brake
 	
 	acceleration = 0
@@ -85,7 +85,7 @@ func _move(delta: float) -> void:
 func _update_applied_force(delta: float) -> void:
 	var target = 0.0
 	if abs(velocity) < average_max_speed:
-		target = total_available_force * throttle_percent
+		target = total_available_drive_force * throttle_percent
 	applied_force = lerp(applied_force, target, delta * force_change_speed)
 
 func _friction_force():
@@ -100,7 +100,7 @@ func _emit_status():
 	train_info.emit({
 		"throttle": throttle_percent,
 		"force_applied": applied_force,
-		"force_max": total_available_force,
+		"force_max": total_available_drive_force,
 		"brake": brake_percent,
 		"total_mass": total_mass,
 		"velocity": velocity,
@@ -112,12 +112,12 @@ func _emit_status():
 
 func _update_physics_from_cars():
 	total_mass = 0.0
-	total_available_force = 0.0
+	total_available_drive_force = 0.0
+	total_available_brake_force = 0.0
 	
 	var friction_coeficient_sum = 0
 	var air_resistance_coefficient_sum = 0
 	var rolling_resistance_coefficient_sum = 0
-	var brake_power_sum = 0
 	var max_speed_sum = 0
 	var engine_count = 0
 	
@@ -126,10 +126,10 @@ func _update_physics_from_cars():
 		friction_coeficient_sum += car.friction_coefficient
 		air_resistance_coefficient_sum += car.air_resistance_coefficient
 		rolling_resistance_coefficient_sum += rolling_resistance_coefficient_sum
-		brake_power_sum += car.brake_power
+		total_available_brake_force += car.brake_power
 		
 		if car is TrainEngine:
-			total_available_force += car.total_force
+			total_available_drive_force += car.total_force
 			max_speed_sum += car.max_speed
 			engine_count += 1
 	
@@ -137,5 +137,4 @@ func _update_physics_from_cars():
 	average_friction_coefficient = friction_coeficient_sum / car_count
 	average_air_resistance_coefficient = air_resistance_coefficient_sum / car_count
 	average_rolling_resistance_coefficient = rolling_resistance_coefficient_sum / car_count
-	average_brake_power = brake_power_sum / car_count
 	average_max_speed = max_speed_sum / float(engine_count)

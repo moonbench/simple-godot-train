@@ -10,7 +10,7 @@ signal towed_mass_changed(mass_delta: float)
 @export var friction_coefficient := 0.01
 @export var rolling_resistance_coefficient := 0.005
 @export var air_resistance_coefficient := 0.12
-@export var brake_power := 3000.0
+@export var brake_power := 200.0
 
 @onready var front_bogie : Bogie = $Bogie
 @onready var back_bogie : Bogie = $Bogie2

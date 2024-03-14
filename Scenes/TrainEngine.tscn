@@ -7,7 +7,7 @@
 [node name="TrainEngine" groups=["train_engines"] instance=ExtResource("1")]
 script = ExtResource("2")
 total_force = 1000.0
-max_speed = 200.0
+max_speed = 150.0
 mass = 60.0
 brake_power = 12.0
 
