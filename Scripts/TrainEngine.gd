@@ -2,4 +2,5 @@
 class_name TrainEngine
 extends TrainVehicle
 
-@export var max_force := 1000.0
+@export var total_force := 1000.0
+@export var max_speed := 200.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsdv5sbpxoeue"]
+[gd_scene load_steps=7 format=3 uid="uid://dsdv5sbpxoeue"]
 
 [ext_resource type="PackedScene" uid="uid://isd3o7ji1m5j" path="res://Scenes/Track.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://rekipk5xspb1" path="res://Demo/Scenes/World.tscn" id="3_w03lg"]
@@ -8,9 +8,16 @@
 [sub_resource type="Curve2D" id="1"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 320, -64, -192.565, 0.840896, 192.565, -0.840896, 640, -64, 0, 0, 0, 0, 832, 120, 0, 0, 0, 0, 832, 168, 192.565, 0, -192.565, 0, 640, 344, 127.365, -0.763106, -127.365, 0.763106, 320, 280, 190.883, 0, -190.883, 0, 0, 424, 0, 0, 0, 0, -192, 224, 0, 0, 0, 0, -192, 128, -191.724, 0.840896, 191.724, -0.840896, 0, -64, 0, 0, 0, 0, 320, -64)
+"points": PackedVector2Array(0, 0, 0, 0, 448, -64, -192.565, 0.840896, 192.565, -0.840896, 640, -64, 0, 0, 0, 0, 832, 120, 0, 0, 0, 0, 832, 168, 192.565, 0, -192.565, 0, 640, 344, 127.365, -0.763106, -127.365, 0.763106, 320, 280, 190.883, 0, -190.883, 0, 0, 424, 0, 0, 0, 0, -192, 224, 0, 0, 0, 0, -192, 128, -191.724, 0.840896, 191.724, -0.840896, 0, -64, 0, 0, 0, 0, 192, -64)
 }
 point_count = 11
+
+[sub_resource type="Curve2D" id="Curve2D_6gyi3"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 256, 0)
+}
+point_count = 2
 
 [node name="TestTracks1" type="Node2D"]
 script = ExtResource("4")
@@ -22,6 +29,10 @@ script = ExtResource("4")
 [node name="Track" parent="Tracks" instance=ExtResource("1")]
 position = Vector2(256, 176)
 curve = SubResource("1")
+
+[node name="Track2" parent="Tracks" instance=ExtResource("1")]
+position = Vector2(448, 112)
+curve = SubResource("Curve2D_6gyi3")
 
 [node name="Structures" type="Node2D" parent="."]
 

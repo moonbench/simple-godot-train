@@ -1,27 +1,10 @@
 # Runs the demo's main scene
 extends Node
 
-@export var car_count := 12
-
-@onready var train_vehicle_reference = load("res://Scenes/TrainVehicle.tscn")
-@onready var engine : TrainEngine = $TrainEngine
-
 func _ready() -> void:
 	_setup_train.call_deferred()
 	UI.remove_driving_ui()
 	UI.transitions.swipe_off()
-
-func _setup_train():
-	engine.add_to_track($Tracks/Track, 200)
-	engine.target_force_percent = 0.5
-	engine.velocity = 46.0
-	
-	var last_car = engine
-	for index in range(car_count):
-		var car = train_vehicle_reference.instantiate()
-		add_child(car)
-		last_car.set_follower_car(car)
-		last_car = car
 
 func _on_Button_pressed():
 	Game.switch_to_scene("res://Demo/Scenes/TestTracks1.tscn")
@@ -46,3 +29,68 @@ func _on_version_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	Game.exit()
+
+func _setup_train():
+	var train = load("res://Scenes/train.tscn").instantiate()
+	add_child(train)
+	
+	train.add_child(load("res://Scenes/components/player_control_component.tscn").instantiate())
+	var engine = load("res://Scenes/TrainEngine.tscn").instantiate()
+	add_child(engine)
+	engine.add_to_track($Tracks/Track, 300)
+	train.add_vehicle(engine)
+	
+	var e2 = load("res://Scenes/TrainEngine.tscn").instantiate()
+	add_child(e2)
+	train.add_vehicle(e2)
+
+	var car = load("res://Scenes/TrainVehicle.tscn").instantiate()
+	add_child(car)
+	train.add_vehicle(car)
+	
+	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
+	add_child(car)
+	train.add_vehicle(car)
+	
+	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
+	add_child(car)
+	train.add_vehicle(car)
+	
+	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
+	add_child(car)
+	train.add_vehicle(car)
+	
+	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
+	add_child(car)
+	train.add_vehicle(car)
+	
+	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
+	add_child(car)
+	train.add_vehicle(car)
+	
+	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
+	add_child(car)
+	train.add_vehicle(car)
+	
+	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
+	add_child(car)
+	train.add_vehicle(car)
+	
+	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
+	add_child(car)
+	train.add_vehicle(car)
+	
+	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
+	add_child(car)
+	train.add_vehicle(car)
+	
+	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
+	add_child(car)
+	train.add_vehicle(car)
+	
+	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
+	add_child(car)
+	train.add_vehicle(car)
+
+	train.throttle_percent = 0.4
+	train.velocity = 42.0

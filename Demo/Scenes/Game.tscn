@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ch0nptrh6l6ab"]
+[gd_scene load_steps=20 format=3 uid="uid://ch0nptrh6l6ab"]
 
 [ext_resource type="FontFile" path="res://Demo/Assets/font.tres" id="1"]
 [ext_resource type="PackedScene" uid="uid://rekipk5xspb1" path="res://Demo/Scenes/World.tscn" id="2"]
@@ -7,9 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://jvakchg2s8i4" path="res://Scenes/TrackSwitch.tscn" id="5"]
 [ext_resource type="Theme" uid="uid://dhkt4uo1jjcia" path="res://Demo/Resources/UITheme.tres" id="6"]
 [ext_resource type="FontFile" uid="uid://chnn7o53hp1wh" path="res://Demo/Assets/DePixelSchmal.ttf" id="7"]
-[ext_resource type="PackedScene" uid="uid://dk4kss5yu35xs" path="res://Scenes/components/player_control_component.tscn" id="7_3fkc2"]
 [ext_resource type="Texture2D" uid="uid://cirsea0damm3q" path="res://Demo/Assets/godot.png" id="8"]
-[ext_resource type="PackedScene" uid="uid://c2qsc24ng38ir" path="res://Scenes/TrainEngine.tscn" id="9"]
 
 [sub_resource type="Curve2D" id="1"]
 resource_local_to_scene = true
@@ -256,11 +254,6 @@ position = Vector2(448, -56)
 [node name="Track7" parent="Tracks" instance=ExtResource("3")]
 position = Vector2(-256, 272)
 curve = SubResource("17")
-
-[node name="TrainEngine" parent="." instance=ExtResource("9")]
-position = Vector2(-152, 504)
-
-[node name="PlayerControlComponent" parent="TrainEngine" instance=ExtResource("7_3fkc2")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(2, 2)

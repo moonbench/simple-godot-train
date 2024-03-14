@@ -4,13 +4,13 @@ extends Node2D
 
 signal towed_mass_changed(mass_delta: float)
 
-@export var mass := 10.0
+@export var mass := 20.0
 @export var bogie_distance := 58.0
 @export var follow_distance := 26.0
-@export var friction_coefficient := 0.1
+@export var friction_coefficient := 0.01
 @export var rolling_resistance_coefficient := 0.005
-@export var air_resistance_coefficient := 0.10
-@export var brake_power := 0.5
+@export var air_resistance_coefficient := 0.12
+@export var brake_power := 3000.0
 
 @onready var front_bogie : Bogie = $Bogie
 @onready var back_bogie : Bogie = $Bogie2

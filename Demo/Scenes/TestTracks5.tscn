@@ -1,18 +1,14 @@
-[gd_scene load_steps=70 format=3 uid="uid://b0qighwfq7mip"]
+[gd_scene load_steps=66 format=3 uid="uid://b0qighwfq7mip"]
 
 [ext_resource type="PackedScene" uid="uid://isd3o7ji1m5j" path="res://Scenes/Track.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://jvakchg2s8i4" path="res://Scenes/TrackSwitch.tscn" id="2"]
-[ext_resource type="PackedScene" uid="uid://bjqtvbefblx2e" path="res://Scenes/TrainVehicle.tscn" id="2_n5moa"]
 [ext_resource type="PackedScene" uid="uid://rekipk5xspb1" path="res://Demo/Scenes/World.tscn" id="3"]
-[ext_resource type="PackedScene" uid="uid://c2qsc24ng38ir" path="res://Scenes/TrainEngine.tscn" id="4"]
 [ext_resource type="Script" path="res://Demo/Scripts/TestTracks5.gd" id="5"]
-[ext_resource type="PackedScene" uid="uid://delplckh6lx3o" path="res://Demo/Scenes/ChaseCamera.tscn" id="6"]
 [ext_resource type="Texture2D" uid="uid://cirsea0damm3q" path="res://Demo/Assets/godot.png" id="7"]
 [ext_resource type="PackedScene" uid="uid://2aqi3h70khsf" path="res://Demo/Scenes/structure.tscn" id="7_72y8j"]
 [ext_resource type="Texture2D" uid="uid://ci1gjepialewv" path="res://Demo/Assets/warn.png" id="8"]
 [ext_resource type="PackedScene" uid="uid://sdhkmq6aj6w1" path="res://Demo/Scenes/structure_small.tscn" id="8_rsjsx"]
 [ext_resource type="PackedScene" uid="uid://5e13vjt40jij" path="res://Demo/Scenes/Station.tscn" id="9"]
-[ext_resource type="PackedScene" uid="uid://dk4kss5yu35xs" path="res://Scenes/components/player_control_component.tscn" id="11_x50km"]
 
 [sub_resource type="Curve2D" id="1"]
 resource_local_to_scene = true
@@ -408,7 +404,6 @@ point_count = 2
 
 [node name="TestTracks5" type="Node2D"]
 script = ExtResource("5")
-train_vehicle_reference = ExtResource("2_n5moa")
 
 [node name="TestWorld" parent="." instance=ExtResource("3")]
 
@@ -1573,19 +1568,12 @@ offset_right = 68.0
 offset_bottom = 88.0
 button_pressed = false
 
-[node name="TrainEngine" parent="." instance=ExtResource("4")]
-
-[node name="ChaseCamera" parent="TrainEngine" instance=ExtResource("6")]
-position = Vector2(24, 0)
-
-[node name="PlayerControlComponent" parent="TrainEngine" instance=ExtResource("11_x50km")]
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="TestWorld"]
 [editable path="Tracks/TrackSwitch"]

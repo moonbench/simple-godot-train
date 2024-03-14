@@ -30,17 +30,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="MarginContainer/GridContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
-text = "Force: "
-horizontal_alignment = 2
-
-[node name="Force" type="Label" parent="MarginContainer/GridContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-
 [node name="Label3" type="Label" parent="MarginContainer/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
@@ -52,6 +41,28 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="Label2" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+text = "Force: "
+horizontal_alignment = 2
+
+[node name="Force" type="Label" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label9" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+text = "Acceleration: "
+horizontal_alignment = 2
+
+[node name="Acceleration" type="Label" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="Label4" type="Label" parent="MarginContainer/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
@@ -59,6 +70,16 @@ text = "Velocity: "
 horizontal_alignment = 2
 
 [node name="Velocity" type="Label" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+text = "(Max Vel): "
+horizontal_alignment = 2
+
+[node name="MaxVelocity" type="Label" parent="MarginContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
@@ -89,5 +110,15 @@ text = "Drag: "
 horizontal_alignment = 2
 
 [node name="Drag" type="Label" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label10" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+text = "Total Resist: "
+horizontal_alignment = 2
+
+[node name="Resist" type="Label" parent="MarginContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2

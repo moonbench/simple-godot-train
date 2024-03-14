@@ -6,8 +6,9 @@
 
 [node name="TrainEngine" groups=["train_engines"] instance=ExtResource("1")]
 script = ExtResource("2")
-max_force = 1000.0
-mass = 50.0
+total_force = 1000.0
+max_speed = 200.0
+mass = 60.0
 brake_power = 12.0
 
 [node name="TextureRect" parent="Body/Node2D2" index="0"]
