@@ -44,53 +44,13 @@ func _setup_train():
 	add_child(e2)
 	train.add_vehicle(e2)
 
-	var car = load("res://Scenes/TrainVehicle.tscn").instantiate()
-	add_child(car)
-	train.add_vehicle(car)
-	
-	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
-	add_child(car)
-	train.add_vehicle(car)
-	
-	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
-	add_child(car)
-	train.add_vehicle(car)
-	
-	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
-	add_child(car)
-	train.add_vehicle(car)
-	
-	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
-	add_child(car)
-	train.add_vehicle(car)
-	
-	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
-	add_child(car)
-	train.add_vehicle(car)
-	
-	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
-	add_child(car)
-	train.add_vehicle(car)
-	
-	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
-	add_child(car)
-	train.add_vehicle(car)
-	
-	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
-	add_child(car)
-	train.add_vehicle(car)
-	
-	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
-	add_child(car)
-	train.add_vehicle(car)
-	
-	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
-	add_child(car)
-	train.add_vehicle(car)
-	
-	car = load("res://Scenes/TrainVehicle.tscn").instantiate()
-	add_child(car)
-	train.add_vehicle(car)
+	for _i in range(14):
+		_add_car_to_train(train)
 
 	train.throttle_percent = 0.4
 	train.velocity = 42.0
+
+func _add_car_to_train(train: Train) -> void:
+	var car = load("res://Scenes/TrainVehicle.tscn").instantiate()
+	add_child(car)
+	train.add_vehicle(car)

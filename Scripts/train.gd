@@ -30,7 +30,6 @@ var friction := 0.0
 var drag := 0.0
 var acceleration := 0.0
 
-
 func _process(_delta: float) -> void:
 	_emit_status()
 

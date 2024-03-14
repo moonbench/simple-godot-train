@@ -22,5 +22,3 @@ func update_info(info):
 	friction_label.text = "%0.2f" % info["friction"]
 	drag_label.text = "%0.2f" % info["drag"]
 	resist_label.text = "%0.1f" % (info["drag"] + info["friction"])
-	
-	
