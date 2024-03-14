@@ -36,7 +36,7 @@ func tail_to_head() -> void:
 	sprite.flip_v = true
 
 # Place this bogie a specific distance behind another one
-func follow(leader, distance) -> void:
+func follow(leader: Bogie, distance: float) -> void:
 	follow_distance = distance
 	direction = leader.direction
 	set_track(leader.current_track)
@@ -44,9 +44,9 @@ func follow(leader, distance) -> void:
 	move_as_follower(-distance, leader.progress, leader.direction, leader.current_track, leader.current_track_length)
 
 # Move by some distance
-func move(distance) -> void:
+func move(distance: float) -> void:
 	if !current_track: return
-	var original_offset = progress
+	var original_offset := progress
 	progress += distance if direction == Directions.TAILWARD else -distance
 	_change_track_if_end(original_offset, distance)
 	moved.emit(distance, progress, direction, current_track, current_track_length)
@@ -61,20 +61,20 @@ func move_as_follower(distance: float, leader_offset: float, leader_direction: D
 		move(distance)
 
 # Put on the same track, with same orientation, as the bogie it's following
-func _put_on_leader_track(leader_track, leader_direction) -> void:
+func _put_on_leader_track(leader_track: Track, leader_direction: Directions) -> void:
 	if leader_track != current_track:
 		set_track(leader_track)
 		head_to_tail() if leader_direction == Directions.TAILWARD else tail_to_head()
 
 # Position exactly at predetermined distance from the bogie it's following
-func _set_at_distance_from_leader(distance, leader_offset, leader_direction) -> void:
-	var original_offset = progress
+func _set_at_distance_from_leader(distance: float, leader_offset: float, leader_direction: Directions) -> void:
+	var original_offset := progress
 	progress = leader_offset + (-follow_distance if leader_direction == Directions.TAILWARD else follow_distance)
 	_change_track_if_end(original_offset, distance)
 	moved.emit(distance, progress, direction, current_track, current_track_length)
 
 # Signal that the bogie has reached the end of the segment
-func _change_track_if_end(original_offset, distance_moved) -> void:
+func _change_track_if_end(original_offset: float, distance_moved: float) -> void:
 	if !current_track: return
 	if progress_ratio <= 0.0:
 		at_track_head.emit(self, abs(original_offset - abs(distance_moved)), distance_moved > 0)
