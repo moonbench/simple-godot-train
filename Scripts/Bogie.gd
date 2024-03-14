@@ -4,8 +4,6 @@
 class_name Bogie
 extends PathFollow2D
 
-signal at_track_head(bogie: Bogie, extra: float, is_forward: bool)
-signal at_track_tail(bogie: Bogie, extra: float, is_forward: bool)
 signal moved(distance: float, leader_offset: float, leader_direction: Directions, leader_track: Track, leader_track_length: float)
 
 enum Directions {HEADWARD, TAILWARD}
@@ -18,12 +16,9 @@ var current_track_length : float
 
 # Put the bogie on a track
 func set_track(track: Path2D) -> void:
-	_disconnect_from_track()
 	reparent(track, false)
 	current_track = track
 	current_track_length = track.curve.get_baked_length()
-	at_track_head.connect(track.on_bogie_at_head)
-	at_track_tail.connect(track.on_bogie_at_tail)
 
 # Set the direction of "forward travel" along the track to be towards the tail
 func head_to_tail() -> void:
@@ -77,12 +72,6 @@ func _set_at_distance_from_leader(distance: float, leader_offset: float, leader_
 func _change_track_if_end(original_offset: float, distance_moved: float) -> void:
 	if !current_track: return
 	if progress_ratio <= 0.0:
-		at_track_head.emit(self, abs(original_offset - abs(distance_moved)), distance_moved > 0)
+		current_track.on_bogie_at_head(self, abs(original_offset - abs(distance_moved)), distance_moved > 0)
 	elif progress_ratio >= 1.0:
-		at_track_tail.emit(self, original_offset + abs(distance_moved) - current_track_length, distance_moved > 0)
-
-# Disconnect signals
-func _disconnect_from_track() -> void:
-	if current_track:
-		at_track_head.disconnect(current_track.on_bogie_at_head)
-		at_track_tail.disconnect(current_track.on_bogie_at_tail)
+		current_track.on_bogie_at_tail(self, original_offset + abs(distance_moved) - current_track_length, distance_moved > 0)
