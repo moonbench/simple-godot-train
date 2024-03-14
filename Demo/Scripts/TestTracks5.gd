@@ -7,7 +7,7 @@ func _setup_train():
 	train.add_child(load("res://Scenes/components/player_control_component.tscn").instantiate())
 	var engine = load("res://Scenes/TrainEngine.tscn").instantiate()
 	add_child(engine)
-	engine.add_to_track($Tracks/Track, 300)
+	engine.add_to_track($Tracks/Track, 2100)
 	train.add_vehicle(engine)
 	
 	var e2 = load("res://Scenes/TrainEngine.tscn").instantiate()

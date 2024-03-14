@@ -2,8 +2,6 @@
 class_name TrainVehicle
 extends Node2D
 
-signal towed_mass_changed(mass_delta: float)
-
 @export var mass := 20.0
 @export var bogie_distance := 58.0
 @export var follow_distance := 26.0
@@ -41,6 +39,3 @@ func set_follower_car(car: TrainVehicle) -> void:
 # Disconnect this car's signals from its followers
 func remove_follower_car(car: TrainVehicle) -> void:
 	back_bogie.moved.disconnect(car.front_bogie.move_as_follower)
-
-func _on_RailFollower_track_changed() -> void:
-	add_to_track(front_bogie.get_parent(), front_bogie.offset)

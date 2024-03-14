@@ -79,7 +79,8 @@ func _move(delta: float) -> void:
 			acceleration = applied_force / total_mass
 	
 	velocity += acceleration * delta
-	first_bogie.move(velocity * velocity_multiplier * delta)
+	if abs(velocity) > 0:
+		first_bogie.move(velocity * velocity_multiplier * delta)
 
 # Lerp the actual engine force from its current value to the throttle position
 func _update_applied_force(delta: float) -> void:
