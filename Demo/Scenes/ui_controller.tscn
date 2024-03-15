@@ -13,7 +13,7 @@ layer = 10
 script = ExtResource("3_orwkx")
 
 [node name="Node2D" type="Node2D" parent="TransitionsLayer"]
-skew = 0.349066
+skew = 0.261799
 
 [node name="ColorRect" type="ColorRect" parent="TransitionsLayer/Node2D"]
 offset_left = -100.0

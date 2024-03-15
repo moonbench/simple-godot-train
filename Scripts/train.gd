@@ -40,6 +40,11 @@ func _physics_process(delta: float) -> void:
 		_move(delta)
 
 #region Public Interface
+func enable_player_control():
+	for node in get_tree().get_nodes_in_group("player_controllers"):
+		node.queue_free()
+	add_child(load("res://Scenes/components/player_control_component.tscn").instantiate())
+
 func add_vehicle(car: TrainVehicle):
 	if cars.size() > 0:
 		add_vehicle_at_end(car)

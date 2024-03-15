@@ -8,13 +8,15 @@ func swipe_on():
 	rect.size = Vector2(1, 1000)
 	
 	var tween = create_tween()
-	tween.tween_property(rect, "size", Vector2(2000, 1000), 0.6)
+	tween.tween_property(rect, "size", Vector2(2000, 1000), 0.4)
 	tween.set_ease(Tween.EASE_OUT)
 
 func swipe_off():
-	node.position = Vector2(-100, -64)
+	node.position = Vector2(-200, -64)
 	rect.size = Vector2(2000, 1000)
 	
 	var tween = create_tween()
-	tween.tween_property(node, "position", Vector2(2000, -64), 0.8)
-	tween.set_ease(Tween.EASE_IN)
+	tween.set_parallel()
+	tween.tween_property(node, "position", Vector2(2000, -64), 0.4)
+	tween.tween_property(rect, "size", Vector2(1, 1000), 0.4)
+	tween.set_ease(Tween.EASE_OUT)

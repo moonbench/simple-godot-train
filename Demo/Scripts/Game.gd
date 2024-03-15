@@ -4,7 +4,6 @@ extends Node
 func _ready() -> void:
 	_setup_train.call_deferred()
 	UI.remove_driving_ui()
-	UI.transitions.swipe_off()
 
 func _on_Button_pressed():
 	Game.switch_to_scene("res://Demo/Scenes/TestTracks1.tscn")

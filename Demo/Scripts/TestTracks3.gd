@@ -1,9 +1,13 @@
 extends Node
+
+func _ready() -> void:
+	UI.add_driving_ui()
+
 func _setup_train():
 	var train = load("res://Scenes/train.tscn").instantiate()
 	add_child(train)
 	
-	train.add_child(load("res://Scenes/components/player_control_component.tscn").instantiate())
+	train.enable_player_control()
 	var engine = load("res://Scenes/TrainEngine.tscn").instantiate()
 	add_child(engine)
 	engine.add_to_track($Tracks/Track, 300)
@@ -16,7 +20,6 @@ func _setup_train():
 	for _i in range(10):
 		_add_car_to_train(train)
 	
-	UI.add_driving_ui()
 	train.train_info.connect(UI.driving_ui.update_train_info)
 
 func _add_car_to_train(train: Train) -> void:

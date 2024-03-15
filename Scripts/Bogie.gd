@@ -72,6 +72,6 @@ func _set_at_distance_from_leader(distance: float, leader_offset: float, leader_
 func _change_track_if_end(original_offset: float, distance_moved: float) -> void:
 	if !current_track: return
 	if progress_ratio <= 0.0:
-		current_track.on_bogie_at_head(self, abs(original_offset - abs(distance_moved)), distance_moved > 0)
+		current_track.on_bogie_at_head(self, abs(original_offset + distance_moved), distance_moved > 0)
 	elif progress_ratio >= 1.0:
 		current_track.on_bogie_at_tail(self, original_offset + abs(distance_moved) - current_track_length, distance_moved > 0)

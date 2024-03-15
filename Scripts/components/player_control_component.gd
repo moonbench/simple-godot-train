@@ -1,4 +1,5 @@
 extends Node
+class_name PlayerTrainController
 
 @onready var train : Train = get_parent()
 
