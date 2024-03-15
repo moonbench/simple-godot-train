@@ -7,10 +7,14 @@ func _setup_train():
 	var train = load("res://Scenes/train.tscn").instantiate()
 	add_child(train)
 	
+	train.enable_player_control()
 	var engine = load("res://Scenes/TrainEngine.tscn").instantiate()
 	add_child(engine)
 	engine.add_to_track($Tracks/Track, 1200)
-	engine.add_child(load("res://Demo/Scenes/ChaseCamera.tscn").instantiate())
+	var camera : Camera2D = load("res://Demo/Scenes/ChaseCamera.tscn").instantiate()
+	camera.ignore_rotation = false
+	camera.rotation = -PI/2
+	engine.add_child(camera)
 	train.add_vehicle(engine)
 	
 	var e2 = load("res://Scenes/TrainEngine.tscn").instantiate()

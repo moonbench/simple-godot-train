@@ -7,6 +7,10 @@ extends Camera2D
 
 var desired_zoom = zoom.x
 
+func _ready() -> void:
+	if get_parent() is TrainVehicle:
+		reparent(get_parent().body)
+
 func _process(delta):
 	if zoom.x != desired_zoom:
 		zoom.x = clamp(

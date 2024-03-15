@@ -4,5 +4,6 @@
 
 [node name="ChaseCamera" type="Camera2D"]
 position_smoothing_enabled = true
-position_smoothing_speed = 8.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 1.0
 script = ExtResource("1")
